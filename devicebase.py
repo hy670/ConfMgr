@@ -328,16 +328,18 @@ class FGT800:
         for i in range(len(self.policymiclist)):
             for j in range(i + 1, len(self.policymiclist)):
                 if self.policymiclist[i].name != self.policymiclist[j].name:
-                    if self.policymiclist[i].srceth == self.policymiclist[j].srceth and self.policymiclist[i].dsteth \
-                            == self.policymiclist[j].dsteth:
-                        if IPy.IP(self.policymiclist[i].srcaddr).overlaps(self.policymiclist[j].srcaddr) == 1:
-                            if IPy.IP(self.policymiclist[i].dstaddr).overlaps(self.policymiclist[j].dstaddr) == 1:
+                    if self.policymiclist[i].srceth == self.policymiclist[j].srceth and \
+                            self.policymiclist[i].dsteth == self.policymiclist[j].dsteth:
+                        if IPy.IP(self.policymiclist[i].srcaddr).overlaps(self.policymiclist[j].srcaddr) == 1 or \
+                                IPy.IP(self.policymiclist[j].srcaddr).overlaps(self.policymiclist[i].srcaddr) == 1:
+                            if IPy.IP(self.policymiclist[i].dstaddr).overlaps(self.policymiclist[j].dstaddr) == 1 or \
+                                    IPy.IP(self.policymiclist[j].srcaddr).overlaps(self.policymiclist[i].srcaddr) == 1:
                                 if self.policymiclist[i].service == 'any' or self.policymiclist[j].service == 'any':
-                                    print("-----------------------------------------------------------------------")
+                                    print("--------------------------------------------------------------")
                                     self.policymiclist[i].printpolicymic()
                                     self.policymiclist[j].printpolicymic()
                                 elif self.policymiclist[i].service == self.policymiclist[j].service:
-                                    print("------------------------------------------------------------------")
+                                    print("--------------------------------------------------------------")
                                     self.policymiclist[i].printpolicymic()
                                     self.policymiclist[j].printpolicymic()
 
@@ -478,7 +480,7 @@ class USG800:
                     self.policylist.append(Policy(tokss[1]))
                     self.policylist[len(self.policylist) - 1].srceth = tokss[2]
                     self.policylist[len(self.policylist) - 1].dsteth = tokss[3]
-                    if tokss[4]!='any':
+                    if tokss[4] != 'any':
                         self.policylist[len(self.policylist) - 1].srcaddr.append(tokss[4])
                     else:
                         self.policylist[len(self.policylist) - 1].srcaddr.append('0.0.0.0/0')
@@ -516,8 +518,10 @@ class USG800:
                 if self.policymiclist[i].name != self.policymiclist[j].name:
                     if self.policymiclist[i].srceth == self.policymiclist[j].srceth and \
                             self.policymiclist[i].dsteth == self.policymiclist[j].dsteth:
-                        if IPy.IP(self.policymiclist[i].srcaddr).overlaps(self.policymiclist[j].srcaddr) == 1:
-                            if IPy.IP(self.policymiclist[i].dstaddr).overlaps(self.policymiclist[j].dstaddr) == 1:
+                        if IPy.IP(self.policymiclist[i].srcaddr).overlaps(self.policymiclist[j].srcaddr) == 1 or \
+                                IPy.IP(self.policymiclist[j].srcaddr).overlaps(self.policymiclist[i].srcaddr) == 1:
+                            if IPy.IP(self.policymiclist[i].dstaddr).overlaps(self.policymiclist[j].dstaddr) == 1 or \
+                                    IPy.IP(self.policymiclist[j].srcaddr).overlaps(self.policymiclist[i].srcaddr) == 1:
                                 if self.policymiclist[i].service == 'any' or self.policymiclist[j].service == 'any':
                                     print("--------------------------------------------------------------")
                                     self.policymiclist[i].printpolicymic()
@@ -527,12 +531,15 @@ class USG800:
                                     self.policymiclist[i].printpolicymic()
                                     self.policymiclist[j].printpolicymic()
 
+
 class NetAddr:
-    def __init__(self,name,netaddr):
+    def __init__(self, name, netaddr):
         self.name = name
         self.type = 'netaddr'
         self.netaddr = netaddr
+
+
 class EthSW:
-    def __init__(self,name):
+    def __init__(self, name):
         self.name = name
         self.type = 'SW'
