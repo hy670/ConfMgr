@@ -1,0 +1,1580 @@
+\uFEFF!config
+authorized-table audit
+    description Default authority table used for audit administrator
+!
+authorized-table admin
+    description Default authority table with all authority enable 
+    authorized read all 
+    authorized write all 
+!
+authorized-table useradmin
+    description Default authority table used for useradmin administrator 
+    authorized read admin-user 
+    authorized write admin-user 
+!
+authorized-table jiankong
+    description yunwei 
+    authorized read system-config 
+    authorized read log-config 
+    authorized read log-read 
+!
+!
+user administrator audit local secret aZRp4Hgb0Qpt+WE6HmNMOYTtVwa6LxkRQRX0N6bhfIJrUFdwcDulMEp09owx/Ob authorized-table audit  
+user administrator audit description default audit administrator
+user administrator admin local secret /Pymy2vBm4CJ7dn9vyAeEsmm3A5W6xG1L8mAMIZPbY0WHRTRBW758RmkfQHU8nL authorized-table admin  
+user administrator admin authorized-address first 172.168.1.17/32
+user administrator admin authorized-address second 172.168.1.18/32
+user administrator admin description default super administrator
+user administrator jiankong local secret 8AL1fGQExrpDBgzPgr2Uu8z47tt3qpfNPppj5Y9aUZd6stgVVgI4GqNeGjFoX/6 authorized-table jiankong  
+user administrator jiankong authorized-address first 172.168.1.100/32
+user administrator jiankong authorized-address second 172.168.1.103/32
+user administrator jiankong description yunwei
+user administrator bykj local secret dZrPtIabPm5HovywKvFwo/OsyQ70XdVMVSKF2A+6HzSHvU9fB1n/UJJ8NHj+1uy authorized-table admin  
+user administrator bykj authorized-address first 172.168.1.1/24
+user administrator bykj authorized-address second 10.16.48.110/32
+user administrator bykj authorized-address third 172.168.1.3/29
+user administrator admin portlet host container vc1 pscreate true psindex 0
+user administrator admin portlet sys_res container vc1 pscreate true psindex 1
+user administrator admin portlet license container vc1 pscreate true psindex 2
+user administrator admin portlet inf_msg container vc2 pscreate true psindex 0
+user administrator admin portlet sys_connect container vc2 pscreate true psindex 1
+user administrator admin portlet inf_flow container vc1 pscreate false psindex 3
+user administrator admin portlet TopSession container vc2 pscreate false psindex 2
+user administrator admin portlet business container vc2 pscreate false psindex 3
+user administrator audit portlet host container vc1 pscreate true psindex 0
+user administrator audit portlet sys_res container vc1 pscreate true psindex 1
+user administrator audit portlet license container vc1 pscreate true psindex 2
+user administrator audit portlet TopSession container vc1 pscreate false psindex 3
+user administrator audit portlet inf_flow container vc1 pscreate false psindex 4
+user administrator audit portlet inf_msg container vc2 pscreate true psindex 0
+user administrator audit portlet sys_connect container vc2 pscreate true psindex 1
+user administrator audit portlet warn container vc2 pscreate true psindex 2
+user administrator audit portlet TopAttack container vc2 pscreate false psindex 3
+user administrator audit portlet TopVirus container vc2 pscreate false psindex 4
+user administrator audit portlet business container vc2 pscreate false psindex 5
+user administrator jiankong portlet host container vc1 pscreate true psindex 0
+user administrator jiankong portlet sys_res container vc1 pscreate true psindex 1
+user administrator jiankong portlet license container vc1 pscreate true psindex 2
+user administrator jiankong portlet TopSession container vc1 pscreate false psindex 3
+user administrator jiankong portlet inf_flow container vc1 pscreate false psindex 4
+user administrator jiankong portlet inf_msg container vc2 pscreate true psindex 0
+user administrator jiankong portlet sys_connect container vc2 pscreate true psindex 1
+user administrator jiankong portlet warn container vc2 pscreate true psindex 2
+user administrator jiankong portlet TopAttack container vc2 pscreate false psindex 3
+user administrator jiankong portlet TopVirus container vc2 pscreate false psindex 4
+user administrator jiankong portlet business container vc2 pscreate false psindex 5
+user administrator cqby portlet host container vc1 pscreate true psindex 0
+user administrator cqby portlet sys_res container vc1 pscreate true psindex 1
+user administrator cqby portlet license container vc1 pscreate true psindex 2
+user administrator cqby portlet TopSession container vc1 pscreate false psindex 3
+user administrator cqby portlet inf_flow container vc1 pscreate false psindex 4
+user administrator cqby portlet inf_msg container vc2 pscreate true psindex 0
+user administrator cqby portlet sys_connect container vc2 pscreate true psindex 1
+user administrator cqby portlet warn container vc2 pscreate true psindex 2
+user administrator cqby portlet TopAttack container vc2 pscreate false psindex 3
+user administrator cqby portlet TopVirus container vc2 pscreate false psindex 4
+user administrator cqby portlet business container vc2 pscreate false psindex 5
+user administrator bykj portlet host container vc1 pscreate true psindex 0
+user administrator bykj portlet sys_res container vc1 pscreate true psindex 1
+user administrator bykj portlet license container vc1 pscreate true psindex 2
+user administrator bykj portlet TopSession container vc1 pscreate false psindex 3
+user administrator bykj portlet inf_flow container vc1 pscreate false psindex 4
+user administrator bykj portlet inf_msg container vc2 pscreate true psindex 0
+user administrator bykj portlet sys_connect container vc2 pscreate true psindex 1
+user administrator bykj portlet warn container vc2 pscreate true psindex 2
+user administrator bykj portlet TopAttack container vc2 pscreate false psindex 3
+user administrator bykj portlet TopVirus container vc2 pscreate false psindex 4
+user administrator bykj portlet business container vc2 pscreate false psindex 5
+!
+timezone 57
+
+ntp 10.16.7.187 60
+
+!
+ips dfi on
+!
+log attack memory upto notifications
+log ipsecvpn memory upto notifications
+log sslvpn memory upto notifications
+log l2tpvpn memory upto notifications
+log grevpn memory upto notifications
+log nat memory upto notifications
+log dhcp memory upto notifications
+log ha memory upto notifications
+log web-auth memory upto notifications
+log run-info memory upto notifications
+log system-info memory upto notifications
+log if-info memory upto notifications
+log scan memory upto notifications
+log session memory upto notifications
+log ospf memory upto notifications
+log rip memory upto notifications
+log qos memory upto notifications
+log ddns memory upto notifications
+log flow memory upto notifications
+log idslink memory upto notifications
+log macfilter memory upto notifications
+log antiarp memory upto notifications
+log pki memory upto notifications
+!
+guish autosave 
+guish maxclient 2 
+!
+vpn ca crl config period 30 url http://127.0.0.1/cacrl.crl
+!
+interface eth0
+ aliasname eth0(\u5916\u7F51)
+ ip address 10.16.2.14/29
+ set bandwidth 10000000 
+ allow access ping
+!
+interface eth1
+ aliasname eth1\uFF08\u7EF4\u62A4\u533A\uFF09
+ ip address 192.168.3.1/30
+ allow access https
+ allow access ssh
+ allow access ping
+!
+interface eth2
+ aliasname eth2\uFF08\u5185\u7F51\uFF09
+ ip address 10.16.2.19/29
+ allow access https
+ allow access ssh
+ allow access ping
+!
+interface eth3
+ aliasname eth3\uFF08\u77ED\u4FE1\u4E13\u7EBF\uFF09
+!
+address WEB-Servers
+ host-address 10.16.8.1
+ host-address 10.16.8.2
+address WEB-8.1
+ host-address 10.16.8.1
+address \u7F51\u7BA1\u4E3B\u673A
+ host-address 10.16.8.17
+ host-address 172.168.1.18
+ host-address 10.16.8.18
+ host-address 172.168.1.222
+ host-address 172.168.1.17
+ host-address 172.168.1.111
+ host-address 172.168.1.4
+ host-address 172.168.1.3
+address TEST-7.10
+ host-address 10.16.7.10
+address \u7EF4\u62A4\u533A\u7F51\u6BB5
+ net-address 172.168.1.0/24
+address TEST-7.11
+ host-address 10.16.7.11
+address APP_Servers
+ host-address 10.16.16.1
+ host-address 10.16.16.5
+ host-address 10.16.16.20
+address \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A
+ host-address 172.168.1.99
+address ISG-1000-01
+ host-address 10.16.2.1
+address ISG-1000-02
+ host-address 10.16.3.1
+address NSAE1200-01
+ host-address 10.16.2.9
+address NSAE1200-02
+ host-address 10.16.2.10
+address DB-Servers
+ host-address 10.16.16.100
+ host-address 10.16.16.108
+address App_10.16.16.1
+ host-address 10.16.16.1
+address WEB_8.2
+ host-address 10.16.8.2
+address App3_ser_10.16.16.10
+ host-address 10.16.16.10
+address App4_ser_10.16.16.15
+ host-address 10.16.16.15
+address APP2_GROUPS
+ host-address 10.16.16.10
+ host-address 10.16.16.15
+address \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.10
+ description \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668\u7EC4
+ host-address 10.16.9.10
+address \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.13
+ description \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668\u7EC4
+ host-address 10.16.9.13
+address \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u516C\u7F51IP_123.147.190.50
+ host-address 123.147.190.50
+ host-address 221.5.203.98
+address MAIL_SRV_8.15
+ host-address 10.16.8.15
+address DB2-P720-Groups
+ host-address 10.16.16.110
+ host-address 10.16.16.115
+ host-address 10.16.16.111
+ host-address 10.16.16.116
+ host-address 10.16.16.117
+address 10.16.2.28
+ host-address 10.16.2.28
+address \u5821\u5792\u673A_10.16.48.110
+ host-address 10.16.48.110
+address \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.16
+ host-address 10.16.9.16
+address \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.19
+ host-address 10.16.9.19
+address \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100
+ host-address 172.168.1.100
+address 4948-01
+ description \u6838\u5FC3\u4EA4\u6362\u673A
+ host-address 10.16.8.252
+address 4948-02
+ description \u6838\u5FC3\u4EA4\u6362\u673A
+ host-address 10.16.8.253
+address RG-RSR20-01_2.34
+ host-address 10.16.2.34
+address RG-RSR20-02_10.10.10.1
+ host-address 10.10.10.1
+address RG-RSR20-03_2.41
+ host-address 10.16.2.41
+address \u5434\u7434_172.168.1.103
+ host-address 172.168.1.103
+address USG-FW-810-2.18
+ host-address 10.16.2.18
+address CFCA-210.74.41.109
+ description \u4E2D\u56FD\u91D1\u878D\u8BA4\u8BC1\u4E2D\u5FC3-\u7535\u4FE1\u5730\u5740
+ host-address 210.74.41.109
+address \u6CF8\u5DDESSL-VPN\u8BBE\u5907_10.16.6.2
+ host-address 10.16.6.2
+address CFCA_\u6D4B\u8BD5\u5730\u5740_210.74.42.11
+ host-address 210.74.42.11
+address XNDB\u79FB\u52A8\u77ED\u4FE1_218.206.27.231
+ host-address 218.206.27.231
+address \u5929\u878D\u4FE1\u52A0\u5BC6\u673A
+ host-address 10.16.5.100
+address \u52A0\u5BC6\u673A10.16.5.100
+ description 10.16.5.100
+ host-address 10.16.5.100
+address zabbix
+ host-address 10.16.7.187
+address juniper\u8054\u901A10.16.2.1
+ description 10.16.2.1
+ host-address 10.16.2.1
+address 10.16.7.250
+ host-address 10.16.7.250
+address \u592A\u5E73\u6D0Bapp
+ description 10.16.8.98 10.16.8.99
+ host-address 10.16.8.98
+ host-address 10.16.8.99
+address \u592A\u5E73\u6D0Bweb
+ description 10.16.16.150 10.16.16.151 152 153
+ host-address 10.16.16.150
+ host-address 10.16.16.151
+ host-address 10.16.16.152
+ host-address 10.16.16.153
+address \u592A\u5E73\u6D0Boracle
+ description 16.201 202
+ host-address 10.16.16.201
+ host-address 10.16.16.202
+address 10.16.16.152
+ description 10.16.16.152
+ host-address 10.16.16.152
+address \u674E\u7337-101
+ host-address 172.168.1.101
+address \u68A6\u7F51\u77ED\u4FE161.145.229.29
+ host-address 61.145.229.29
+address 10.16.16.150
+ description \u592A\u5E73\u6D0Bweb
+ host-address 10.16.16.150
+address 10.16.7.189
+ host-address 10.16.7.189
+address \u51C9\u5C71\u5DDE192.169.3.6
+ host-address 192.169.3.6
+address \u98DE\u585410.16.2.28
+ host-address 10.16.2.28
+address 118.112.187.42
+ description 118.112.187.42
+ host-address 118.112.187.42
+address \u51C9\u5C71\u5DDEVPN\u6D4B\u8BD5192.169.3.7
+ host-address 192.169.3.7
+address \u9510\u6377\u7535\u4FE110.16.2.34
+ host-address 10.16.2.34
+address 10.16.16.150,152
+ host-address 10.16.16.150
+ host-address 10.16.16.152
+ host-address 10.16.16.151
+ host-address 10.16.16.153
+address XP\u8DF3\u677F\u673A10.16.7.45
+ description XP\u8DF3\u677F\u673A10.16.7.45
+ host-address 10.16.7.45
+address 218.204.222.14;112.91.147.37
+ description 218.204.222.14;112.91.147.37
+ host-address 112.91.147.37
+ host-address 218.204.222.12
+ host-address 218.204.220.242
+address 180.96.8.40
+ description 180.96.8.40
+ host-address 180.96.8.40
+address \u51C9\u5C71\u5DDE192.169.3.10
+ description 192.169.3.10
+ host-address 192.169.3.10
+address 10.16.7.45
+ host-address 10.16.7.45
+address jump7.45
+ host-address 10.16.7.45
+address \u65B0zabbix10.16.7.187
+ description 10.16.7.187
+ host-address 10.16.7.187
+address \u529E\u516C\u5BA4VPN\u8DF3\u677F\u673A
+ description 172.168.1.156
+ host-address 172.168.1.120
+address WAF
+ host-address 10.16.48.120
+address \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C
+ description \u6D4B\u8BD510.16.7.222,\u751F\u4EA710.16.8.222
+ host-address 10.16.7.222
+ host-address 10.16.8.222
+address \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5:10.16.7.222
+ description 10.16.7.222
+ host-address 10.16.7.222
+address \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u751F\u4EA7:10.16.8.222
+ description 10.16.8.222
+ host-address 10.16.8.222
+address \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5\u5916\u7F51:210.74.42.45
+ description 210.74.42.45
+ host-address 210.74.42.45
+address \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5\u5916\u7F51:210.74.41.204
+ description 210.74.41.204
+ host-address 210.74.41.204
+address \u592A\u5E73\u6D0BWeb10.16.16.150
+ description 10.16.16.150
+ host-address 10.16.16.150
+address \u592A\u5E73\u6D0BWeb10.16.16.151
+ host-address 10.16.16.151
+address 101.251.214.152
+ host-address 101.251.214.152
+address \u6BB5\u661F\u5B87-\u5F00\u53D1
+ host-address 172.168.1.130
+address \u7530\u52C7\u5409-\u5F00\u53D1
+ host-address 172.168.1.131
+address \u5F6D\u5927\u94A2-\u5F00\u53D1
+ host-address 172.168.1.132
+address \u5DE6\u6587\u624D-\u5F00\u53D1
+ host-address 172.168.1.133
+address \u5F20\u78A7\u743C-\u5F00\u53D1
+ host-address 172.168.1.134
+address \u5218\u807F\u9A9E-\u5F00\u53D1
+ host-address 172.168.1.135
+address \u66FE\u5DE7-\u5F00\u53D1
+ host-address 172.168.1.136
+address \u5218\u7EAF-\u5F00\u53D1
+ host-address 172.168.1.137
+address \u5F00\u53D1\u90E8-\u738B\u666E
+ host-address 172.168.1.138
+address \u6D4B\u8BD5\u670D\u52A1\u5668-7.10
+ host-address 10.16.7.10
+address \u6D4B\u8BD5\u670D\u52A1\u5668-7.11
+ host-address 10.16.7.11
+address \u6D4B\u8BD5\u670D\u52A1\u5668-7.250
+ host-address 10.16.7.250
+address \u6881\u5148\u53CB-\u5F00\u53D1
+ host-address 172.168.1.141
+address \u738B\u8363\u5DDD-\u8FD0\u7EF4
+ host-address 172.168.1.2
+address \u4F55\u679C-\u8FD0\u7EF4
+ host-address 172.168.1.3
+address \u6D4B\u8BD5\u533A\u7F51\u6BB5
+ net-address 10.16.7.0/24
+address \u8FD0\u7EF4\u7F51\u6BB5
+ net-address 172.168.1.0/25
+address \u6D4B\u8BD5\u6570\u636E\u5E93
+ host-address 10.16.7.189
+address \u6570\u636E\u5E93\u670D\u52A1\u5668
+ host-address 10.16.16.108
+ host-address 10.16.16.201
+ host-address 10.16.16.202
+ host-address 10.16.16.100
+address zabbix\u5FAE\u4FE1\u63A8\u9001_140.207.189.106
+ description zabbix\u5FAE\u4FE1\u63A8\u9001140.207.189.106
+ host-address 140.207.189.106
+address zabbixNTP_203.187.6.88
+ description zabbixNTP_203.187.6.88
+ host-address 203.187.6.88
+address zabbix\u5FAE\u4FE1\u63A8\u9001_140.207.127.79
+ description zabbix\u5FAE\u4FE1\u63A8\u9001_140.207.127.79
+ host-address 140.207.127.79
+address \u8FD0\u7EF4\u90E8_\u738B\u8363\u5DDD172.168.1.102
+ description \u8FD0\u7EF4\u90E8_\u738B\u8363\u5DDD172.168.1.102
+ host-address 172.168.1.102
+address 10.16.16.153
+ host-address 10.16.16.153
+address SMS_112.91.147.37
+ host-address 112.91.147.37
+address SMS_218.204.222.12
+ host-address 218.204.222.12
+address SMS_61.130.7.220
+ host-address 61.130.7.220
+address SMS_61.145.229.29
+ host-address 61.145.229.29
+address WGZJ
+ host-address 10.16.8.17
+ host-address 172.168.1.18
+ host-address 10.16.8.18
+ host-address 172.168.1.222
+ host-address 172.168.1.17
+ host-address 172.168.1.111
+ host-address 172.168.1.4
+ host-address 172.168.1.3
+address weihuqu
+ range-address 172.168.1.1 172.168.1.254
+address fabuji
+ host-address 172.168.1.99
+address XNDBserver_9.10
+ host-address 10.16.9.10
+address XNDBserver_9.13
+ host-address 10.16.9.13
+address XNDBgongwangIP
+ host-address 123.147.190.50
+ host-address 221.5.203.98
+address baoleiji_48.110
+ host-address 10.16.48.110
+address XNDBserver_9.16
+ host-address 10.16.9.16
+address XNDBserver_9.19
+ host-address 10.16.9.19
+address yunweijiankong_1.100
+ host-address 172.168.1.100
+address wuqin_1.103
+ host-address 172.168.1.103
+address luzhouSSL-VPN
+ host-address 10.16.6.2
+address CFCA_test
+ host-address 210.74.41.109
+address XNDByidongduanxin
+ host-address 218.206.27.231
+address TRXjiamiji
+ host-address 10.16.5.100
+address juniperliantong
+ description 10.16.2.1
+ host-address 10.16.2.1
+address TPYapp
+ host-address 10.16.8.98
+ host-address 10.16.8.99
+address TPYweb
+ host-address 10.16.16.150
+ host-address 10.16.16.151
+ host-address 10.16.16.152
+ host-address 10.16.16.153
+address TPYoracle
+ host-address 10.16.16.201
+ host-address 10.16.16.202
+address DBA_LY
+ host-address 172.168.1.101
+address mengwangduanxin
+ host-address 61.145.229.29
+address LSZ_192.169.3.6
+ host-address 192.169.3.6
+address feita
+ host-address 10.16.2.28
+address LSZ_VPNtest
+ host-address 192.169.3.7
+address ruijidianxin
+ host-address 10.16.2.34
+address XPtiaobanji
+ host-address 10.16.7.45
+address officeVPNtiaobanji
+ host-address 172.168.1.120
+address LSZmobilebank
+ host-address 10.16.7.222
+ host-address 10.16.8.222
+address TPYWEB_16.150
+ host-address 10.16.16.150
+!
+address-group TEST-Servers_Group
+   address-object \u6D4B\u8BD5\u6570\u636E\u5E93
+address-group \u7F51\u7EDC\u8BBE\u5907\u7EC4
+   address-object ISG-1000-01
+   address-object ISG-1000-02
+   address-object NSAE1200-01
+   address-object NSAE1200-02
+address-group \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668\u7EC4
+ description 10.16.9.0/24
+   address-object \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.13
+   address-object \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.10
+address-group \u670D\u52A1\u5668\u7EC4
+   address-object WEB-Servers
+   address-object DB2-P720-Groups
+   address-object APP2_GROUPS
+   address-object APP_Servers
+   address-object DB-Servers
+address-group \u7F51\u7EDC\u8BBE\u5907\u7EC41
+   address-object 10.16.2.28
+   address-object 4948-01
+   address-object 4948-02
+   address-object RG-RSR20-01_2.34
+   address-object RG-RSR20-02_10.10.10.1
+   address-object RG-RSR20-03_2.41
+   address-object USG-FW-810-2.18
+address-group \u8FD0\u7EF4\u76D1\u63A7\u7EC4
+   address-object \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100
+   address-object \u5434\u7434_172.168.1.103
+address-group \u6570\u636E\u5E93\uFF0C\u7CFB\u7EDF\u8FD0\u7EF4\u7EC4
+ description \u6570\u636E\u5E93\u548C\u7CFB\u7EDF\u8FD0\u7EF4
+   address-object \u674E\u7337-101
+address-group \u592A\u5E73\u6D0BWeb10.16.16.150;10.16.16.151
+   address-object \u592A\u5E73\u6D0BWeb10.16.16.150
+   address-object \u592A\u5E73\u6D0BWeb10.16.16.151
+address-group \u5F00\u53D1\u7EC4
+   address-object \u6BB5\u661F\u5B87-\u5F00\u53D1
+   address-object \u7530\u52C7\u5409-\u5F00\u53D1
+   address-object \u5F6D\u5927\u94A2-\u5F00\u53D1
+   address-object \u5DE6\u6587\u624D-\u5F00\u53D1
+   address-object \u5F20\u78A7\u743C-\u5F00\u53D1
+   address-object \u5218\u807F\u9A9E-\u5F00\u53D1
+   address-object \u66FE\u5DE7-\u5F00\u53D1
+   address-object \u5218\u7EAF-\u5F00\u53D1
+   address-object \u5F00\u53D1\u90E8-\u738B\u666E
+   address-object \u6881\u5148\u53CB-\u5F00\u53D1
+address-group \u5F00\u53D1\u6D4B\u8BD5\u670D\u52A1\u5668
+   address-object \u6D4B\u8BD5\u670D\u52A1\u5668-7.10
+   address-object \u6D4B\u8BD5\u670D\u52A1\u5668-7.11
+   address-object \u6D4B\u8BD5\u670D\u52A1\u5668-7.250
+address-group CZAPP_group
+   address-object \u592A\u5E73\u6D0BWeb10.16.16.150
+   address-object \u592A\u5E73\u6D0BWeb10.16.16.151
+address-group DSQAPP_group
+   address-object 10.16.16.152
+   address-object 10.16.16.153
+address-group SMSgroup
+   address-object SMS_112.91.147.37
+   address-object SMS_218.204.222.12
+   address-object SMS_61.130.7.220
+   address-object SMS_61.145.229.29
+address-group APPgroup
+   address-object App3_ser_10.16.16.10
+   address-object App4_ser_10.16.16.15
+!
+service TCP_8801
+ description \u8054\u901A\u77ED\u4FE1\u56DE\u6267\u7AEF\u53E3 
+ tcp dest 8801 source 1 65535
+service TCP_9001
+ description \u8054\u901A\u77ED\u4FE1\u53D1\u9001\u63A5\u53E3 
+ tcp dest 9001 source 1 65535
+service TCP_8888
+ description LT1200 HTTPS 
+ tcp dest 8888 source 1 65535
+service TCP_7001
+ tcp dest 7001 source 1 65535
+service HTTP_8080
+ tcp dest 8080 source 1 65535
+service TCP_1521
+ tcp dest 1521 source 1 65535
+service TCP_10006
+ tcp dest 10006 source 1 65535
+service CQXNDB-HTTP8113
+ tcp dest 8113 source 1 65535
+service CQXNDB-WebLog-8013
+ tcp dest 8013 source 1 65535
+service NXDB_HTTP_8113
+ tcp dest 8113 source 1 65535
+service CQBY-WebLog-8099
+ tcp dest 8099 source 1 65535
+service CQBY_HTTP_8199
+ tcp dest 8199 source 1 65535
+service ZABBIX\u76D1\u63A7\u7AEF\u53E3
+ description zabbix_10050 
+ tcp dest 10050 source 1 65535
+service TCP_8002
+ tcp dest 8002 source 1 65535
+service TCP_8102
+ tcp dest 8102 source 1 65535
+service TCP_18001
+ tcp dest 18001 source 1 65535
+service TCP_9901
+ tcp dest 9901 source 1 65535
+service TCP_8001
+ tcp dest 8001 source 1 65535
+service TCP_9444
+ description CFCA 
+ tcp dest 9444 source 1 65535
+service TCP_7543
+ tcp dest 7543 source 1 65535
+service TCP_8015
+ tcp dest 8015 source 1 65535
+service TCP_8115
+ tcp dest 8115 source 1 65535
+service TCP_20009
+ tcp dest 20009 source 1 65535
+service TCP_8199
+ tcp dest 8199 source 1 65535
+service \u4E07\u6E90\u6C34\u52A18401
+ tcp dest 8401 source 1 65535
+service TCP_8301
+ tcp dest 8301 source 1 65535
+service TCP_8098
+ description RA 
+ tcp dest 8098 source 1 65535
+service TCP_8198
+ tcp dest 8198 source 1 65535
+service TCP_9040
+ tcp dest 9040 source 1 65535
+service TCP_8016
+ tcp dest 8016 source 1 65535
+service TCP_8116
+ description \u91D1\u878D\u540E\u63F4 
+ tcp dest 8116 source 1 65535
+service TCP_8008
+ tcp dest 8008 source 1 65535
+service TCP_8108
+ tcp dest 8108 source 1 65535
+service TCP_7443
+ description \u91CD\u5E86\u94F6\u884C\u7AEF\u53E3 
+ tcp dest 7443 source 1 65535
+service TCP_443
+ description \u91CD\u5E86\u94F6\u884C\u7AEF\u53E3 
+ tcp dest 443 source 1 65535
+service TCP_8402
+ tcp dest 8402 source 1 65535
+service TCP_9080
+ description XNDB\u670D\u52A1\u5668\u7528 
+ tcp dest 9080 source 1 65535
+service TCP_3306
+ description XNDB\u670D\u52A1\u5668\u7528 
+ tcp dest 3306 source 1 65535
+service TCP_8113
+ tcp dest 8113 source 1 65535
+service TCP_8088
+ description Bugfree 
+ tcp dest 8088 source 1 65535
+service TCP_6220
+ tcp dest 6220 source 1 65535
+service TCP_1222
+ tcp dest 1222 source 1 65535
+service TCP_8070
+ tcp dest 8070 source 1 65535
+service TCP_8071
+ tcp dest 8071 source 1 65535
+service TCP_8408
+ tcp dest 8408 source 1 65535
+service TCP_8401
+ tcp dest 8401 source 1 65535
+service tcp_8001
+ tcp dest 8001 source 1 65535
+service TCP_8101
+ tcp dest 8101 source 1 65535
+service TCP_1024
+ tcp dest 1024 source 1 65535
+service TCP_7050
+ tcp dest 7050 source 1 65535
+service TCP_7060
+ tcp dest 7060 source 1 65535
+service TCP_7040
+ tcp dest 7040 source 1 65535
+service TCP_1025
+ tcp dest 1025 source 1 65535
+service TCP_7080
+ tcp dest 7080 source 1 65535
+service TCP_7090
+ tcp dest 7090 source 1 65535
+service TCP_7030
+ tcp dest 7030 source 1 65535
+service 172.168.1.99_FTP2025
+ tcp dest 2025 source 1 65535
+service TCP_8103
+ tcp dest 8103 source 1 65535
+service TCP_8117
+ tcp dest 8117 source 1 65535
+service TCP_8417
+ tcp dest 8417 source 1 65535
+service TCP_8017
+ tcp dest 8017 source 1 65535
+service TCP_8403
+ tcp dest 8403 source 1 65535
+service TCP_8090
+ tcp dest 8090 source 1 65535
+service TCP_8003
+ tcp dest 8003 source 1 65535
+service TCP_8009
+ description \u6500\u679D\u82B1\u5546\u884C\u77ED\u606F 
+ tcp dest 8009 source 1 65535
+service TCP_9909
+ description \u6500\u679D\u82B1\u5546\u884C\u77ED\u4FE1 
+ tcp dest 9909 source 1 65535
+service PZHCCB_10002
+ description \u6500\u679D\u82B1\u5546\u884C\u77ED\u4FE1\u7AEF\u53E3 
+ tcp dest 10002 source 1 65535
+service TCP_9999
+ tcp dest 9999 source 1 65535
+service FTP_2121
+ tcp dest 2121 source 1 65535
+service keypos_3000_8081
+ tcp dest 8081 source 1 65535
+ tcp dest 3000 source 1 65535
+service TCP_50002
+ tcp dest 50002 source 1 65535
+service TCP_50003
+ tcp dest 50003 source 1 65535
+service TCP_8443
+ description \u8FBE\u5DDE\u5546\u884CSSL-VPN\u8FDE\u63A5 
+ tcp dest 8443 source 1 65535
+service TCP_1158
+ tcp dest 1158 source 1 65535
+service TCP_8404
+ tcp dest 8404 source 1 65535
+service TCP_8118
+ description \u8FDB\u51FA\u53E3\u62C5\u4FDD 
+ tcp dest 8118 source 1 65535
+service TCP_6443
+ tcp dest 6443 source 1 65535
+service HTTP_9080
+ description XNDB\u670D\u52A1\u5668\u7528 
+ tcp dest 9080 source 1 65535
+service TCP_8119
+ description p2p\u7AEF\u53E3 
+ tcp dest 8119 source 1 65535
+service TCP_16770
+ tcp dest 16770 source 1 65535
+service TCP_3389
+ tcp dest 3389 source 1 65535
+service TCP_6050
+ tcp dest 6050 source 1 65535
+service TCP_6060
+ tcp dest 6060 source 1 65535
+service SMTPS_465
+ tcp dest 465 source 1 65535
+service TCP_5901
+ tcp dest 5901 source 1 65535
+service TCP_88
+ description 218.4.234.150 
+ tcp dest 88 source 1 65535
+service TCP_7910
+ description XNDB\u79FB\u52A8\u7AEF\u53E3\u63A5\u53E3 
+ tcp dest 7910 source 1 65535
+service \u79FB\u52A8\u77ED\u4FE1\u63A5\u53E3_7890
+ tcp dest 7890 source 1 65535
+service TCP_3307
+ tcp dest 3307 source 1 65535
+service TCP_1520
+ tcp dest 1520 source 1 65535
+service TCP_8089
+ tcp dest 8089 source 1 65535
+service TCP_8442
+ tcp dest 8442 source 1 65535
+service TCP_5102
+ tcp dest 5102 source 1 65535
+service TCP_8581
+ description \u91D1\u878D\u540E\u63F4\u4F7F\u7528 
+ tcp dest 8581 source 1 65535
+service zabbix_tcp_7999
+ tcp dest 7999 source 1 65535
+service IC\u5361\u7CFB\u7EDF
+ description IC\u5361\u7CFB\u7EDF\u90E8\u7F72\u8BBF\u95EE 
+ tcp dest 7001 source 1 65535
+ tcp dest 7999 source 1 65535
+ tcp dest 8901 source 1 65535
+ tcp dest 8086 source 1 65535
+ tcp dest 1086 source 1 65535
+ tcp dest 7998 source 1 65535
+ tcp dest 1718 source 1 65535
+ tcp dest 1719 source 1 65535
+ tcp dest 1720 source 1 65535
+ tcp dest 4561 source 1 65535
+ tcp dest 4564 source 1 65535
+service \u79D1\u84DDIC\u5361\u7AEF\u53E3TCP3691
+ description TCP3691 
+ tcp dest 3691 source 1 65535
+service \u8FBD\u5B81\u6C47\u901A\u6D4B\u8BD550021
+ tcp dest 50021 source 1 65535
+service TCP_9600
+ tcp dest 9600 source 1 65535
+service TCP-8081
+ tcp dest 8081 source 1 65535
+service 50023
+ tcp dest 50023 source 1 65535
+service TCP_8080
+ tcp dest 8080 source 1 65535
+service TCP8893
+ tcp dest 8893 source 1 65535
+service TCP7893
+ tcp dest 7893 source 1 65535
+service \u6751\u9547\u94F6\u884C\u76D1\u63A7\u7AEF\u53E3
+ tcp dest 12106 source 1 65535
+ tcp dest 12102 source 1 65535
+ tcp dest 12111 source 1 65535
+ tcp dest 12206 source 1 65535
+ tcp dest 12202 source 1 65535
+ tcp dest 12211 source 1 65535
+ tcp dest 22101 source 1 65535
+ tcp dest 22102 source 1 65535
+service TCP_8423
+ tcp dest 8423 source 1 65535
+service TCP_8123
+ tcp dest 8123 source 1 65535
+service TCP_9099
+ tcp dest 9099 source 1 65535
+service tcp5000
+ tcp dest 5000 source 1 65535
+service \u8FB0\u5DDE\u6C47\u901A\u76D1\u63A7\u7AEF\u53E3
+ description TCP_12106 /12102 /12111 
+ tcp dest 12106 source 1 65535
+ tcp dest 12102 source 1 65535
+ tcp dest 12111 source 1 65535
+service \u5927\u77F3\u6865\u76D1\u63A7\u7AEF\u53E3
+ description 12206/12202/12211 
+ tcp dest 12206 source 1 65535
+ tcp dest 12202 source 1 65535
+ tcp dest 12211 source 1 65535
+service \u91D1\u5802\u6C47\u91D1\u76D1\u63A7\u7AEF\u53E3
+ description 12306/12302/12311 
+ tcp dest 12306 source 1 65535
+ tcp dest 12302 source 1 65535
+ tcp dest 12311 source 1 65535
+service tcp8001
+ tcp dest 8001 source 1 65535
+service \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C
+ description TCP_8801,TCP_8802
+ tcp dest 8801 source 1 65535
+ tcp dest 8802 source 1 65535
+service TCP_9665
+ tcp dest 9665 source 1 65535
+service IC\u5361\u7CFB\u7EDF\u7AEF\u53E3
+ description 22103,22106,22105
+ tcp dest 22105 source 1 65535
+ tcp dest 22106 source 1 65535
+ tcp dest 22103 source 1 65535
+service TCP1521
+ tcp dest 1521 source 1 65535
+!
+service-group \u7EF4\u62A4\u533AServices
+ service-object ping
+ service-object ssh
+ service-object https
+ service-object telnet
+ service-object http
+ service-object dns
+ service-object TCP_8888
+ service-object HTTP_8080
+ service-object TCP_7001
+ service-object TCP_1521
+ service-object TCP_7543
+service-group \u8054\u901A\u77ED\u4FE1\u7F51\u5173service_group
+ service-object ping
+ service-object TCP_9001
+ service-object TCP_8801
+service-group WEB-Service_group
+ service-object http
+ service-object https
+ service-object NXDB_HTTP_8113
+ service-object TCP_8102
+ service-object TCP_8402
+ service-object TCP_8115
+ service-object TCP_8108
+ service-object TCP_8116
+ service-object TCP_8101
+ service-object TCP_8401
+ service-object TCP_8408
+ service-object TCP_8117
+ service-object TCP_8417
+ service-object TCP_8403
+ service-object TCP_8103
+ service-object TCP_8119
+service-group CQSEK_Services_Group
+ service-object ftp
+ service-object ping
+ service-object TCP_10006
+service-group \u5174\u519C\u62C5\u4FDD\u670D\u52A1
+ service-object CQXNDB-HTTP8113
+ service-object CQXNDB-WebLog-8013
+service-group \u5DF4\u4E91\u7F51\u7AD9\u670D\u52A1\u7EC4
+ service-object CQBY_HTTP_8199
+ service-object CQBY-WebLog-8099
+service-group \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E3
+ description \u5E94\u7528\u5F00\u53D1\u90E8 
+ service-object http
+ service-object ssh
+ service-object ftp
+ service-object CQBY-WebLog-8099
+ service-object CQBY_HTTP_8199
+ service-object CQXNDB-WebLog-8013
+ service-object NXDB_HTTP_8113
+ service-object TCP_7001
+ service-object TCP_8098
+ service-object TCP_8198
+ service-object TCP_8016
+ service-object TCP_8116
+ service-object TCP_8002
+ service-object TCP_8102
+ service-object TCP_8402
+ service-object TCP_8015
+ service-object TCP_8115
+ service-object TCP_8008
+ service-object TCP_8108
+ service-object TCP_8101
+ service-object tcp_8001
+ service-object TCP_8401
+ service-object TCP_8408
+ service-object TCP_8117
+ service-object TCP_8017
+ service-object TCP_8417
+ service-object TCP_8103
+ service-object TCP_8403
+ service-object TCP_8003
+ service-object TCP_8404
+ service-object TCP_8009
+service-group \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E32
+ service-object ssh
+ service-object TCP_7001
+ service-object TCP_8001
+ service-object CQBY-WebLog-8099
+ service-object TCP_8098
+service-group \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E33
+ service-object TCP_1521
+service-group \u7EF4\u62A4\u534F\u8BAE
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object ssh
+ service-object TCP_1521
+service-group FTP\u670D\u52A1
+ service-object ftp
+ service-object ping
+service-group \u91CD\u5E86\u94F6\u884C\u7AEF\u53E3\u7EC4
+ service-object http
+ service-object https
+ service-object dns
+ service-object telnet
+ service-object ping
+ service-object TCP_7443
+ service-object TCP_443
+service-group \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E34
+ service-object ssh
+ service-object telnet
+ service-object TCP_7001
+ service-object TCP_8002
+ service-object TCP_8008
+ service-object TCP_8003
+ service-object TCP_8009
+service-group XNDB\u5E94\u7528\u670D\u52A1\u5668
+ description XNDB\u5E94\u7528\u670D\u52A1\u56689.10\u7528 
+ service-object ssh
+ service-object http
+ service-object HTTP_8080
+ service-object TCP_9080
+ service-object TCP_3389
+service-group XNDB\u6570\u636E\u5E93\u670D\u52A1\u5668
+ description XNDB\u6570\u636E\u5E93\u670D\u52A1\u5668\u7528 
+ service-object ssh
+ service-object TCP_3306
+ service-object HTTP_9080
+ service-object HTTP_8080
+service-group \u7231\u67E5\u5FEB\u9012\u7AEF\u53E3
+ service-object http
+ service-object https
+ service-object dns
+service-group XNDB\u5E94\u7528\u670D\u52A1\u56681
+ service-object dns
+ service-object http
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_9080
+ service-object TCP_8090
+ service-object TCP_7080
+service-group E-mail\u534F\u8BAE
+ service-object pop3
+ service-object smtp
+ service-object http
+ service-object imap
+ service-object dns
+ service-object ping
+service-group 7.10\u6D4B\u8BD5\u7EC4\u7AEF\u53E3
+ service-object TCP_8113
+service-group APP_16.1_group
+ service-object \u4E07\u6E90\u6C34\u52A18401
+ service-object TCP_8801
+service-group TEST_7.10_Group
+ service-object https
+ service-object TCP_8108
+ service-object TCP_8116
+ service-object TCP_8113
+ service-object TCP_8102
+ service-object HTTP_8080
+ service-object TCP_8101
+ service-object TCP_8103
+ service-object TCP_8117
+ service-object TCP_8417
+ service-object TCP_8403
+ service-object TCP_8001
+ service-object \u4E07\u6E90\u6C34\u52A18401
+ service-object TCP_8408
+ service-object TCP_8118
+ service-object TCP_7443
+ service-object TCP_6443
+ service-object TCP_8008
+ service-object TCP_8115
+ service-object TCP_8119
+ service-object CQBY-WebLog-8099
+ service-object \u8FBD\u5B81\u6C47\u901A\u6D4B\u8BD550021
+service-group TEST_7.11_Group
+ service-object https
+ service-object TCP_8015
+ service-object TCP_8115
+ service-object TCP_8401
+service-group E-MAIL\u66F4\u65B0\u7AEF\u53E3
+ service-object ping
+ service-object TCP_6220
+ service-object TCP_1222
+ service-object TCP_8070
+ service-object TCP_8071
+service-group \u5821\u5792\u673A\u7AEF\u53E3\u7EC4
+ service-object https
+ service-object ping
+ service-object ssh
+ service-object telnet
+ service-object ftp
+ service-object tftp
+service-group XNDB\u5E94\u7528\u670D\u52A1\u56682
+ description 10.16.9.16 
+ service-object ssh
+ service-object telnet
+ service-object dns
+ service-object TCP_1024
+ service-object TCP_7050
+ service-object TCP_7060
+ service-object TCP_7040
+service-group XNDB\u5E94\u7528\u670D\u52A1\u56683
+ description 10.16.9.19 
+ service-object dns
+ service-object http
+ service-object ssh
+ service-object telnet
+ service-object TCP_1025
+ service-object TCP_7080
+ service-object TCP_7090
+ service-object TCP_7030
+ service-object TCP_9080
+ service-object HTTP_8080
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC4
+ service-object http
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object CQXNDB-WebLog-8013
+ service-object CQXNDB-HTTP8113
+ service-object TCP_8016
+ service-object TCP_8116
+ service-object TCP_8002
+ service-object TCP_8102
+ service-object TCP_8015
+ service-object TCP_8115
+ service-object TCP_8008
+ service-object TCP_8108
+ service-object tcp_8001
+ service-object TCP_8101
+ service-object TCP_8401
+ service-object TCP_8408
+ service-object TCP_8117
+ service-object TCP_8417
+ service-object TCP_8017
+ service-object TCP_1521
+ service-object TCP_8103
+ service-object TCP_8403
+ service-object TCP_8003
+service-group \u7F51\u7EDC\u8BBE\u5907\u76D1\u63A7\u7AEF\u53E3
+ description \u8FD0\u7EF4\u90E8 
+ service-object http
+ service-object https
+ service-object ftp
+ service-object ping
+ service-object snmp
+ service-object ssh
+ service-object telnet
+ service-object TCP_8888
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC41
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object ssh
+ service-object TCP_1521
+ service-object CQBY-WebLog-8099
+ service-object TCP_8001
+ service-object TCP_8098
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC42
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object telnet
+ service-object ssh
+ service-object TCP_1521
+ service-object TCP_1158
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC43
+ service-object ping
+ service-object ssh
+ service-object TCP_8002
+ service-object TCP_8008
+ service-object TCP_8003
+service-group \u8FD0\u7EF4\u76D1\u63A7-\u6D4B\u8BD5\u670D\u52A1\u5668
+ service-object http
+ service-object https
+ service-object ping
+ service-object HTTP_8080
+service-group \u674E\u6210\u5FD7FTP\u7EC4
+ service-object ftp
+ service-object ping
+service-group \u7F51\u7EDC\u8BBE\u5907\u76D1\u63A7\u7AEF\u53E31
+ service-object http
+ service-object https
+ service-object ftp
+ service-object ping
+ service-object snmp
+ service-object TCP_8888
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC44
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object TCP_1521
+ service-object CQBY-WebLog-8099
+ service-object TCP_8001
+ service-object TCP_8098
+ service-object PZHCCB_10002
+ service-object TCP_8009
+ service-object TCP_9909
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC45
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object telnet
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC46
+ service-object ping
+ service-object TCP_8002
+ service-object TCP_8008
+ service-object TCP_8003
+service-group \u6500\u679D\u82B1\u5546\u884C\u77ED\u4FE1\u7AEF\u53E3\u7EC4
+ service-object TCP_8009
+ service-object TCP_9909
+service-group \u6500\u679D\u82B1\u5546\u884C\u77ED\u4FE1\u7AEF\u53E3\u7EC41
+ service-object ping
+ service-object PZHCCB_10002
+service-group XNDB\u5E94\u7528\u670D\u52A1\u56684
+ service-object dns
+ service-object http
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_9080
+ service-object TCP_8090
+ service-object TCP_7080
+ service-object TCP_7050
+ service-object TCP_7060
+ service-object TCP_6050
+ service-object TCP_6060
+service-group \u7981\u6B62\u767B\u9646SSH/TELNET
+ service-object ssh
+ service-object telnet
+service-group XNDB_9.16_in
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_3306
+ service-object TCP_8090
+service-group XNDB_9.19_in
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_3306
+ service-object TCP_8090
+service-group \u4E92\u8054\u7F51\u8BBF\u95EE\u7AEF\u53E3\u7EC4
+ service-object dns
+ service-object http
+ service-object TCP_8089
+service-group CFCA\u7AEF\u53E3\u7EC4
+ description 9444 
+ service-object ping
+ service-object TCP_9444
+service-group ZQW_sers_groups
+ description \u79CD\u94B1\u7F51\u7AEF\u53E3\u7EC4 
+ service-object ssh
+ service-object TCP_3306
+ service-object TCP_5901
+ service-object TCP_3307
+ service-object TCP_1521
+ service-object TCP_1520
+ service-object TCP_8442
+ service-object TCP_8581
+service-group ZQW_sers_groups_in
+ service-object smtp
+ service-object ssh
+ service-object http
+ service-object dns
+ service-object https
+ service-object internet-locator-service
+ service-object HTTP_8080
+ service-object TCP_88
+ service-object TCP_9444
+ service-object TCP_9600
+service-group XNDB\u79FB\u52A8\u77ED\u4FE1\u7AEF\u53E3\u7EC4
+ service-object TCP_7910
+ service-object \u79FB\u52A8\u77ED\u4FE1\u63A5\u53E3_7890
+service-group \u4E92\u8054\u7F51\u8BBF\u95EE\u7AEF\u53E3\u7EC41
+ service-object dns
+ service-object https
+ service-object http
+service-group HTTPS\u7EC4
+ service-object https
+ service-object dns
+service-group \u8FD0\u7EF4\u76D1\u63A7\u7EC4
+ description DBA\uFF0C\u7CFB\u7EDF\u7BA1\u7406 
+ service-object ping
+ service-object ssh
+ service-object telnet
+ service-object ftp
+ service-object mysql
+ service-object tcp
+ service-object ZABBIX\u76D1\u63A7\u7AEF\u53E3
+ service-object zabbix_tcp_7999
+ service-object TCP_1521
+service-group \u79D1\u84DDic\u5361\u7CFB\u7EDF\u90E8\u7F72
+ description \u90E8\u7F72\u9700\u8981 
+ service-object ftp
+ service-object http
+ service-object ping
+ service-object ssh
+ service-object TCP_1521
+ service-object IC\u5361\u7CFB\u7EDF
+ service-object \u79D1\u84DDIC\u5361\u7AEF\u53E3TCP3691
+service-group \u7F51\u7BA1\u7EC4
+ service-object ping
+ service-object telnet
+ service-object ssh
+ service-object https
+ service-object ftp
+service-group 1.206
+ service-object \u7F51\u7BA1\u7EC4
+ service-object \u8FD0\u7EF4\u76D1\u63A7\u7EC4
+service-group Zabbix\u670D\u52A1\u7EC4
+ service-object snmp
+ service-object ping
+service-group \u6D4B\u8BD5\u77ED\u4FE1\u7AEF\u53E3
+ service-object TCP8893
+ service-object TCP7893
+service-group \u5434\u7434\u76D1\u63A7
+ service-object \u8FB0\u5DDE\u6C47\u901A\u76D1\u63A7\u7AEF\u53E3
+ service-object \u5927\u77F3\u6865\u76D1\u63A7\u7AEF\u53E3
+ service-object \u91D1\u5802\u6C47\u91D1\u76D1\u63A7\u7AEF\u53E3
+service-group zabbix\u5FAE\u4FE1\u63A8\u9001
+ service-object https
+ service-object http
+service-group SMS
+ service-object \u79FB\u52A8\u77ED\u4FE1\u63A5\u53E3_7890
+ service-object TCP8893
+ service-object TCP7893
+!
+router rip
+!
+external-ctrl template Block_All 
+ description Predefined: Block all apps 
+external-ctrl template Monitor_All 
+ description Predefined: Monitor all apps 
+!
+sslvpn
+!
+policy 2 eth0 eth2 any WEB-Servers WEB-Service_group always permit
+ enable
+ qos-group high
+policy 49 eth2 eth0 WEB-Servers CFCA-210.74.41.109 CFCA\u7AEF\u53E3\u7EC4 always permit
+ enable
+policy 61 eth2 eth0 TEST-7.10 CFCA_\u6D4B\u8BD5\u5730\u5740_210.74.42.11 any always permit
+ enable
+policy 46 eth1 eth2 \u674E\u7337-101 any any always permit
+ enable
+policy 44 eth1 eth2 \u674E\u7337-101 \u6570\u636E\u5E93\u670D\u52A1\u5668 TCP1521 always permit
+ enable
+policy 80 eth1 eth2 \u7EF4\u62A4\u533A\u7F51\u6BB5 MAIL_SRV_8.15 E-mail\u534F\u8BAE always permit
+ enable
+policy 29 eth1 eth2 \u5F00\u53D1\u7EC4 \u5F00\u53D1\u6D4B\u8BD5\u670D\u52A1\u5668 any always permit
+ enable
+policy 3 eth1 eth2 \u5F00\u53D1\u7EC4 \u6D4B\u8BD5\u6570\u636E\u5E93 TCP_1521 always permit
+ enable
+policy 43 eth1 eth2 \u8FD0\u7EF4\u7F51\u6BB5 \u5F00\u53D1\u6D4B\u8BD5\u670D\u52A1\u5668 any always deny
+ enable
+policy 4 eth1 eth2 any \u670D\u52A1\u5668\u7EC4 \u7981\u6B62\u767B\u9646SSH/TELNET always deny
+ enable
+policy 18 eth1 eth2 \u5F00\u53D1\u7EC4 any any always deny
+ enable
+policy 176 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A jump7.45 any always permit
+ enable
+policy 22 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A APP_Servers \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E32 always permit
+ enable
+policy 6 eth1 eth2 \u7F51\u7BA1\u4E3B\u673A any any always permit
+ enable
+policy 53 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A WEB-Servers \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E3 always permit
+ enable
+policy 30 eth1 eth2 \u7EF4\u62A4\u533A\u7F51\u6BB5 \u5821\u5792\u673A_10.16.48.110 \u5821\u5792\u673A\u7AEF\u53E3\u7EC4 always permit
+ enable
+policy 10 eth1 eth0 \u7F51\u7BA1\u4E3B\u673A any \u7EF4\u62A4\u533AServices always permit
+ enable
+policy 57 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A DB-Servers \u7EF4\u62A4\u534F\u8BAE always permit
+ enable
+policy 71 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A APP2_GROUPS \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E34 always permit
+ enable
+policy 73 eth2 eth0 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.10 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u516C\u7F51IP_123.147.190.50 XNDB\u5E94\u7528\u670D\u52A1\u56684 always permit
+ enable
+policy 79 eth2 eth0 MAIL_SRV_8.15 any E-mail\u534F\u8BAE always permit
+ enable
+policy 8 eth0 eth2 any APP_Servers APP_16.1_group always permit
+ enable
+ qos-group high
+policy 11 eth0 eth2 any TEST-7.10 any always permit
+ enable
+policy 27 eth0 eth2 any MAIL_SRV_8.15 E-mail\u534F\u8BAE always permit
+ enable
+policy 1 eth2 eth0 MAIL_SRV_8.15 any E-MAIL\u66F4\u65B0\u7AEF\u53E3 always permit
+ enable
+policy 64 eth2 eth0 WEB_8.2 any SMTPS_465 always permit
+ enable
+policy 17 eth2 eth0 WEB_8.2 any http always permit
+ enable
+policy 74 eth0 eth2 any \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.10 XNDB\u5E94\u7528\u670D\u52A1\u5668 always permit
+ enable
+policy 75 eth0 eth2 any \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.13 XNDB\u6570\u636E\u5E93\u670D\u52A1\u5668 always permit
+ enable
+policy 32 eth0 eth2 any \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.16 XNDB_9.16_in always permit
+ enable
+policy 33 eth0 eth2 any \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.19 XNDB_9.19_in always permit
+ enable
+policy 35 eth2 eth0 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.16 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u516C\u7F51IP_123.147.190.50 XNDB\u5E94\u7528\u670D\u52A1\u56681 always permit
+ enable
+policy 37 eth2 eth0 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.19 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u516C\u7F51IP_123.147.190.50 XNDB\u5E94\u7528\u670D\u52A1\u56683 always permit
+policy 41 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 WEB-Servers \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC4 always permit
+ enable
+policy 42 eth1 eth0 \u8FD0\u7EF4\u76D1\u63A7\u7EC4 \u7F51\u7EDC\u8BBE\u5907\u7EC4 \u7F51\u7EDC\u8BBE\u5907\u76D1\u63A7\u7AEF\u53E3 always permit
+ enable
+policy 54 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 APP_Servers \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC44 always permit
+ enable
+policy 55 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 DB-Servers \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC45 always permit
+ enable
+policy 58 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 APP2_GROUPS \u8FD0\u7EF4\u76D1\u63A7\u7AEF\u53E3\u7EC46 always permit
+ enable
+policy 59 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 \u7F51\u7EDC\u8BBE\u5907\u7EC41 \u7F51\u7EDC\u8BBE\u5907\u76D1\u63A7\u7AEF\u53E31 always permit
+ enable
+policy 51 eth0 eth2 any APP_Servers \u6500\u679D\u82B1\u5546\u884C\u77ED\u4FE1\u7AEF\u53E3\u7EC4 always permit
+policy 82 eth0 eth2 any App_10.16.16.1 TCP_9999 always permit
+policy 9 eth2 eth1 \u670D\u52A1\u5668\u7EC4 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A ftp always permit
+ enable
+policy 23 eth0 eth2 ISG-1000-02 \u6CF8\u5DDESSL-VPN\u8BBE\u5907_10.16.6.2 any always permit
+ enable
+policy 70 eth2 eth0 \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u5668_9.16 XNDB\u79FB\u52A8\u77ED\u4FE1_218.206.27.231 XNDB\u79FB\u52A8\u77ED\u4FE1\u7AEF\u53E3\u7EC4 always permit
+ enable
+policy 90 eth1 eth2 \u6570\u636E\u5E93\uFF0C\u7CFB\u7EDF\u8FD0\u7EF4\u7EC4 TEST-Servers_Group \u8FD0\u7EF4\u76D1\u63A7\u7EC4 always permit
+ enable
+policy 20 eth1 eth2 \u5434\u7434_172.168.1.103 \u670D\u52A1\u5668\u7EC4 \u5F00\u53D1\u53D1\u5E03\u673A\u7AEF\u53E3 always permit
+ enable
+policy 98 eth0 eth2 juniper\u8054\u901A10.16.2.1 any any always permit
+ enable
+policy 119 eth0 eth2 any \u592A\u5E73\u6D0Bapp any always permit
+ enable
+policy 123 eth2 eth0 10.16.7.250 any any always permit
+policy 124 eth1 eth2 \u7F51\u7BA1\u4E3B\u673A \u5174\u519C\u62C5\u4FDD\u670D\u52A1\u56689.10 icmp always permit
+ enable
+policy 125 eth0 eth2 any 10.16.7.250 any always permit
+ enable
+policy 5 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A \u592A\u5E73\u6D0Bapp any always permit
+ enable
+policy 21 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A \u592A\u5E73\u6D0Boracle any always permit
+ enable
+policy 26 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A \u592A\u5E73\u6D0Bweb any always permit
+ enable
+policy 38 eth2 eth0 10.16.16.152 any HTTPS\u7EC4 always permit
+ enable
+policy 45 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A \u592A\u5E73\u6D0Boracle TCP_1521 always permit
+policy 78 eth1 eth2 \u674E\u7337-101 \u592A\u5E73\u6D0Bweb any always permit
+policy 95 eth0 eth2 any App_10.16.16.1 CQBY-WebLog-8099 always permit
+ enable
+policy 39 eth2 eth0 APPgroup SMSgroup SMS always permit
+ enable
+policy 101 eth2 eth0 App3_ser_10.16.16.10 \u68A6\u7F51\u77ED\u4FE161.145.229.29 any always permit
+ enable
+policy 105 eth2 eth0 TEST-7.10 \u68A6\u7F51\u77ED\u4FE161.145.229.29 any always permit
+ enable
+policy 106 eth2 eth0 TEST-7.11 any HTTPS\u7EC4 always permit
+ enable
+policy 110 eth2 eth0 TEST-7.11 any http always permit
+ enable
+policy 112 eth2 eth0 10.16.16.150 any HTTPS\u7EC4 always permit
+ enable
+policy 118 eth2 eth0 \u51C9\u5C71\u5DDE192.169.3.6 118.112.187.42 any always permit
+ enable
+policy 121 eth2 eth0 TEST-7.10 any HTTPS\u7EC4 always permit
+ enable
+policy 139 eth0 eth2 any \u51C9\u5C71\u5DDEVPN\u6D4B\u8BD5192.169.3.7 any always permit
+ enable
+policy 153 eth1 eth2 \u5434\u7434_172.168.1.103 10.16.16.150,152 \u6751\u9547\u94F6\u884C\u76D1\u63A7\u7AEF\u53E3 always permit
+ enable
+policy 154 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 10.16.16.150,152 \u6751\u9547\u94F6\u884C\u76D1\u63A7\u7AEF\u53E3 always permit
+ enable
+policy 131 eth2 eth0 XP\u8DF3\u677F\u673A10.16.7.45 any any always permit
+ enable
+policy 136 eth2 eth1 XP\u8DF3\u677F\u673A10.16.7.45 any any always permit
+ enable
+policy 145 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 XP\u8DF3\u677F\u673A10.16.7.45 https always permit
+ enable
+policy 156 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 \u592A\u5E73\u6D0Bapp TCP_8123 always permit
+ enable
+policy 158 eth1 eth2 \u5434\u7434_172.168.1.103 \u592A\u5E73\u6D0Bapp TCP_8123 always permit
+ enable
+policy 159 eth1 eth2 \u7EF4\u62A4\u533A\u7F51\u6BB5 XP\u8DF3\u677F\u673A10.16.7.45 https always permit
+ enable
+policy 88 eth2 eth0 App3_ser_10.16.16.10 218.204.222.14;112.91.147.37 any always permit
+ enable
+policy 115 eth2 eth0 App4_ser_10.16.16.15 218.204.222.14;112.91.147.37 any always permit
+ enable
+policy 165 eth2 eth0 \u51C9\u5C71\u5DDE192.169.3.10 180.96.8.40 any always permit
+ enable
+policy 166 eth0 eth2 any TEST-7.10 TCP_8102 always permit
+ enable
+policy 168 eth1 eth2 \u738B\u8363\u5DDD-\u8FD0\u7EF4 10.16.7.45 https always permit
+ enable
+policy 181 eth1 eth2 \u5434\u7434_172.168.1.103 \u592A\u5E73\u6D0Bweb \u5434\u7434\u76D1\u63A7 always permit
+ enable
+policy 183 eth0 eth2 any \u65B0zabbix10.16.7.187 any always permit
+ enable
+policy 25 eth1 eth0 \u529E\u516C\u5BA4VPN\u8DF3\u677F\u673A any \u7F51\u7BA1\u7EC4 always permit
+ enable
+policy 28 eth1 eth2 \u529E\u516C\u5BA4VPN\u8DF3\u677F\u673A any \u7F51\u7BA1\u7EC4 always permit
+ enable
+policy 14 eth2 eth0 App4_ser_10.16.16.15 \u68A6\u7F51\u77ED\u4FE161.145.229.29 any always permit
+ enable
+policy 31 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 \u592A\u5E73\u6D0Bweb \u5434\u7434\u76D1\u63A7 always permit
+ enable
+policy 34 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 WEB-8.1 CQBY-WebLog-8099 always permit
+ enable
+policy 67 eth1 eth2 \u529E\u516C\u5BA4VPN\u8DF3\u677F\u673A TEST-7.10 any always permit
+ enable
+policy 19 eth2 eth0 APP_Servers any any always permit
+ enable
+ flow-log
+policy 116 eth2 eth0 \u592A\u5E73\u6D0Bweb any any always permit
+ enable
+policy 111 eth1 eth2 \u529E\u516C\u5BA4VPN\u8DF3\u677F\u673A 10.16.7.189 any always permit
+ enable
+policy 187 eth0 eth2 any \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C any always permit
+ enable
+policy 97 eth2 eth0 \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5:10.16.7.222 \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5\u5916\u7F51:210.74.42.45 TCP_9665 always permit
+ enable
+policy 170 eth2 eth0 \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u751F\u4EA7:10.16.8.222 \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5\u5916\u7F51:210.74.41.204 TCP_9665 always permit
+ enable
+policy 186 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 \u592A\u5E73\u6D0BWeb10.16.16.150;10.16.16.151 IC\u5361\u7CFB\u7EDF\u7AEF\u53E3 always permit
+ enable
+policy 192 eth2 eth0 \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u6D4B\u8BD5:10.16.7.222 any HTTPS\u7EC4 always permit
+ enable
+policy 194 eth2 eth0 App3_ser_10.16.16.10 101.251.214.152 \u79FB\u52A8\u77ED\u4FE1\u63A5\u53E3_7890 always permit
+ enable
+policy 195 eth2 eth0 App4_ser_10.16.16.15 101.251.214.152 \u79FB\u52A8\u77ED\u4FE1\u63A5\u53E3_7890 always permit
+ enable
+policy 7 eth0 eth2 any 10.16.7.189 TCP1521 always permit
+ enable
+policy 13 eth2 eth0 \u51C9\u5C71\u5DDE\u624B\u673A\u94F6\u884C\u751F\u4EA7:10.16.8.222 any HTTPS\u7EC4 always permit
+ enable
+policy 16 eth1 eth2 \u4F55\u679C-\u8FD0\u7EF4 \u7F51\u7EDC\u8BBE\u5907\u7EC41 any always permit
+ enable
+policy 24 eth1 eth0 \u4F55\u679C-\u8FD0\u7EF4 \u7F51\u7EDC\u8BBE\u5907\u7EC4 any always permit
+ enable
+policy 40 eth1 eth2 \u8FD0\u7EF4\u90E8\u5185\u7F51\u76D1\u63A7_1.100 \u65B0zabbix10.16.7.187 http always permit
+ enable
+policy 12 eth2 eth0 zabbix \u7F51\u7EDC\u8BBE\u5907\u7EC4 Zabbix\u670D\u52A1\u7EC4 always permit
+ enable
+policy 15 eth2 eth1 zabbix \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A ftp always permit
+ enable
+policy 36 eth1 eth2 \u5E94\u7528\u5F00\u53D1\u90E8\u53D1\u5E03\u673A \u6570\u636E\u5E93\u670D\u52A1\u5668 TCP_1521 always permit
+ enable
+policy 50 eth2 eth0 \u65B0zabbix10.16.7.187 zabbix\u5FAE\u4FE1\u63A8\u9001_140.207.189.106 zabbix\u5FAE\u4FE1\u63A8\u9001 always permit
+ enable
+policy 52 eth2 eth0 \u65B0zabbix10.16.7.187 zabbixNTP_203.187.6.88 ntp always permit
+ enable
+policy 56 eth2 eth0 \u65B0zabbix10.16.7.187 zabbix\u5FAE\u4FE1\u63A8\u9001_140.207.127.79 zabbix\u5FAE\u4FE1\u63A8\u9001 always permit
+ enable
+policy 60 eth1 eth2 \u8FD0\u7EF4\u90E8_\u738B\u8363\u5DDD172.168.1.102 \u65B0zabbix10.16.7.187 http always permit
+ description \u8BBF\u95EEzabbix
+ enable
+!
+sysmon
+ log cpu local
+ log memory local
+ log session local
+ log flow local
+ sysres flow eth0(\u5916\u7F51) 10240
+!
+
+ha-group
+ hainterface eth3
+ enable backup-master
+ auto_syn config-on rto-on ips-on av-off
+ grob-style master
+ config-style basic
+ monitor eth0
+ monitor eth2
+
+snmp
+ snmp enable
+ trap address 10.16.7.187
+!
+router ospf
+!
+ip route 0.0.0.0/0 10.16.2.11
+ip route 10.0.255.0/24 10.16.2.22
+ip route 10.10.10.0/30 10.16.2.22
+ip route 10.16.1.0/24 10.16.2.22
+ip route 10.16.2.28/32 10.16.2.22
+ip route 10.16.2.32/29 10.16.2.22
+ip route 10.16.2.40/29 10.16.2.22
+ip route 10.16.4.6/32 10.16.2.22
+ip route 10.16.4.30/32 eth2
+ip route 10.16.5.0/24 10.16.2.22
+ip route 10.16.6.0/24 10.16.2.22
+ip route 10.16.6.6/32 10.16.2.22
+ip route 10.16.7.0/24 10.16.2.22
+ip route 10.16.8.0/24 10.16.2.22
+ip route 10.16.9.0/24 10.16.2.22
+ip route 10.16.10.0/24 10.16.2.22
+ip route 10.16.16.0/24 10.16.2.22
+ip route 10.16.48.0/24 10.16.2.22
+ip route 16.118.201.108/32 10.16.2.22
+ip route 16.118.210.13/32 10.16.2.22
+ip route 16.118.210.16/32 10.16.2.22
+ip route 57.0.2.0/24 10.16.2.22
+ip route 172.16.10.138/32 10.16.2.22
+ip route 172.16.254.10/32 10.16.2.22
+ip route 172.30.1.0/24 10.16.2.22
+ip route 172.168.1.0/24 192.168.3.2
+ip route 172.168.3.0/24 10.16.2.22
+ip route 172.254.254.160/32 10.16.2.22
+ip route 175.16.25.8/30 10.16.2.22
+ip route 175.16.26.8/30 10.16.2.22
+ip route 192.16.21.0/24 10.16.3.2
+ip route 192.168.1.0/24 192.168.3.2
+ip route 192.169.3.0/24 eth2
+ip route 192.169.3.5/32 10.16.2.22
+!
+!
+!
+!
+anti-arp spoof service
+!
+bind-interface eth0 eth2  
+!
+ids-interaction
+ ids-ip 10.16.48.100
+!
+tianxun-interaction
+!
+!end
+#IPS AV CONFIG FILE
+[IPS PREDEFINE CONFIG]
+
+[IPS CUSTOM CONFIG]
+[EXT-CTRL CUSTOM TEMPLATE LIST]
+[EXT-CTRL CUSTOM TEMPLATE LIST END]
+[WF KEYWORD CONFIG]
+[WF KEYWORD CONFIG END]
+
+[AV CONFIG]
+7
+mail_rep_str = 
+http_rep_str = 
+
+[AV SCAN LIST CONFIG]
+
+[AV BLOCK LIST CONFIG]
+[ANTI-SPAM CONFIG BEGIN]
+[ANTI-SPAM CONFIG END]

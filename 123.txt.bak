@@ -1,0 +1,1580 @@
+!config
+authorized-table audit
+    description Default authority table used for audit administrator
+!
+authorized-table admin
+    description Default authority table with all authority enable 
+    authorized read all 
+    authorized write all 
+!
+authorized-table useradmin
+    description Default authority table used for useradmin administrator 
+    authorized read admin-user 
+    authorized write admin-user 
+!
+authorized-table jiankong
+    description yunwei 
+    authorized read system-config 
+    authorized read log-config 
+    authorized read log-read 
+!
+!
+user administrator audit local secret aZRp4Hgb0Qpt+WE6HmNMOYTtVwa6LxkRQRX0N6bhfIJrUFdwcDulMEp09owx/Ob authorized-table audit  
+user administrator audit description default audit administrator
+user administrator admin local secret /Pymy2vBm4CJ7dn9vyAeEsmm3A5W6xG1L8mAMIZPbY0WHRTRBW758RmkfQHU8nL authorized-table admin  
+user administrator admin authorized-address first 172.168.1.17/32
+user administrator admin authorized-address second 172.168.1.18/32
+user administrator admin description default super administrator
+user administrator jiankong local secret 8AL1fGQExrpDBgzPgr2Uu8z47tt3qpfNPppj5Y9aUZd6stgVVgI4GqNeGjFoX/6 authorized-table jiankong  
+user administrator jiankong authorized-address first 172.168.1.100/32
+user administrator jiankong authorized-address second 172.168.1.103/32
+user administrator jiankong description yunwei
+user administrator bykj local secret dZrPtIabPm5HovywKvFwo/OsyQ70XdVMVSKF2A+6HzSHvU9fB1n/UJJ8NHj+1uy authorized-table admin  
+user administrator bykj authorized-address first 172.168.1.1/24
+user administrator bykj authorized-address second 10.16.48.110/32
+user administrator bykj authorized-address third 172.168.1.3/29
+user administrator admin portlet host container vc1 pscreate true psindex 0
+user administrator admin portlet sys_res container vc1 pscreate true psindex 1
+user administrator admin portlet license container vc1 pscreate true psindex 2
+user administrator admin portlet inf_msg container vc2 pscreate true psindex 0
+user administrator admin portlet sys_connect container vc2 pscreate true psindex 1
+user administrator admin portlet inf_flow container vc1 pscreate false psindex 3
+user administrator admin portlet TopSession container vc2 pscreate false psindex 2
+user administrator admin portlet business container vc2 pscreate false psindex 3
+user administrator audit portlet host container vc1 pscreate true psindex 0
+user administrator audit portlet sys_res container vc1 pscreate true psindex 1
+user administrator audit portlet license container vc1 pscreate true psindex 2
+user administrator audit portlet TopSession container vc1 pscreate false psindex 3
+user administrator audit portlet inf_flow container vc1 pscreate false psindex 4
+user administrator audit portlet inf_msg container vc2 pscreate true psindex 0
+user administrator audit portlet sys_connect container vc2 pscreate true psindex 1
+user administrator audit portlet warn container vc2 pscreate true psindex 2
+user administrator audit portlet TopAttack container vc2 pscreate false psindex 3
+user administrator audit portlet TopVirus container vc2 pscreate false psindex 4
+user administrator audit portlet business container vc2 pscreate false psindex 5
+user administrator jiankong portlet host container vc1 pscreate true psindex 0
+user administrator jiankong portlet sys_res container vc1 pscreate true psindex 1
+user administrator jiankong portlet license container vc1 pscreate true psindex 2
+user administrator jiankong portlet TopSession container vc1 pscreate false psindex 3
+user administrator jiankong portlet inf_flow container vc1 pscreate false psindex 4
+user administrator jiankong portlet inf_msg container vc2 pscreate true psindex 0
+user administrator jiankong portlet sys_connect container vc2 pscreate true psindex 1
+user administrator jiankong portlet warn container vc2 pscreate true psindex 2
+user administrator jiankong portlet TopAttack container vc2 pscreate false psindex 3
+user administrator jiankong portlet TopVirus container vc2 pscreate false psindex 4
+user administrator jiankong portlet business container vc2 pscreate false psindex 5
+user administrator cqby portlet host container vc1 pscreate true psindex 0
+user administrator cqby portlet sys_res container vc1 pscreate true psindex 1
+user administrator cqby portlet license container vc1 pscreate true psindex 2
+user administrator cqby portlet TopSession container vc1 pscreate false psindex 3
+user administrator cqby portlet inf_flow container vc1 pscreate false psindex 4
+user administrator cqby portlet inf_msg container vc2 pscreate true psindex 0
+user administrator cqby portlet sys_connect container vc2 pscreate true psindex 1
+user administrator cqby portlet warn container vc2 pscreate true psindex 2
+user administrator cqby portlet TopAttack container vc2 pscreate false psindex 3
+user administrator cqby portlet TopVirus container vc2 pscreate false psindex 4
+user administrator cqby portlet business container vc2 pscreate false psindex 5
+user administrator bykj portlet host container vc1 pscreate true psindex 0
+user administrator bykj portlet sys_res container vc1 pscreate true psindex 1
+user administrator bykj portlet license container vc1 pscreate true psindex 2
+user administrator bykj portlet TopSession container vc1 pscreate false psindex 3
+user administrator bykj portlet inf_flow container vc1 pscreate false psindex 4
+user administrator bykj portlet inf_msg container vc2 pscreate true psindex 0
+user administrator bykj portlet sys_connect container vc2 pscreate true psindex 1
+user administrator bykj portlet warn container vc2 pscreate true psindex 2
+user administrator bykj portlet TopAttack container vc2 pscreate false psindex 3
+user administrator bykj portlet TopVirus container vc2 pscreate false psindex 4
+user administrator bykj portlet business container vc2 pscreate false psindex 5
+!
+timezone 57
+
+ntp 10.16.7.187 60
+
+!
+ips dfi on
+!
+log attack memory upto notifications
+log ipsecvpn memory upto notifications
+log sslvpn memory upto notifications
+log l2tpvpn memory upto notifications
+log grevpn memory upto notifications
+log nat memory upto notifications
+log dhcp memory upto notifications
+log ha memory upto notifications
+log web-auth memory upto notifications
+log run-info memory upto notifications
+log system-info memory upto notifications
+log if-info memory upto notifications
+log scan memory upto notifications
+log session memory upto notifications
+log ospf memory upto notifications
+log rip memory upto notifications
+log qos memory upto notifications
+log ddns memory upto notifications
+log flow memory upto notifications
+log idslink memory upto notifications
+log macfilter memory upto notifications
+log antiarp memory upto notifications
+log pki memory upto notifications
+!
+guish autosave 
+guish maxclient 2 
+!
+vpn ca crl config period 30 url http://127.0.0.1/cacrl.crl
+!
+interface eth0
+ aliasname eth0(外网)
+ ip address 10.16.2.14/29
+ set bandwidth 10000000 
+ allow access ping
+!
+interface eth1
+ aliasname eth1（维护区）
+ ip address 192.168.3.1/30
+ allow access https
+ allow access ssh
+ allow access ping
+!
+interface eth2
+ aliasname eth2（内网）
+ ip address 10.16.2.19/29
+ allow access https
+ allow access ssh
+ allow access ping
+!
+interface eth3
+ aliasname eth3（短信专线）
+!
+address WEB-Servers
+ host-address 10.16.8.1
+ host-address 10.16.8.2
+address WEB-8.1
+ host-address 10.16.8.1
+address 网管主机
+ host-address 10.16.8.17
+ host-address 172.168.1.18
+ host-address 10.16.8.18
+ host-address 172.168.1.222
+ host-address 172.168.1.17
+ host-address 172.168.1.111
+ host-address 172.168.1.4
+ host-address 172.168.1.3
+address TEST-7.10
+ host-address 10.16.7.10
+address 维护区网段
+ net-address 172.168.1.0/24
+address TEST-7.11
+ host-address 10.16.7.11
+address APP_Servers
+ host-address 10.16.16.1
+ host-address 10.16.16.5
+ host-address 10.16.16.20
+address 应用开发部发布机
+ host-address 172.168.1.99
+address ISG-1000-01
+ host-address 10.16.2.1
+address ISG-1000-02
+ host-address 10.16.3.1
+address NSAE1200-01
+ host-address 10.16.2.9
+address NSAE1200-02
+ host-address 10.16.2.10
+address DB-Servers
+ host-address 10.16.16.100
+ host-address 10.16.16.108
+address App_10.16.16.1
+ host-address 10.16.16.1
+address WEB_8.2
+ host-address 10.16.8.2
+address App3_ser_10.16.16.10
+ host-address 10.16.16.10
+address App4_ser_10.16.16.15
+ host-address 10.16.16.15
+address APP2_GROUPS
+ host-address 10.16.16.10
+ host-address 10.16.16.15
+address 兴农担保服务器9.10
+ description 兴农担保服务器组
+ host-address 10.16.9.10
+address 兴农担保服务器9.13
+ description 兴农担保服务器组
+ host-address 10.16.9.13
+address 兴农担保服务公网IP_123.147.190.50
+ host-address 123.147.190.50
+ host-address 221.5.203.98
+address MAIL_SRV_8.15
+ host-address 10.16.8.15
+address DB2-P720-Groups
+ host-address 10.16.16.110
+ host-address 10.16.16.115
+ host-address 10.16.16.111
+ host-address 10.16.16.116
+ host-address 10.16.16.117
+address 10.16.2.28
+ host-address 10.16.2.28
+address 堡垒机_10.16.48.110
+ host-address 10.16.48.110
+address 兴农担保服务器_9.16
+ host-address 10.16.9.16
+address 兴农担保服务器_9.19
+ host-address 10.16.9.19
+address 运维部内网监控_1.100
+ host-address 172.168.1.100
+address 4948-01
+ description 核心交换机
+ host-address 10.16.8.252
+address 4948-02
+ description 核心交换机
+ host-address 10.16.8.253
+address RG-RSR20-01_2.34
+ host-address 10.16.2.34
+address RG-RSR20-02_10.10.10.1
+ host-address 10.10.10.1
+address RG-RSR20-03_2.41
+ host-address 10.16.2.41
+address 吴琴_172.168.1.103
+ host-address 172.168.1.103
+address USG-FW-810-2.18
+ host-address 10.16.2.18
+address CFCA-210.74.41.109
+ description 中国金融认证中心-电信地址
+ host-address 210.74.41.109
+address 泸州SSL-VPN设备_10.16.6.2
+ host-address 10.16.6.2
+address CFCA_测试地址_210.74.42.11
+ host-address 210.74.42.11
+address XNDB移动短信_218.206.27.231
+ host-address 218.206.27.231
+address 天融信加密机
+ host-address 10.16.5.100
+address 加密机10.16.5.100
+ description 10.16.5.100
+ host-address 10.16.5.100
+address zabbix
+ host-address 10.16.7.187
+address juniper联通10.16.2.1
+ description 10.16.2.1
+ host-address 10.16.2.1
+address 10.16.7.250
+ host-address 10.16.7.250
+address 太平洋app
+ description 10.16.8.98 10.16.8.99
+ host-address 10.16.8.98
+ host-address 10.16.8.99
+address 太平洋web
+ description 10.16.16.150 10.16.16.151 152 153
+ host-address 10.16.16.150
+ host-address 10.16.16.151
+ host-address 10.16.16.152
+ host-address 10.16.16.153
+address 太平洋oracle
+ description 16.201 202
+ host-address 10.16.16.201
+ host-address 10.16.16.202
+address 10.16.16.152
+ description 10.16.16.152
+ host-address 10.16.16.152
+address 李猷-101
+ host-address 172.168.1.101
+address 梦网短信61.145.229.29
+ host-address 61.145.229.29
+address 10.16.16.150
+ description 太平洋web
+ host-address 10.16.16.150
+address 10.16.7.189
+ host-address 10.16.7.189
+address 凉山州192.169.3.6
+ host-address 192.169.3.6
+address 飞塔10.16.2.28
+ host-address 10.16.2.28
+address 118.112.187.42
+ description 118.112.187.42
+ host-address 118.112.187.42
+address 凉山州VPN测试192.169.3.7
+ host-address 192.169.3.7
+address 锐捷电信10.16.2.34
+ host-address 10.16.2.34
+address 10.16.16.150,152
+ host-address 10.16.16.150
+ host-address 10.16.16.152
+ host-address 10.16.16.151
+ host-address 10.16.16.153
+address XP跳板机10.16.7.45
+ description XP跳板机10.16.7.45
+ host-address 10.16.7.45
+address 218.204.222.14;112.91.147.37
+ description 218.204.222.14;112.91.147.37
+ host-address 112.91.147.37
+ host-address 218.204.222.12
+ host-address 218.204.220.242
+address 180.96.8.40
+ description 180.96.8.40
+ host-address 180.96.8.40
+address 凉山州192.169.3.10
+ description 192.169.3.10
+ host-address 192.169.3.10
+address 10.16.7.45
+ host-address 10.16.7.45
+address jump7.45
+ host-address 10.16.7.45
+address 新zabbix10.16.7.187
+ description 10.16.7.187
+ host-address 10.16.7.187
+address 办公室VPN跳板机
+ description 172.168.1.156
+ host-address 172.168.1.120
+address WAF
+ host-address 10.16.48.120
+address 凉山州手机银行
+ description 测试10.16.7.222,生产10.16.8.222
+ host-address 10.16.7.222
+ host-address 10.16.8.222
+address 凉山州手机银行测试:10.16.7.222
+ description 10.16.7.222
+ host-address 10.16.7.222
+address 凉山州手机银行生产:10.16.8.222
+ description 10.16.8.222
+ host-address 10.16.8.222
+address 凉山州手机银行测试外网:210.74.42.45
+ description 210.74.42.45
+ host-address 210.74.42.45
+address 凉山州手机银行测试外网:210.74.41.204
+ description 210.74.41.204
+ host-address 210.74.41.204
+address 太平洋Web10.16.16.150
+ description 10.16.16.150
+ host-address 10.16.16.150
+address 太平洋Web10.16.16.151
+ host-address 10.16.16.151
+address 101.251.214.152
+ host-address 101.251.214.152
+address 段星宇-开发
+ host-address 172.168.1.130
+address 田勇吉-开发
+ host-address 172.168.1.131
+address 彭大钢-开发
+ host-address 172.168.1.132
+address 左文才-开发
+ host-address 172.168.1.133
+address 张碧琼-开发
+ host-address 172.168.1.134
+address 刘聿骞-开发
+ host-address 172.168.1.135
+address 曾巧-开发
+ host-address 172.168.1.136
+address 刘纯-开发
+ host-address 172.168.1.137
+address 开发部-王普
+ host-address 172.168.1.138
+address 测试服务器-7.10
+ host-address 10.16.7.10
+address 测试服务器-7.11
+ host-address 10.16.7.11
+address 测试服务器-7.250
+ host-address 10.16.7.250
+address 梁先友-开发
+ host-address 172.168.1.141
+address 王荣川-运维
+ host-address 172.168.1.2
+address 何果-运维
+ host-address 172.168.1.3
+address 测试区网段
+ net-address 10.16.7.0/24
+address 运维网段
+ net-address 172.168.1.0/25
+address 测试数据库
+ host-address 10.16.7.189
+address 数据库服务器
+ host-address 10.16.16.108
+ host-address 10.16.16.201
+ host-address 10.16.16.202
+ host-address 10.16.16.100
+address zabbix微信推送_140.207.189.106
+ description zabbix微信推送140.207.189.106
+ host-address 140.207.189.106
+address zabbixNTP_203.187.6.88
+ description zabbixNTP_203.187.6.88
+ host-address 203.187.6.88
+address zabbix微信推送_140.207.127.79
+ description zabbix微信推送_140.207.127.79
+ host-address 140.207.127.79
+address 运维部_王荣川172.168.1.102
+ description 运维部_王荣川172.168.1.102
+ host-address 172.168.1.102
+address 10.16.16.153
+ host-address 10.16.16.153
+address SMS_112.91.147.37
+ host-address 112.91.147.37
+address SMS_218.204.222.12
+ host-address 218.204.222.12
+address SMS_61.130.7.220
+ host-address 61.130.7.220
+address SMS_61.145.229.29
+ host-address 61.145.229.29
+address WGZJ
+ host-address 10.16.8.17
+ host-address 172.168.1.18
+ host-address 10.16.8.18
+ host-address 172.168.1.222
+ host-address 172.168.1.17
+ host-address 172.168.1.111
+ host-address 172.168.1.4
+ host-address 172.168.1.3
+address weihuqu
+ range-address 172.168.1.1 172.168.1.254
+address fabuji
+ host-address 172.168.1.99
+address XNDBserver_9.10
+ host-address 10.16.9.10
+address XNDBserver_9.13
+ host-address 10.16.9.13
+address XNDBgongwangIP
+ host-address 123.147.190.50
+ host-address 221.5.203.98
+address baoleiji_48.110
+ host-address 10.16.48.110
+address XNDBserver_9.16
+ host-address 10.16.9.16
+address XNDBserver_9.19
+ host-address 10.16.9.19
+address yunweijiankong_1.100
+ host-address 172.168.1.100
+address wuqin_1.103
+ host-address 172.168.1.103
+address luzhouSSL-VPN
+ host-address 10.16.6.2
+address CFCA_test
+ host-address 210.74.41.109
+address XNDByidongduanxin
+ host-address 218.206.27.231
+address TRXjiamiji
+ host-address 10.16.5.100
+address juniperliantong
+ description 10.16.2.1
+ host-address 10.16.2.1
+address TPYapp
+ host-address 10.16.8.98
+ host-address 10.16.8.99
+address TPYweb
+ host-address 10.16.16.150
+ host-address 10.16.16.151
+ host-address 10.16.16.152
+ host-address 10.16.16.153
+address TPYoracle
+ host-address 10.16.16.201
+ host-address 10.16.16.202
+address DBA_LY
+ host-address 172.168.1.101
+address mengwangduanxin
+ host-address 61.145.229.29
+address LSZ_192.169.3.6
+ host-address 192.169.3.6
+address feita
+ host-address 10.16.2.28
+address LSZ_VPNtest
+ host-address 192.169.3.7
+address ruijidianxin
+ host-address 10.16.2.34
+address XPtiaobanji
+ host-address 10.16.7.45
+address officeVPNtiaobanji
+ host-address 172.168.1.120
+address LSZmobilebank
+ host-address 10.16.7.222
+ host-address 10.16.8.222
+address TPYWEB_16.150
+ host-address 10.16.16.150
+!
+address-group TEST-Servers_Group
+   address-object 测试数据库
+address-group 网络设备组
+   address-object ISG-1000-01
+   address-object ISG-1000-02
+   address-object NSAE1200-01
+   address-object NSAE1200-02
+address-group 兴农担保服务器组
+ description 10.16.9.0/24
+   address-object 兴农担保服务器9.13
+   address-object 兴农担保服务器9.10
+address-group 服务器组
+   address-object WEB-Servers
+   address-object DB2-P720-Groups
+   address-object APP2_GROUPS
+   address-object APP_Servers
+   address-object DB-Servers
+address-group 网络设备组1
+   address-object 10.16.2.28
+   address-object 4948-01
+   address-object 4948-02
+   address-object RG-RSR20-01_2.34
+   address-object RG-RSR20-02_10.10.10.1
+   address-object RG-RSR20-03_2.41
+   address-object USG-FW-810-2.18
+address-group 运维监控组
+   address-object 运维部内网监控_1.100
+   address-object 吴琴_172.168.1.103
+address-group 数据库，系统运维组
+ description 数据库和系统运维
+   address-object 李猷-101
+address-group 太平洋Web10.16.16.150;10.16.16.151
+   address-object 太平洋Web10.16.16.150
+   address-object 太平洋Web10.16.16.151
+address-group 开发组
+   address-object 段星宇-开发
+   address-object 田勇吉-开发
+   address-object 彭大钢-开发
+   address-object 左文才-开发
+   address-object 张碧琼-开发
+   address-object 刘聿骞-开发
+   address-object 曾巧-开发
+   address-object 刘纯-开发
+   address-object 开发部-王普
+   address-object 梁先友-开发
+address-group 开发测试服务器
+   address-object 测试服务器-7.10
+   address-object 测试服务器-7.11
+   address-object 测试服务器-7.250
+address-group CZAPP_group
+   address-object 太平洋Web10.16.16.150
+   address-object 太平洋Web10.16.16.151
+address-group DSQAPP_group
+   address-object 10.16.16.152
+   address-object 10.16.16.153
+address-group SMSgroup
+   address-object SMS_112.91.147.37
+   address-object SMS_218.204.222.12
+   address-object SMS_61.130.7.220
+   address-object SMS_61.145.229.29
+address-group APPgroup
+   address-object App3_ser_10.16.16.10
+   address-object App4_ser_10.16.16.15
+!
+service TCP_8801
+ description 联通短信回执端口 
+ tcp dest 8801 source 1 65535
+service TCP_9001
+ description 联通短信发送接口 
+ tcp dest 9001 source 1 65535
+service TCP_8888
+ description LT1200 HTTPS 
+ tcp dest 8888 source 1 65535
+service TCP_7001
+ tcp dest 7001 source 1 65535
+service HTTP_8080
+ tcp dest 8080 source 1 65535
+service TCP_1521
+ tcp dest 1521 source 1 65535
+service TCP_10006
+ tcp dest 10006 source 1 65535
+service CQXNDB-HTTP8113
+ tcp dest 8113 source 1 65535
+service CQXNDB-WebLog-8013
+ tcp dest 8013 source 1 65535
+service NXDB_HTTP_8113
+ tcp dest 8113 source 1 65535
+service CQBY-WebLog-8099
+ tcp dest 8099 source 1 65535
+service CQBY_HTTP_8199
+ tcp dest 8199 source 1 65535
+service ZABBIX监控端口
+ description zabbix_10050 
+ tcp dest 10050 source 1 65535
+service TCP_8002
+ tcp dest 8002 source 1 65535
+service TCP_8102
+ tcp dest 8102 source 1 65535
+service TCP_18001
+ tcp dest 18001 source 1 65535
+service TCP_9901
+ tcp dest 9901 source 1 65535
+service TCP_8001
+ tcp dest 8001 source 1 65535
+service TCP_9444
+ description CFCA 
+ tcp dest 9444 source 1 65535
+service TCP_7543
+ tcp dest 7543 source 1 65535
+service TCP_8015
+ tcp dest 8015 source 1 65535
+service TCP_8115
+ tcp dest 8115 source 1 65535
+service TCP_20009
+ tcp dest 20009 source 1 65535
+service TCP_8199
+ tcp dest 8199 source 1 65535
+service 万源水务8401
+ tcp dest 8401 source 1 65535
+service TCP_8301
+ tcp dest 8301 source 1 65535
+service TCP_8098
+ description RA 
+ tcp dest 8098 source 1 65535
+service TCP_8198
+ tcp dest 8198 source 1 65535
+service TCP_9040
+ tcp dest 9040 source 1 65535
+service TCP_8016
+ tcp dest 8016 source 1 65535
+service TCP_8116
+ description 金融后援 
+ tcp dest 8116 source 1 65535
+service TCP_8008
+ tcp dest 8008 source 1 65535
+service TCP_8108
+ tcp dest 8108 source 1 65535
+service TCP_7443
+ description 重庆银行端口 
+ tcp dest 7443 source 1 65535
+service TCP_443
+ description 重庆银行端口 
+ tcp dest 443 source 1 65535
+service TCP_8402
+ tcp dest 8402 source 1 65535
+service TCP_9080
+ description XNDB服务器用 
+ tcp dest 9080 source 1 65535
+service TCP_3306
+ description XNDB服务器用 
+ tcp dest 3306 source 1 65535
+service TCP_8113
+ tcp dest 8113 source 1 65535
+service TCP_8088
+ description Bugfree 
+ tcp dest 8088 source 1 65535
+service TCP_6220
+ tcp dest 6220 source 1 65535
+service TCP_1222
+ tcp dest 1222 source 1 65535
+service TCP_8070
+ tcp dest 8070 source 1 65535
+service TCP_8071
+ tcp dest 8071 source 1 65535
+service TCP_8408
+ tcp dest 8408 source 1 65535
+service TCP_8401
+ tcp dest 8401 source 1 65535
+service tcp_8001
+ tcp dest 8001 source 1 65535
+service TCP_8101
+ tcp dest 8101 source 1 65535
+service TCP_1024
+ tcp dest 1024 source 1 65535
+service TCP_7050
+ tcp dest 7050 source 1 65535
+service TCP_7060
+ tcp dest 7060 source 1 65535
+service TCP_7040
+ tcp dest 7040 source 1 65535
+service TCP_1025
+ tcp dest 1025 source 1 65535
+service TCP_7080
+ tcp dest 7080 source 1 65535
+service TCP_7090
+ tcp dest 7090 source 1 65535
+service TCP_7030
+ tcp dest 7030 source 1 65535
+service 172.168.1.99_FTP2025
+ tcp dest 2025 source 1 65535
+service TCP_8103
+ tcp dest 8103 source 1 65535
+service TCP_8117
+ tcp dest 8117 source 1 65535
+service TCP_8417
+ tcp dest 8417 source 1 65535
+service TCP_8017
+ tcp dest 8017 source 1 65535
+service TCP_8403
+ tcp dest 8403 source 1 65535
+service TCP_8090
+ tcp dest 8090 source 1 65535
+service TCP_8003
+ tcp dest 8003 source 1 65535
+service TCP_8009
+ description 攀枝花商行短息 
+ tcp dest 8009 source 1 65535
+service TCP_9909
+ description 攀枝花商行短信 
+ tcp dest 9909 source 1 65535
+service PZHCCB_10002
+ description 攀枝花商行短信端口 
+ tcp dest 10002 source 1 65535
+service TCP_9999
+ tcp dest 9999 source 1 65535
+service FTP_2121
+ tcp dest 2121 source 1 65535
+service keypos_3000_8081
+ tcp dest 8081 source 1 65535
+ tcp dest 3000 source 1 65535
+service TCP_50002
+ tcp dest 50002 source 1 65535
+service TCP_50003
+ tcp dest 50003 source 1 65535
+service TCP_8443
+ description 达州商行SSL-VPN连接 
+ tcp dest 8443 source 1 65535
+service TCP_1158
+ tcp dest 1158 source 1 65535
+service TCP_8404
+ tcp dest 8404 source 1 65535
+service TCP_8118
+ description 进出口担保 
+ tcp dest 8118 source 1 65535
+service TCP_6443
+ tcp dest 6443 source 1 65535
+service HTTP_9080
+ description XNDB服务器用 
+ tcp dest 9080 source 1 65535
+service TCP_8119
+ description p2p端口 
+ tcp dest 8119 source 1 65535
+service TCP_16770
+ tcp dest 16770 source 1 65535
+service TCP_3389
+ tcp dest 3389 source 1 65535
+service TCP_6050
+ tcp dest 6050 source 1 65535
+service TCP_6060
+ tcp dest 6060 source 1 65535
+service SMTPS_465
+ tcp dest 465 source 1 65535
+service TCP_5901
+ tcp dest 5901 source 1 65535
+service TCP_88
+ description 218.4.234.150 
+ tcp dest 88 source 1 65535
+service TCP_7910
+ description XNDB移动端口接口 
+ tcp dest 7910 source 1 65535
+service 移动短信接口_7890
+ tcp dest 7890 source 1 65535
+service TCP_3307
+ tcp dest 3307 source 1 65535
+service TCP_1520
+ tcp dest 1520 source 1 65535
+service TCP_8089
+ tcp dest 8089 source 1 65535
+service TCP_8442
+ tcp dest 8442 source 1 65535
+service TCP_5102
+ tcp dest 5102 source 1 65535
+service TCP_8581
+ description 金融后援使用 
+ tcp dest 8581 source 1 65535
+service zabbix_tcp_7999
+ tcp dest 7999 source 1 65535
+service IC卡系统
+ description IC卡系统部署访问 
+ tcp dest 7001 source 1 65535
+ tcp dest 7999 source 1 65535
+ tcp dest 8901 source 1 65535
+ tcp dest 8086 source 1 65535
+ tcp dest 1086 source 1 65535
+ tcp dest 7998 source 1 65535
+ tcp dest 1718 source 1 65535
+ tcp dest 1719 source 1 65535
+ tcp dest 1720 source 1 65535
+ tcp dest 4561 source 1 65535
+ tcp dest 4564 source 1 65535
+service 科蓝IC卡端口TCP3691
+ description TCP3691 
+ tcp dest 3691 source 1 65535
+service 辽宁汇通测试50021
+ tcp dest 50021 source 1 65535
+service TCP_9600
+ tcp dest 9600 source 1 65535
+service TCP-8081
+ tcp dest 8081 source 1 65535
+service 50023
+ tcp dest 50023 source 1 65535
+service TCP_8080
+ tcp dest 8080 source 1 65535
+service TCP8893
+ tcp dest 8893 source 1 65535
+service TCP7893
+ tcp dest 7893 source 1 65535
+service 村镇银行监控端口
+ tcp dest 12106 source 1 65535
+ tcp dest 12102 source 1 65535
+ tcp dest 12111 source 1 65535
+ tcp dest 12206 source 1 65535
+ tcp dest 12202 source 1 65535
+ tcp dest 12211 source 1 65535
+ tcp dest 22101 source 1 65535
+ tcp dest 22102 source 1 65535
+service TCP_8423
+ tcp dest 8423 source 1 65535
+service TCP_8123
+ tcp dest 8123 source 1 65535
+service TCP_9099
+ tcp dest 9099 source 1 65535
+service tcp5000
+ tcp dest 5000 source 1 65535
+service 辰州汇通监控端口
+ description TCP_12106 /12102 /12111 
+ tcp dest 12106 source 1 65535
+ tcp dest 12102 source 1 65535
+ tcp dest 12111 source 1 65535
+service 大石桥监控端口
+ description 12206/12202/12211 
+ tcp dest 12206 source 1 65535
+ tcp dest 12202 source 1 65535
+ tcp dest 12211 source 1 65535
+service 金堂汇金监控端口
+ description 12306/12302/12311 
+ tcp dest 12306 source 1 65535
+ tcp dest 12302 source 1 65535
+ tcp dest 12311 source 1 65535
+service tcp8001
+ tcp dest 8001 source 1 65535
+service 凉山州手机银行
+ description TCP_8801,TCP_8802
+ tcp dest 8801 source 1 65535
+ tcp dest 8802 source 1 65535
+service TCP_9665
+ tcp dest 9665 source 1 65535
+service IC卡系统端口
+ description 22103,22106,22105
+ tcp dest 22105 source 1 65535
+ tcp dest 22106 source 1 65535
+ tcp dest 22103 source 1 65535
+service TCP1521
+ tcp dest 1521 source 1 65535
+!
+service-group 维护区Services
+ service-object ping
+ service-object ssh
+ service-object https
+ service-object telnet
+ service-object http
+ service-object dns
+ service-object TCP_8888
+ service-object HTTP_8080
+ service-object TCP_7001
+ service-object TCP_1521
+ service-object TCP_7543
+service-group 联通短信网关service_group
+ service-object ping
+ service-object TCP_9001
+ service-object TCP_8801
+service-group WEB-Service_group
+ service-object http
+ service-object https
+ service-object NXDB_HTTP_8113
+ service-object TCP_8102
+ service-object TCP_8402
+ service-object TCP_8115
+ service-object TCP_8108
+ service-object TCP_8116
+ service-object TCP_8101
+ service-object TCP_8401
+ service-object TCP_8408
+ service-object TCP_8117
+ service-object TCP_8417
+ service-object TCP_8403
+ service-object TCP_8103
+ service-object TCP_8119
+service-group CQSEK_Services_Group
+ service-object ftp
+ service-object ping
+ service-object TCP_10006
+service-group 兴农担保服务
+ service-object CQXNDB-HTTP8113
+ service-object CQXNDB-WebLog-8013
+service-group 巴云网站服务组
+ service-object CQBY_HTTP_8199
+ service-object CQBY-WebLog-8099
+service-group 开发发布机端口
+ description 应用开发部 
+ service-object http
+ service-object ssh
+ service-object ftp
+ service-object CQBY-WebLog-8099
+ service-object CQBY_HTTP_8199
+ service-object CQXNDB-WebLog-8013
+ service-object NXDB_HTTP_8113
+ service-object TCP_7001
+ service-object TCP_8098
+ service-object TCP_8198
+ service-object TCP_8016
+ service-object TCP_8116
+ service-object TCP_8002
+ service-object TCP_8102
+ service-object TCP_8402
+ service-object TCP_8015
+ service-object TCP_8115
+ service-object TCP_8008
+ service-object TCP_8108
+ service-object TCP_8101
+ service-object tcp_8001
+ service-object TCP_8401
+ service-object TCP_8408
+ service-object TCP_8117
+ service-object TCP_8017
+ service-object TCP_8417
+ service-object TCP_8103
+ service-object TCP_8403
+ service-object TCP_8003
+ service-object TCP_8404
+ service-object TCP_8009
+service-group 开发发布机端口2
+ service-object ssh
+ service-object TCP_7001
+ service-object TCP_8001
+ service-object CQBY-WebLog-8099
+ service-object TCP_8098
+service-group 开发发布机端口3
+ service-object TCP_1521
+service-group 维护协议
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object ssh
+ service-object TCP_1521
+service-group FTP服务
+ service-object ftp
+ service-object ping
+service-group 重庆银行端口组
+ service-object http
+ service-object https
+ service-object dns
+ service-object telnet
+ service-object ping
+ service-object TCP_7443
+ service-object TCP_443
+service-group 开发发布机端口4
+ service-object ssh
+ service-object telnet
+ service-object TCP_7001
+ service-object TCP_8002
+ service-object TCP_8008
+ service-object TCP_8003
+ service-object TCP_8009
+service-group XNDB应用服务器
+ description XNDB应用服务器9.10用 
+ service-object ssh
+ service-object http
+ service-object HTTP_8080
+ service-object TCP_9080
+ service-object TCP_3389
+service-group XNDB数据库服务器
+ description XNDB数据库服务器用 
+ service-object ssh
+ service-object TCP_3306
+ service-object HTTP_9080
+ service-object HTTP_8080
+service-group 爱查快递端口
+ service-object http
+ service-object https
+ service-object dns
+service-group XNDB应用服务器1
+ service-object dns
+ service-object http
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_9080
+ service-object TCP_8090
+ service-object TCP_7080
+service-group E-mail协议
+ service-object pop3
+ service-object smtp
+ service-object http
+ service-object imap
+ service-object dns
+ service-object ping
+service-group 7.10测试组端口
+ service-object TCP_8113
+service-group APP_16.1_group
+ service-object 万源水务8401
+ service-object TCP_8801
+service-group TEST_7.10_Group
+ service-object https
+ service-object TCP_8108
+ service-object TCP_8116
+ service-object TCP_8113
+ service-object TCP_8102
+ service-object HTTP_8080
+ service-object TCP_8101
+ service-object TCP_8103
+ service-object TCP_8117
+ service-object TCP_8417
+ service-object TCP_8403
+ service-object TCP_8001
+ service-object 万源水务8401
+ service-object TCP_8408
+ service-object TCP_8118
+ service-object TCP_7443
+ service-object TCP_6443
+ service-object TCP_8008
+ service-object TCP_8115
+ service-object TCP_8119
+ service-object CQBY-WebLog-8099
+ service-object 辽宁汇通测试50021
+service-group TEST_7.11_Group
+ service-object https
+ service-object TCP_8015
+ service-object TCP_8115
+ service-object TCP_8401
+service-group E-MAIL更新端口
+ service-object ping
+ service-object TCP_6220
+ service-object TCP_1222
+ service-object TCP_8070
+ service-object TCP_8071
+service-group 堡垒机端口组
+ service-object https
+ service-object ping
+ service-object ssh
+ service-object telnet
+ service-object ftp
+ service-object tftp
+service-group XNDB应用服务器2
+ description 10.16.9.16 
+ service-object ssh
+ service-object telnet
+ service-object dns
+ service-object TCP_1024
+ service-object TCP_7050
+ service-object TCP_7060
+ service-object TCP_7040
+service-group XNDB应用服务器3
+ description 10.16.9.19 
+ service-object dns
+ service-object http
+ service-object ssh
+ service-object telnet
+ service-object TCP_1025
+ service-object TCP_7080
+ service-object TCP_7090
+ service-object TCP_7030
+ service-object TCP_9080
+ service-object HTTP_8080
+service-group 运维监控端口组
+ service-object http
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object CQXNDB-WebLog-8013
+ service-object CQXNDB-HTTP8113
+ service-object TCP_8016
+ service-object TCP_8116
+ service-object TCP_8002
+ service-object TCP_8102
+ service-object TCP_8015
+ service-object TCP_8115
+ service-object TCP_8008
+ service-object TCP_8108
+ service-object tcp_8001
+ service-object TCP_8101
+ service-object TCP_8401
+ service-object TCP_8408
+ service-object TCP_8117
+ service-object TCP_8417
+ service-object TCP_8017
+ service-object TCP_1521
+ service-object TCP_8103
+ service-object TCP_8403
+ service-object TCP_8003
+service-group 网络设备监控端口
+ description 运维部 
+ service-object http
+ service-object https
+ service-object ftp
+ service-object ping
+ service-object snmp
+ service-object ssh
+ service-object telnet
+ service-object TCP_8888
+service-group 运维监控端口组1
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object ssh
+ service-object TCP_1521
+ service-object CQBY-WebLog-8099
+ service-object TCP_8001
+ service-object TCP_8098
+service-group 运维监控端口组2
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object telnet
+ service-object ssh
+ service-object TCP_1521
+ service-object TCP_1158
+service-group 运维监控端口组3
+ service-object ping
+ service-object ssh
+ service-object TCP_8002
+ service-object TCP_8008
+ service-object TCP_8003
+service-group 运维监控-测试服务器
+ service-object http
+ service-object https
+ service-object ping
+ service-object HTTP_8080
+service-group 李成志FTP组
+ service-object ftp
+ service-object ping
+service-group 网络设备监控端口1
+ service-object http
+ service-object https
+ service-object ftp
+ service-object ping
+ service-object snmp
+ service-object TCP_8888
+service-group 运维监控端口组4
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object TCP_1521
+ service-object CQBY-WebLog-8099
+ service-object TCP_8001
+ service-object TCP_8098
+ service-object PZHCCB_10002
+ service-object TCP_8009
+ service-object TCP_9909
+service-group 运维监控端口组5
+ service-object ftp
+ service-object https
+ service-object ping
+ service-object telnet
+service-group 运维监控端口组6
+ service-object ping
+ service-object TCP_8002
+ service-object TCP_8008
+ service-object TCP_8003
+service-group 攀枝花商行短信端口组
+ service-object TCP_8009
+ service-object TCP_9909
+service-group 攀枝花商行短信端口组1
+ service-object ping
+ service-object PZHCCB_10002
+service-group XNDB应用服务器4
+ service-object dns
+ service-object http
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_9080
+ service-object TCP_8090
+ service-object TCP_7080
+ service-object TCP_7050
+ service-object TCP_7060
+ service-object TCP_6050
+ service-object TCP_6060
+service-group 禁止登陆SSH/TELNET
+ service-object ssh
+ service-object telnet
+service-group XNDB_9.16_in
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_3306
+ service-object TCP_8090
+service-group XNDB_9.19_in
+ service-object ssh
+ service-object HTTP_8080
+ service-object TCP_3306
+ service-object TCP_8090
+service-group 互联网访问端口组
+ service-object dns
+ service-object http
+ service-object TCP_8089
+service-group CFCA端口组
+ description 9444 
+ service-object ping
+ service-object TCP_9444
+service-group ZQW_sers_groups
+ description 种钱网端口组 
+ service-object ssh
+ service-object TCP_3306
+ service-object TCP_5901
+ service-object TCP_3307
+ service-object TCP_1521
+ service-object TCP_1520
+ service-object TCP_8442
+ service-object TCP_8581
+service-group ZQW_sers_groups_in
+ service-object smtp
+ service-object ssh
+ service-object http
+ service-object dns
+ service-object https
+ service-object internet-locator-service
+ service-object HTTP_8080
+ service-object TCP_88
+ service-object TCP_9444
+ service-object TCP_9600
+service-group XNDB移动短信端口组
+ service-object TCP_7910
+ service-object 移动短信接口_7890
+service-group 互联网访问端口组1
+ service-object dns
+ service-object https
+ service-object http
+service-group HTTPS组
+ service-object https
+ service-object dns
+service-group 运维监控组
+ description DBA，系统管理 
+ service-object ping
+ service-object ssh
+ service-object telnet
+ service-object ftp
+ service-object mysql
+ service-object tcp
+ service-object ZABBIX监控端口
+ service-object zabbix_tcp_7999
+ service-object TCP_1521
+service-group 科蓝ic卡系统部署
+ description 部署需要 
+ service-object ftp
+ service-object http
+ service-object ping
+ service-object ssh
+ service-object TCP_1521
+ service-object IC卡系统
+ service-object 科蓝IC卡端口TCP3691
+service-group 网管组
+ service-object ping
+ service-object telnet
+ service-object ssh
+ service-object https
+ service-object ftp
+service-group 1.206
+ service-object 网管组
+ service-object 运维监控组
+service-group Zabbix服务组
+ service-object snmp
+ service-object ping
+service-group 测试短信端口
+ service-object TCP8893
+ service-object TCP7893
+service-group 吴琴监控
+ service-object 辰州汇通监控端口
+ service-object 大石桥监控端口
+ service-object 金堂汇金监控端口
+service-group zabbix微信推送
+ service-object https
+ service-object http
+service-group SMS
+ service-object 移动短信接口_7890
+ service-object TCP8893
+ service-object TCP7893
+!
+router rip
+!
+external-ctrl template Block_All 
+ description Predefined: Block all apps 
+external-ctrl template Monitor_All 
+ description Predefined: Monitor all apps 
+!
+sslvpn
+!
+policy 2 eth0 eth2 any WEB-Servers WEB-Service_group always permit
+ enable
+ qos-group high
+policy 49 eth2 eth0 WEB-Servers CFCA-210.74.41.109 CFCA端口组 always permit
+ enable
+policy 61 eth2 eth0 TEST-7.10 CFCA_测试地址_210.74.42.11 any always permit
+ enable
+policy 46 eth1 eth2 李猷-101 any any always permit
+ enable
+policy 44 eth1 eth2 李猷-101 数据库服务器 TCP1521 always permit
+ enable
+policy 80 eth1 eth2 维护区网段 MAIL_SRV_8.15 E-mail协议 always permit
+ enable
+policy 29 eth1 eth2 开发组 开发测试服务器 any always permit
+ enable
+policy 3 eth1 eth2 开发组 测试数据库 TCP_1521 always permit
+ enable
+policy 43 eth1 eth2 运维网段 开发测试服务器 any always deny
+ enable
+policy 4 eth1 eth2 any 服务器组 禁止登陆SSH/TELNET always deny
+ enable
+policy 18 eth1 eth2 开发组 any any always deny
+ enable
+policy 176 eth1 eth2 应用开发部发布机 jump7.45 any always permit
+ enable
+policy 22 eth1 eth2 应用开发部发布机 APP_Servers 开发发布机端口2 always permit
+ enable
+policy 6 eth1 eth2 网管主机 any any always permit
+ enable
+policy 53 eth1 eth2 应用开发部发布机 WEB-Servers 开发发布机端口 always permit
+ enable
+policy 30 eth1 eth2 维护区网段 堡垒机_10.16.48.110 堡垒机端口组 always permit
+ enable
+policy 10 eth1 eth0 网管主机 any 维护区Services always permit
+ enable
+policy 57 eth1 eth2 应用开发部发布机 DB-Servers 维护协议 always permit
+ enable
+policy 71 eth1 eth2 应用开发部发布机 APP2_GROUPS 开发发布机端口4 always permit
+ enable
+policy 73 eth2 eth0 兴农担保服务器9.10 兴农担保服务公网IP_123.147.190.50 XNDB应用服务器4 always permit
+ enable
+policy 79 eth2 eth0 MAIL_SRV_8.15 any E-mail协议 always permit
+ enable
+policy 8 eth0 eth2 any APP_Servers APP_16.1_group always permit
+ enable
+ qos-group high
+policy 11 eth0 eth2 any TEST-7.10 any always permit
+ enable
+policy 27 eth0 eth2 any MAIL_SRV_8.15 E-mail协议 always permit
+ enable
+policy 1 eth2 eth0 MAIL_SRV_8.15 any E-MAIL更新端口 always permit
+ enable
+policy 64 eth2 eth0 WEB_8.2 any SMTPS_465 always permit
+ enable
+policy 17 eth2 eth0 WEB_8.2 any http always permit
+ enable
+policy 74 eth0 eth2 any 兴农担保服务器9.10 XNDB应用服务器 always permit
+ enable
+policy 75 eth0 eth2 any 兴农担保服务器9.13 XNDB数据库服务器 always permit
+ enable
+policy 32 eth0 eth2 any 兴农担保服务器_9.16 XNDB_9.16_in always permit
+ enable
+policy 33 eth0 eth2 any 兴农担保服务器_9.19 XNDB_9.19_in always permit
+ enable
+policy 35 eth2 eth0 兴农担保服务器_9.16 兴农担保服务公网IP_123.147.190.50 XNDB应用服务器1 always permit
+ enable
+policy 37 eth2 eth0 兴农担保服务器_9.19 兴农担保服务公网IP_123.147.190.50 XNDB应用服务器3 always permit
+policy 41 eth1 eth2 运维部内网监控_1.100 WEB-Servers 运维监控端口组 always permit
+ enable
+policy 42 eth1 eth0 运维监控组 网络设备组 网络设备监控端口 always permit
+ enable
+policy 54 eth1 eth2 运维部内网监控_1.100 APP_Servers 运维监控端口组4 always permit
+ enable
+policy 55 eth1 eth2 运维部内网监控_1.100 DB-Servers 运维监控端口组5 always permit
+ enable
+policy 58 eth1 eth2 运维部内网监控_1.100 APP2_GROUPS 运维监控端口组6 always permit
+ enable
+policy 59 eth1 eth2 运维部内网监控_1.100 网络设备组1 网络设备监控端口1 always permit
+ enable
+policy 51 eth0 eth2 any APP_Servers 攀枝花商行短信端口组 always permit
+policy 82 eth0 eth2 any App_10.16.16.1 TCP_9999 always permit
+policy 9 eth2 eth1 服务器组 应用开发部发布机 ftp always permit
+ enable
+policy 23 eth0 eth2 ISG-1000-02 泸州SSL-VPN设备_10.16.6.2 any always permit
+ enable
+policy 70 eth2 eth0 兴农担保服务器_9.16 XNDB移动短信_218.206.27.231 XNDB移动短信端口组 always permit
+ enable
+policy 90 eth1 eth2 数据库，系统运维组 TEST-Servers_Group 运维监控组 always permit
+ enable
+policy 20 eth1 eth2 吴琴_172.168.1.103 服务器组 开发发布机端口 always permit
+ enable
+policy 98 eth0 eth2 juniper联通10.16.2.1 any any always permit
+ enable
+policy 119 eth0 eth2 any 太平洋app any always permit
+ enable
+policy 123 eth2 eth0 10.16.7.250 any any always permit
+policy 124 eth1 eth2 网管主机 兴农担保服务器9.10 icmp always permit
+ enable
+policy 125 eth0 eth2 any 10.16.7.250 any always permit
+ enable
+policy 5 eth1 eth2 应用开发部发布机 太平洋app any always permit
+ enable
+policy 21 eth1 eth2 应用开发部发布机 太平洋oracle any always permit
+ enable
+policy 26 eth1 eth2 应用开发部发布机 太平洋web any always permit
+ enable
+policy 38 eth2 eth0 10.16.16.152 any HTTPS组 always permit
+ enable
+policy 45 eth1 eth2 应用开发部发布机 太平洋oracle TCP_1521 always permit
+policy 78 eth1 eth2 李猷-101 太平洋web any always permit
+policy 95 eth0 eth2 any App_10.16.16.1 CQBY-WebLog-8099 always permit
+ enable
+policy 39 eth2 eth0 APPgroup SMSgroup SMS always permit
+ enable
+policy 101 eth2 eth0 App3_ser_10.16.16.10 梦网短信61.145.229.29 any always permit
+ enable
+policy 105 eth2 eth0 TEST-7.10 梦网短信61.145.229.29 any always permit
+ enable
+policy 106 eth2 eth0 TEST-7.11 any HTTPS组 always permit
+ enable
+policy 110 eth2 eth0 TEST-7.11 any http always permit
+ enable
+policy 112 eth2 eth0 10.16.16.150 any HTTPS组 always permit
+ enable
+policy 118 eth2 eth0 凉山州192.169.3.6 118.112.187.42 any always permit
+ enable
+policy 121 eth2 eth0 TEST-7.10 any HTTPS组 always permit
+ enable
+policy 139 eth0 eth2 any 凉山州VPN测试192.169.3.7 any always permit
+ enable
+policy 153 eth1 eth2 吴琴_172.168.1.103 10.16.16.150,152 村镇银行监控端口 always permit
+ enable
+policy 154 eth1 eth2 运维部内网监控_1.100 10.16.16.150,152 村镇银行监控端口 always permit
+ enable
+policy 131 eth2 eth0 XP跳板机10.16.7.45 any any always permit
+ enable
+policy 136 eth2 eth1 XP跳板机10.16.7.45 any any always permit
+ enable
+policy 145 eth1 eth2 运维部内网监控_1.100 XP跳板机10.16.7.45 https always permit
+ enable
+policy 156 eth1 eth2 运维部内网监控_1.100 太平洋app TCP_8123 always permit
+ enable
+policy 158 eth1 eth2 吴琴_172.168.1.103 太平洋app TCP_8123 always permit
+ enable
+policy 159 eth1 eth2 维护区网段 XP跳板机10.16.7.45 https always permit
+ enable
+policy 88 eth2 eth0 App3_ser_10.16.16.10 218.204.222.14;112.91.147.37 any always permit
+ enable
+policy 115 eth2 eth0 App4_ser_10.16.16.15 218.204.222.14;112.91.147.37 any always permit
+ enable
+policy 165 eth2 eth0 凉山州192.169.3.10 180.96.8.40 any always permit
+ enable
+policy 166 eth0 eth2 any TEST-7.10 TCP_8102 always permit
+ enable
+policy 168 eth1 eth2 王荣川-运维 10.16.7.45 https always permit
+ enable
+policy 181 eth1 eth2 吴琴_172.168.1.103 太平洋web 吴琴监控 always permit
+ enable
+policy 183 eth0 eth2 any 新zabbix10.16.7.187 any always permit
+ enable
+policy 25 eth1 eth0 办公室VPN跳板机 any 网管组 always permit
+ enable
+policy 28 eth1 eth2 办公室VPN跳板机 any 网管组 always permit
+ enable
+policy 14 eth2 eth0 App4_ser_10.16.16.15 梦网短信61.145.229.29 any always permit
+ enable
+policy 31 eth1 eth2 运维部内网监控_1.100 太平洋web 吴琴监控 always permit
+ enable
+policy 34 eth1 eth2 运维部内网监控_1.100 WEB-8.1 CQBY-WebLog-8099 always permit
+ enable
+policy 67 eth1 eth2 办公室VPN跳板机 TEST-7.10 any always permit
+ enable
+policy 19 eth2 eth0 APP_Servers any any always permit
+ enable
+ flow-log
+policy 116 eth2 eth0 太平洋web any any always permit
+ enable
+policy 111 eth1 eth2 办公室VPN跳板机 10.16.7.189 any always permit
+ enable
+policy 187 eth0 eth2 any 凉山州手机银行 any always permit
+ enable
+policy 97 eth2 eth0 凉山州手机银行测试:10.16.7.222 凉山州手机银行测试外网:210.74.42.45 TCP_9665 always permit
+ enable
+policy 170 eth2 eth0 凉山州手机银行生产:10.16.8.222 凉山州手机银行测试外网:210.74.41.204 TCP_9665 always permit
+ enable
+policy 186 eth1 eth2 运维部内网监控_1.100 太平洋Web10.16.16.150;10.16.16.151 IC卡系统端口 always permit
+ enable
+policy 192 eth2 eth0 凉山州手机银行测试:10.16.7.222 any HTTPS组 always permit
+ enable
+policy 194 eth2 eth0 App3_ser_10.16.16.10 101.251.214.152 移动短信接口_7890 always permit
+ enable
+policy 195 eth2 eth0 App4_ser_10.16.16.15 101.251.214.152 移动短信接口_7890 always permit
+ enable
+policy 7 eth0 eth2 any 10.16.7.189 TCP1521 always permit
+ enable
+policy 13 eth2 eth0 凉山州手机银行生产:10.16.8.222 any HTTPS组 always permit
+ enable
+policy 16 eth1 eth2 何果-运维 网络设备组1 any always permit
+ enable
+policy 24 eth1 eth0 何果-运维 网络设备组 any always permit
+ enable
+policy 40 eth1 eth2 运维部内网监控_1.100 新zabbix10.16.7.187 http always permit
+ enable
+policy 12 eth2 eth0 zabbix 网络设备组 Zabbix服务组 always permit
+ enable
+policy 15 eth2 eth1 zabbix 应用开发部发布机 ftp always permit
+ enable
+policy 36 eth1 eth2 应用开发部发布机 数据库服务器 TCP_1521 always permit
+ enable
+policy 50 eth2 eth0 新zabbix10.16.7.187 zabbix微信推送_140.207.189.106 zabbix微信推送 always permit
+ enable
+policy 52 eth2 eth0 新zabbix10.16.7.187 zabbixNTP_203.187.6.88 ntp always permit
+ enable
+policy 56 eth2 eth0 新zabbix10.16.7.187 zabbix微信推送_140.207.127.79 zabbix微信推送 always permit
+ enable
+policy 60 eth1 eth2 运维部_王荣川172.168.1.102 新zabbix10.16.7.187 http always permit
+ description 访问zabbix
+ enable
+!
+sysmon
+ log cpu local
+ log memory local
+ log session local
+ log flow local
+ sysres flow eth0(外网) 10240
+!
+
+ha-group
+ hainterface eth3
+ enable backup-master
+ auto_syn config-on rto-on ips-on av-off
+ grob-style master
+ config-style basic
+ monitor eth0
+ monitor eth2
+
+snmp
+ snmp enable
+ trap address 10.16.7.187
+!
+router ospf
+!
+ip route 0.0.0.0/0 10.16.2.11
+ip route 10.0.255.0/24 10.16.2.22
+ip route 10.10.10.0/30 10.16.2.22
+ip route 10.16.1.0/24 10.16.2.22
+ip route 10.16.2.28/32 10.16.2.22
+ip route 10.16.2.32/29 10.16.2.22
+ip route 10.16.2.40/29 10.16.2.22
+ip route 10.16.4.6/32 10.16.2.22
+ip route 10.16.4.30/32 eth2
+ip route 10.16.5.0/24 10.16.2.22
+ip route 10.16.6.0/24 10.16.2.22
+ip route 10.16.6.6/32 10.16.2.22
+ip route 10.16.7.0/24 10.16.2.22
+ip route 10.16.8.0/24 10.16.2.22
+ip route 10.16.9.0/24 10.16.2.22
+ip route 10.16.10.0/24 10.16.2.22
+ip route 10.16.16.0/24 10.16.2.22
+ip route 10.16.48.0/24 10.16.2.22
+ip route 16.118.201.108/32 10.16.2.22
+ip route 16.118.210.13/32 10.16.2.22
+ip route 16.118.210.16/32 10.16.2.22
+ip route 57.0.2.0/24 10.16.2.22
+ip route 172.16.10.138/32 10.16.2.22
+ip route 172.16.254.10/32 10.16.2.22
+ip route 172.30.1.0/24 10.16.2.22
+ip route 172.168.1.0/24 192.168.3.2
+ip route 172.168.3.0/24 10.16.2.22
+ip route 172.254.254.160/32 10.16.2.22
+ip route 175.16.25.8/30 10.16.2.22
+ip route 175.16.26.8/30 10.16.2.22
+ip route 192.16.21.0/24 10.16.3.2
+ip route 192.168.1.0/24 192.168.3.2
+ip route 192.169.3.0/24 eth2
+ip route 192.169.3.5/32 10.16.2.22
+!
+!
+!
+!
+anti-arp spoof service
+!
+bind-interface eth0 eth2  
+!
+ids-interaction
+ ids-ip 10.16.48.100
+!
+tianxun-interaction
+!
+!end
+#IPS AV CONFIG FILE
+[IPS PREDEFINE CONFIG]
+
+[IPS CUSTOM CONFIG]
+[EXT-CTRL CUSTOM TEMPLATE LIST]
+[EXT-CTRL CUSTOM TEMPLATE LIST END]
+[WF KEYWORD CONFIG]
+[WF KEYWORD CONFIG END]
+
+[AV CONFIG]
+7
+mail_rep_str = 
+http_rep_str = 
+
+[AV SCAN LIST CONFIG]
+
+[AV BLOCK LIST CONFIG]
+[ANTI-SPAM CONFIG BEGIN]
+[ANTI-SPAM CONFIG END]
