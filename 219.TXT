@@ -78,7 +78,8 @@ user administrator cqby portlet TopVirus container vc2 pscreate false psindex 4
 user administrator cqby portlet business container vc2 pscreate false psindex 5
 !
 timezone 57
-!
+
+!
 ips dfi on
 !
 ip defend attack all
@@ -117,42 +118,42 @@ log pki memory upto notifications
 vpn ca crl config period 30 url http://127.0.0.1/cacrl.crl
 !
 interface eth0
- aliasname eth0(ÍâÍø)
+ aliasname eth0(å¤–ç½‘)
  ip address 10.16.2.14/29
  set bandwidth 10000000 
  allow access ping
 !
 interface eth1
- aliasname eth1£¨Î¬»¤Çø£©
+ aliasname eth1ï¼ˆç»´æŠ¤åŒºï¼‰
  ip address 192.168.3.1/30
  allow access https
  allow access ssh
  allow access ping
 !
 interface eth2
- aliasname eth2£¨ÄÚÍø£©
+ aliasname eth2ï¼ˆå†…ç½‘ï¼‰
  ip address 10.16.2.19/29
  allow access https
  allow access ssh
  allow access ping
 !
 interface eth3
- aliasname eth3£¨¶ÌĞÅ×¨Ïß£©
+ aliasname eth3ï¼ˆçŸ­ä¿¡ä¸“çº¿ï¼‰
 !
 address WEB-Servers
  host-address 10.16.8.1
  host-address 10.16.8.2
 address WEB-8.1
  host-address 10.16.8.1
-address ÁªÍ¨¶ÌĞÅÍø¹Ø
+address è”é€šçŸ­ä¿¡ç½‘å…³
  host-address 172.27.4.185
-address ÒÆ¶¯¶ÌĞÅÍø¹Ø
+address ç§»åŠ¨çŸ­ä¿¡ç½‘å…³
  host-address 192.168.50.5
-address Î¬»¤ÇøÖ÷»ú
+address ç»´æŠ¤åŒºä¸»æœº
  host-address 172.168.1.10
  host-address 172.168.1.7
  host-address 172.168.1.15
-address Íø¹ÜÖ÷»ú
+address ç½‘ç®¡ä¸»æœº
  host-address 10.16.8.17
  host-address 172.168.1.17
  host-address 172.168.1.18
@@ -160,14 +161,14 @@ address Íø¹ÜÖ÷»ú
  host-address 10.16.8.18
 address IDS-48.100
  host-address 10.16.48.100
-address ·şÎñÆ÷µØÖ·
+address æœåŠ¡å™¨åœ°å€
  net-address 10.16.8.0/24
  net-address 10.16.16.0/24
  host-address 10.16.7.10
  host-address 10.16.7.11
 address TEST-7.10
  host-address 10.16.7.10
-address Î¬»¤ÇøÍø¶Î
+address ç»´æŠ¤åŒºç½‘æ®µ
  net-address 172.168.1.0/24
 address 221.5.203.98
  host-address 221.5.203.98
@@ -175,30 +176,30 @@ address TEST-7.11
  host-address 10.16.7.11
 address TEST-VIP_7.12
  host-address 10.16.7.12
-address Ê¯ÁÖ·å
- description Ó¦ÓÃ¿ª·¢²¿-Ì·ÔÙĞĞ
+address çŸ³æ—å³°
+ description åº”ç”¨å¼€å‘éƒ¨-è°­å†è¡Œ
  host-address 172.168.1.55
 address APP_Servers
  host-address 10.16.16.1
  host-address 10.16.16.5
  host-address 10.16.16.20
-address ÀîÇå£¨ĞéÄâ»ú£©
+address ææ¸…ï¼ˆè™šæ‹Ÿæœºï¼‰
  host-address 172.168.1.222
-address CFCAÖĞ¹ú½ğÈÚÈÏÖ¤ÖĞĞÄ
- description ÖĞ¹ú½ğÈÚÈÏÖ¤ÖĞĞÄ-µçĞÅµØÖ·
+address CFCAä¸­å›½é‡‘èè®¤è¯ä¸­å¿ƒ
+ description ä¸­å›½é‡‘èè®¤è¯ä¸­å¿ƒ-ç”µä¿¡åœ°å€
  host-address 210.74.41.109
-address Áõ´¿£¨²âÊÔÒ»Ìå»ú£©
+address åˆ˜çº¯ï¼ˆæµ‹è¯•ä¸€ä½“æœºï¼‰
  host-address 172.168.1.46
-address Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú
+address åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº
  host-address 172.168.1.99
-address ³Â±Ì²¨172.168.1.39
+address é™ˆç¢§æ³¢172.168.1.39
  host-address 172.168.1.39
-address ¹¶Í¢·å172.168.1.44
- description ÂŞ²ıÔÆÊ¹ÓÃ
+address è‹Ÿå»·å³°172.168.1.44
+ description ç½—æ˜Œäº‘ä½¿ç”¨
  host-address 172.168.1.44
-address ÀîÆô´¨172.168.1.33
+address æå¯å·172.168.1.33
  host-address 172.168.1.33
-address ÄÚ²¿Éú²ú·şÎñÆ÷
+address è¯“å¯îŒîŒ†î’•è¡¿ï¿½
  host-address 10.16.8.1
  host-address 10.16.8.2
  host-address 10.16.16.1
@@ -219,17 +220,17 @@ address NSAE1200-02
 address DB-Servers
  host-address 10.16.16.100
  host-address 10.16.16.108
-address ÍòÔ´Ë®Îñ
+address ä¸‡æºæ°´åŠ¡
  host-address 124.161.189.17
 address App_10.16.16.1
  host-address 10.16.16.1
-address ÔøÇÉ172.168.1.15
+address æ›¾å·§172.168.1.15
  host-address 172.168.1.15
 address WEB_8.2
  host-address 10.16.8.2
-address ÖØÇìÒøĞĞ_113.204.117.140
+address é‡åº†é“¶è¡Œ_113.204.117.140
  host-address 113.204.117.140
-address °®²é¿ìµİ_60.190.223.227
+address çˆ±æŸ¥å¿«é€’_60.190.223.227
  host-address 60.190.223.227
 address App3_ser_10.16.16.10
  host-address 10.16.16.10
@@ -238,31 +239,31 @@ address App4_ser_10.16.16.15
 address APP2_GROUPS
  host-address 10.16.16.10
  host-address 10.16.16.15
-address ĞËÅ©µ£±£·şÎñÆ÷9.10
- description ĞËÅ©µ£±£·şÎñÆ÷×é
+address å…´å†œæ‹…ä¿æœåŠ¡å™¨9.10
+ description å…´å†œæ‹…ä¿æœåŠ¡å™¨ç»„
  host-address 10.16.9.10
-address ĞËÅ©µ£±£·şÎñÆ÷9.13
- description ĞËÅ©µ£±£·şÎñÆ÷×é
+address å…´å†œæ‹…ä¿æœåŠ¡å™¨9.13
+ description å…´å†œæ‹…ä¿æœåŠ¡å™¨ç»„
  host-address 10.16.9.13
-address ÖØÇìÒøĞĞµç×ÓÉÌ³Ç
+address é‡åº†é“¶è¡Œç”µå­å•†åŸ
  host-address 124.162.20.10
  host-address 222.178.110.233
-address ÁªÍ¨DNS
+address è”é€šDNS
  host-address 221.5.203.98
-address ĞËÅ©µ£±£·şÎñ¹«ÍøIP_123.147.190.50
+address å…´å†œæ‹…ä¿æœåŠ¡å…¬ç½‘IP_123.147.190.50
  host-address 123.147.190.50
  host-address 221.5.203.98
 address MAIL_SRV_8.15
  host-address 10.16.8.15
-address Ğ»¹ú¸»_172.168.1.47
+address è°¢å›½å¯Œ_172.168.1.47
  host-address 172.168.1.47
-address ¹¨Õıçô_172.168.1.13
+address é¾šæ­£çº_172.168.1.13
  host-address 172.168.1.13
-address ÔøÇÉ_172.168.1.15
+address æ›¾å·§_172.168.1.15
  host-address 172.168.1.15
-address ÕÅ½¨Àû_172.168.1.7
+address å¼ å»ºåˆ©_172.168.1.7
  host-address 172.168.1.7
-address ×óÎÄ²Å_172.168.1.10
+address å·¦æ–‡æ‰_172.168.1.10
  host-address 172.168.1.10
 address DB2-P720-Groups
  host-address 10.16.16.110
@@ -270,37 +271,37 @@ address DB2-P720-Groups
  host-address 10.16.16.111
  host-address 10.16.16.116
  host-address 10.16.16.117
-address ÖØÇìÒøĞĞ_113.204.104.198
+address é‡åº†é“¶è¡Œ_113.204.104.198
  host-address 113.204.104.198
 address lijinzhou_172.168.1.56
  host-address 172.168.1.56
-address ãòÖİ²âÊÔµØÖ·_172.254.254.160
+address æ³¸å·æµ‹è¯•åœ°å€_172.254.254.160
  host-address 172.254.254.160
-address Áõ½¡_172.168.1.5
+address åˆ˜å¥_172.168.1.5
  host-address 172.168.1.5
-address Áõ´¿_172.168.1.87
+address åˆ˜çº¯_172.168.1.87
  host-address 172.168.1.87
 address 10.16.2.28
  host-address 10.16.2.28
-address ÁªÍ¨¶ÌĞÅÆ½Ì¨ÍâÍø_123.147.144.21
+address è”é€šçŸ­ä¿¡å¹³å°å¤–ç½‘_123.147.144.21
  host-address 123.147.144.21
-address Áõí²å¹_172.168.1.59
+address åˆ˜è¿éª_172.168.1.59
  host-address 172.168.1.59
-address ±¤Àİ»ú_10.16.48.110
+address å ¡å’æœº_10.16.48.110
  host-address 10.16.48.110
-address ÉòÑôÒøĞĞ²âÊÔµØÖ·_57.0.2.41
+address æ²ˆé˜³é“¶è¡Œæµ‹è¯•åœ°å€_57.0.2.41
  net-address 57.0.2.0/24
-address ĞËÅ©µ£±£·şÎñÆ÷_9.16
+address å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.16
  host-address 10.16.9.16
-address ĞËÅ©µ£±£·şÎñÆ÷_9.19
+address å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.19
  host-address 10.16.9.19
-address ÔËÎ¬²¿ÄÚÍø¼à¿Ø_1.100
+address è¿ç»´éƒ¨å†…ç½‘ç›‘æ§_1.100
  host-address 172.168.1.100
 address 4948-01
- description ºËĞÄ½»»»»ú
+ description æ ¸å¿ƒäº¤æ¢æœº
  host-address 10.16.8.252
 address 4948-02
- description ºËĞÄ½»»»»ú
+ description æ ¸å¿ƒäº¤æ¢æœº
  host-address 10.16.8.253
 address RG-RSR20-01_2.34
  host-address 10.16.2.34
@@ -308,79 +309,79 @@ address RG-RSR20-02_10.10.10.1
  host-address 10.10.10.1
 address RG-RSR20-03_2.41
  host-address 10.16.2.41
-address Àî³ÉÖ¾_172.168.1.101
+address ææˆå¿—_172.168.1.101
  host-address 172.168.1.101
 address DB-10.16.16.108
  host-address 10.16.16.108
-address ÕÅ½¨ºÀ_172.168.1.102
+address å¼ å»ºè±ª_172.168.1.102
  host-address 172.168.1.102
-address ÎâÇÙ_172.168.1.103
+address å´ç´_172.168.1.103
  host-address 172.168.1.103
-address ÔËÎ¬±¸·İ»ú_172.168.1.104
+address è¿ç»´å¤‡ä»½æœº_172.168.1.104
  host-address 172.168.1.104
 address USG-FW-810-2.18
  host-address 10.16.2.18
 address CFCA-123.127.239.109
- description ÁªÍ¨µØÖ·
+ description è”é€šåœ°å€
  host-address 123.127.239.109
 address CFCA-210.74.41.109
- description ÖĞ¹ú½ğÈÚÈÏÖ¤ÖĞĞÄ-µçĞÅµØÖ·
+ description ä¸­å›½é‡‘èè®¤è¯ä¸­å¿ƒ-ç”µä¿¡åœ°å€
  host-address 210.74.41.109
 address PZHCCB_SMS_218.89.109.196
- description ÅÊÖ¦»¨CCB¶ÌĞÅ
+ description æ”€æèŠ±CCBçŸ­ä¿¡
  host-address 218.89.109.196
-address ãòÖİSSL-VPNÉè±¸_172.16.10.138
+address æ³¸å·SSL-VPNè®¾å¤‡_172.16.10.138
  host-address 172.16.10.138
-address Ğìº£²©_172.168.1.65
- description Ó¦ÓÃ¿ª·¢²¿
+address å¾æµ·åš_172.168.1.65
+ description åº”ç”¨å¼€å‘éƒ¨
  host-address 172.168.1.65
-address ãòÖİSSL-VPNÉè±¸_10.16.6.2
+address æ³¸å·SSL-VPNè®¾å¤‡_10.16.6.2
  host-address 10.16.6.2
-address ¹ÜÀíµØÖ·¡ª¡ª10.16.8.18
+address ç®¡ç†åœ°å€â€”â€”10.16.8.18
  host-address 10.16.8.18
-address ¿ª·¢²¿_ÑîĞñ172.168.1.12
+address å¼€å‘éƒ¨_æ¨æ—­172.168.1.12
  host-address 172.168.1.12
-address ¿Í»§_172.168.1.40
+address å®¢æˆ·_172.168.1.40
  host-address 172.168.1.40
-address ÏµÍ³¼¯³É²¿_¼à¿Ø»ú_1.206
+address ç³»ç»Ÿé›†æˆéƒ¨_ç›‘æ§æœº_1.206
  host-address 172.168.1.206
-address zabbix_ĞéÄâ»ú8.26
+address zabbix_è™šæ‹Ÿæœº8.26
  host-address 10.16.8.26
-address ÍõÑĞº¯_172.168.1.34
+address ç‹ç ”å‡½_172.168.1.34
  host-address 172.168.1.34
-address ÊÕ¸¶±¦¹«Ë¾¹«ÍøµØÖ·_223.223.193.101
+address æ”¶ä»˜å®å…¬å¸å…¬ç½‘åœ°å€_223.223.193.101
  host-address 223.223.193.101
-address zabbix_ĞéÄâ»ú8.27-28
+address zabbix_è™šæ‹Ÿæœº8.27-28
  host-address 10.16.8.27
  host-address 10.16.8.28
  host-address 10.16.8.108
  host-address 10.16.8.109
-address ´ïÖİSSL-VPNÉè±¸_175.16.24.2
+address è¾¾å·SSL-VPNè®¾å¤‡_175.16.24.2
  host-address 175.16.24.2
-address ´ïÖİSSL-VPNÉè±¸_16.118.210.13
+address è¾¾å·SSL-VPNè®¾å¤‡_16.118.210.13
  host-address 16.118.210.13
-address ´ïÖİSSL-VPNÉè±¸_175.16.25.10
+address è¾¾å·SSL-VPNè®¾å¤‡_175.16.25.10
  host-address 175.16.25.10
-address ´ïÖİSSL-VPNÉè±¸_16.118.210.16
+address è¾¾å·SSL-VPNè®¾å¤‡_16.118.210.16
  host-address 16.118.210.16
-address Ç°ÖÃ»ú_10.16.8.20
+address å‰ç½®æœº_10.16.8.20
  host-address 10.16.8.20
 address 10.16.8.17
  host-address 10.16.8.17
 address 172.168.1.18
  host-address 172.168.1.18
-address Î÷ÓÀÔ°Çø_218.70.169.150
+address è¥¿æ°¸å›­åŒº_218.70.169.150
  host-address 218.70.169.150
-address ´ïÖİFTP·şÎñÆ÷_16.118.201.108
- description ´ïÖİFTP·şÎñÆ÷ÓÃ
+address è¾¾å·FTPæœåŠ¡å™¨_16.118.201.108
+ description è¾¾å·FTPæœåŠ¡å™¨ç”¨
  host-address 16.118.201.108
-address Ò×¼«¸¶²âÊÔ_218.70.82.178
+address æ˜“æä»˜æµ‹è¯•_218.70.82.178
  host-address 218.70.82.178
 address ZQW1_ser_10.16.10.1
  host-address 10.16.10.1
 address ZQW2_ser_10.16.10.5
  host-address 10.16.10.5
-address ½ğÈÚºóÔ®¹«ÍøµØÖ·_113.204.37.10
+address é‡‘èåæ´å…¬ç½‘åœ°å€_113.204.37.10
  host-address 113.204.37.10
 address ZQW3_ser_10.16.10.11
  description ZQW1-ILO
@@ -388,82 +389,82 @@ address ZQW3_ser_10.16.10.11
 address ZQW4_ser_10.16.10.15
  description ZQW2-ILO
  host-address 10.16.10.15
-address ÄÏÆº°ì¹«Çø¹«ÍøIP_113.204.37.146
+address å—åªåŠå…¬åŒºå…¬ç½‘IP_113.204.37.146
  host-address 113.204.37.146
-address ÌÚÑ¶ÆóÒµÓÊÏäsmtp
+address è…¾è®¯ä¼ä¸šé‚®ç®±smtp
  description 163.177.65.157
  host-address 163.177.65.157
 address ZQW0_ser_VM_10.16.10.6
  host-address 10.16.10.6
-address ´ó¶«·½¹«ÍøIP_183.64.106.153
+address å¤§ä¸œæ–¹å…¬ç½‘IP_183.64.106.153
  host-address 183.64.106.153
-address CFCA_²âÊÔµØÖ·_210.74.42.11
+address CFCA_æµ‹è¯•åœ°å€_210.74.42.11
  host-address 210.74.42.11
-address XNDBÒÆ¶¯¶ÌĞÅ_218.206.27.231
+address XNDBç§»åŠ¨çŸ­ä¿¡_218.206.27.231
  host-address 218.206.27.231
-address ÉøÍ¸²âÊÔµØÖ·_172.168.1.120
+address æ¸—é€æµ‹è¯•åœ°å€_172.168.1.120
  host-address 172.168.1.120
-address ÖØÇìÒøĞĞÉ¨Ãè_172.168.1.131
+address é‡åº†é“¶è¡Œæ‰«æ_172.168.1.131
  host-address 172.168.1.131
-address Ğìº£²©_172.168.1.66
- description ¿ª·¢²¿
+address å¾æµ·åš_172.168.1.66
+ description å¼€å‘éƒ¨
  host-address 172.168.1.66
-address ÂŞ²ıÔÆ_172.168.1.45
- description ¿ª·¢²¿
+address ç½—æ˜Œäº‘_172.168.1.45
+ description å¼€å‘éƒ¨
  host-address 172.168.1.45
 !
 address-group TEST-Servers_Group
    address-object TEST-VIP_7.12
    address-object TEST-7.11
    address-object TEST-7.10
-address-group ÍøÂçÉè±¸×é
+address-group ç½‘ç»œè®¾å¤‡ç»„
    address-object ISG-1000-01
    address-object ISG-1000-02
    address-object NSAE1200-01
    address-object NSAE1200-02
-address-group ÖØÇìÒøĞĞ²âÊÔ×é
-   address-object ¹¶Í¢·å172.168.1.44
-address-group ĞËÅ©µ£±£·şÎñÆ÷×é
+address-group é‡åº†é“¶è¡Œæµ‹è¯•ç»„
+   address-object è‹Ÿå»·å³°172.168.1.44
+address-group å…´å†œæ‹…ä¿æœåŠ¡å™¨ç»„
  description 10.16.9.0/24
-   address-object ĞËÅ©µ£±£·şÎñÆ÷9.13
-   address-object ĞËÅ©µ£±£·şÎñÆ÷9.10
-address-group ÖØÇìÒøĞĞµç×ÓÉÌ³ÇµØÖ·×é
-   address-object ÁªÍ¨DNS
-   address-object ÖØÇìÒøĞĞµç×ÓÉÌ³Ç
-   address-object ÖØÇìÒøĞĞ_113.204.104.198
-   address-object ÖØÇìÒøĞĞ_113.204.117.140
-address-group °®²é¿ìµİµØÖ·×é
-   address-object °®²é¿ìµİ_60.190.223.227
-   address-object ÁªÍ¨DNS
-address-group Î¬»¤Çø²âÊÔ×é
-   address-object Ğ»¹ú¸»_172.168.1.47
-   address-object ¹¨Õıçô_172.168.1.13
-   address-object Ê¯ÁÖ·å
-   address-object ÀîÇå£¨ĞéÄâ»ú£©
-   address-object Áõ´¿£¨²âÊÔÒ»Ìå»ú£©
-   address-object ³Â±Ì²¨172.168.1.39
-   address-object ¹¶Í¢·å172.168.1.44
-   address-object ÔøÇÉ_172.168.1.15
-   address-object ÕÅ½¨Àû_172.168.1.7
-   address-object ×óÎÄ²Å_172.168.1.10
+   address-object å…´å†œæ‹…ä¿æœåŠ¡å™¨9.13
+   address-object å…´å†œæ‹…ä¿æœåŠ¡å™¨9.10
+address-group é‡åº†é“¶è¡Œç”µå­å•†åŸåœ°å€ç»„
+   address-object è”é€šDNS
+   address-object é‡åº†é“¶è¡Œç”µå­å•†åŸ
+   address-object é‡åº†é“¶è¡Œ_113.204.104.198
+   address-object é‡åº†é“¶è¡Œ_113.204.117.140
+address-group çˆ±æŸ¥å¿«é€’åœ°å€ç»„
+   address-object çˆ±æŸ¥å¿«é€’_60.190.223.227
+   address-object è”é€šDNS
+address-group ç»´æŠ¤åŒºæµ‹è¯•ç»„
+   address-object è°¢å›½å¯Œ_172.168.1.47
+   address-object é¾šæ­£çº_172.168.1.13
+   address-object çŸ³æ—å³°
+   address-object ææ¸…ï¼ˆè™šæ‹Ÿæœºï¼‰
+   address-object åˆ˜çº¯ï¼ˆæµ‹è¯•ä¸€ä½“æœºï¼‰
+   address-object é™ˆç¢§æ³¢172.168.1.39
+   address-object è‹Ÿå»·å³°172.168.1.44
+   address-object æ›¾å·§_172.168.1.15
+   address-object å¼ å»ºåˆ©_172.168.1.7
+   address-object å·¦æ–‡æ‰_172.168.1.10
    address-object lijinzhou_172.168.1.56
-   address-object Áõ½¡_172.168.1.5
-   address-object Áõ´¿_172.168.1.87
-   address-object Áõí²å¹_172.168.1.59
-   address-object Ğìº£²©_172.168.1.65
-   address-object ÏµÍ³¼¯³É²¿_¼à¿Ø»ú_1.206
-   address-object Ğìº£²©_172.168.1.66
-   address-object ÂŞ²ıÔÆ_172.168.1.45
-address-group ·ÃÎÊÖØÇìÒøĞĞ²âÊÔ×é
-   address-object ¹¶Í¢·å172.168.1.44
-   address-object ×óÎÄ²Å_172.168.1.10
-address-group ·şÎñÆ÷×é
+   address-object åˆ˜å¥_172.168.1.5
+   address-object åˆ˜çº¯_172.168.1.87
+   address-object åˆ˜è¿éª_172.168.1.59
+   address-object å¾æµ·åš_172.168.1.65
+   address-object ç³»ç»Ÿé›†æˆéƒ¨_ç›‘æ§æœº_1.206
+   address-object å¾æµ·åš_172.168.1.66
+   address-object ç½—æ˜Œäº‘_172.168.1.45
+address-group è®¿é—®é‡åº†é“¶è¡Œæµ‹è¯•ç»„
+   address-object è‹Ÿå»·å³°172.168.1.44
+   address-object å·¦æ–‡æ‰_172.168.1.10
+address-group æœåŠ¡å™¨ç»„
    address-object WEB-Servers
    address-object DB2-P720-Groups
    address-object APP2_GROUPS
    address-object APP_Servers
    address-object DB-Servers
-address-group ÍøÂçÉè±¸×é1
+address-group ç½‘ç»œè®¾å¤‡ç»„1
    address-object 10.16.2.28
    address-object 4948-01
    address-object 4948-02
@@ -471,30 +472,30 @@ address-group ÍøÂçÉè±¸×é1
    address-object RG-RSR20-02_10.10.10.1
    address-object RG-RSR20-03_2.41
    address-object USG-FW-810-2.18
-address-group ÔËÎ¬¼à¿Ø×é
-   address-object ÔËÎ¬²¿ÄÚÍø¼à¿Ø_1.100
-   address-object ÎâÇÙ_172.168.1.103
-   address-object Àî³ÉÖ¾_172.168.1.101
-   address-object ÍõÑĞº¯_172.168.1.34
-address-group ÔËÎ¬¼à¿Ø×é1
-   address-object Àî³ÉÖ¾_172.168.1.101
-   address-object ÎâÇÙ_172.168.1.103
-   address-object ÍõÑĞº¯_172.168.1.34
-address-group Êı¾İ¿â×é
-   address-object Àî³ÉÖ¾_172.168.1.101
-   address-object ÕÅ½¨ºÀ_172.168.1.102
-address-group ´ïÖİÉÌĞĞSSL-VPNÉè±¸
-   address-object ´ïÖİSSL-VPNÉè±¸_16.118.210.13
-   address-object ´ïÖİSSL-VPNÉè±¸_16.118.210.16
-address-group ÍâÍø·ÃÎÊ×é
-   address-object Ç°ÖÃ»ú_10.16.8.20
-address-group Ò×¼«¸¶²âÊÔ×é
-   address-object ÔøÇÉ172.168.1.15
-   address-object ¹¨Õıçô_172.168.1.13
-   address-object ×óÎÄ²Å_172.168.1.10
-address-group Ò×¼«¸¶¹«ÍøIP²âÊÔ×é
-   address-object ÁªÍ¨DNS
-   address-object Ò×¼«¸¶²âÊÔ_218.70.82.178
+address-group è¿ç»´ç›‘æ§ç»„
+   address-object è¿ç»´éƒ¨å†…ç½‘ç›‘æ§_1.100
+   address-object å´ç´_172.168.1.103
+   address-object ææˆå¿—_172.168.1.101
+   address-object ç‹ç ”å‡½_172.168.1.34
+address-group è¿ç»´ç›‘æ§ç»„1
+   address-object ææˆå¿—_172.168.1.101
+   address-object å´ç´_172.168.1.103
+   address-object ç‹ç ”å‡½_172.168.1.34
+address-group æ•°æ®åº“ç»„
+   address-object ææˆå¿—_172.168.1.101
+   address-object å¼ å»ºè±ª_172.168.1.102
+address-group è¾¾å·å•†è¡ŒSSL-VPNè®¾å¤‡
+   address-object è¾¾å·SSL-VPNè®¾å¤‡_16.118.210.13
+   address-object è¾¾å·SSL-VPNè®¾å¤‡_16.118.210.16
+address-group å¤–ç½‘è®¿é—®ç»„
+   address-object å‰ç½®æœº_10.16.8.20
+address-group æ˜“æä»˜æµ‹è¯•ç»„
+   address-object æ›¾å·§172.168.1.15
+   address-object é¾šæ­£çº_172.168.1.13
+   address-object å·¦æ–‡æ‰_172.168.1.10
+address-group æ˜“æä»˜å…¬ç½‘IPæµ‹è¯•ç»„
+   address-object è”é€šDNS
+   address-object æ˜“æä»˜æµ‹è¯•_218.70.82.178
 address-group ZQW_sers_groups
    address-object ZQW1_ser_10.16.10.1
    address-object ZQW2_ser_10.16.10.5
@@ -503,7 +504,7 @@ address-group ZQW_ILO_sers_groups
  description ZQW-ILO
    address-object ZQW3_ser_10.16.10.11
    address-object ZQW4_ser_10.16.10.15
-address-group ÉøÍ¸²âÊÔ·şÎñÆ÷µØÖ·×é
+address-group æ¸—é€æµ‹è¯•æœåŠ¡å™¨åœ°å€ç»„
    address-object WEB-Servers
    address-object TEST-7.10
    address-object TEST-7.11
@@ -511,10 +512,10 @@ address-group ÉøÍ¸²âÊÔ·şÎñÆ÷µØÖ·×é
    address-object APP2_GROUPS
 !
 service TCP_8801
- description ÁªÍ¨¶ÌĞÅ»ØÖ´¶Ë¿Ú 
+ description è”é€šçŸ­ä¿¡å›æ‰§ç«¯å£ 
  tcp dest 8801 source 1 65535
 service TCP_9001
- description ÁªÍ¨¶ÌĞÅ·¢ËÍ½Ó¿Ú 
+ description è”é€šçŸ­ä¿¡å‘é€æ¥å£ 
  tcp dest 9001 source 1 65535
 service TCP_8888
  description LT1200 HTTPS 
@@ -537,7 +538,7 @@ service CQBY-WebLog-8099
  tcp dest 8099 source 1 65535
 service CQBY_HTTP_8199
  tcp dest 8199 source 1 65535
-service ZABBIX¼à¿Ø¶Ë¿Ú
+service ZABBIXç›‘æ§ç«¯å£
  description zabbix_10050 
  tcp dest 10050 source 1 65535
 service TCP_8002
@@ -563,7 +564,7 @@ service TCP_20009
  tcp dest 20009 source 1 65535
 service TCP_8199
  tcp dest 8199 source 1 65535
-service ÍòÔ´Ë®Îñ8401
+service ä¸‡æºæ°´åŠ¡8401
  tcp dest 8401 source 1 65535
 service TCP_8301
  tcp dest 8301 source 1 65535
@@ -577,25 +578,25 @@ service TCP_9040
 service TCP_8016
  tcp dest 8016 source 1 65535
 service TCP_8116
- description ½ğÈÚºóÔ® 
+ description é‡‘èåæ´ 
  tcp dest 8116 source 1 65535
 service TCP_8008
  tcp dest 8008 source 1 65535
 service TCP_8108
  tcp dest 8108 source 1 65535
 service TCP_7443
- description ÖØÇìÒøĞĞ¶Ë¿Ú 
+ description é‡åº†é“¶è¡Œç«¯å£ 
  tcp dest 7443 source 1 65535
 service TCP_443
- description ÖØÇìÒøĞĞ¶Ë¿Ú 
+ description é‡åº†é“¶è¡Œç«¯å£ 
  tcp dest 443 source 1 65535
 service TCP_8402
  tcp dest 8402 source 1 65535
 service TCP_9080
- description XNDB·şÎñÆ÷ÓÃ 
+ description XNDBæœåŠ¡å™¨ç”¨ 
  tcp dest 9080 source 1 65535
 service TCP_3306
- description XNDB·şÎñÆ÷ÓÃ 
+ description XNDBæœåŠ¡å™¨ç”¨ 
  tcp dest 3306 source 1 65535
 service TCP_8113
  tcp dest 8113 source 1 65535
@@ -651,13 +652,13 @@ service TCP_8090
 service TCP_8003
  tcp dest 8003 source 1 65535
 service TCP_8009
- description ÅÊÖ¦»¨ÉÌĞĞ¶ÌÏ¢ 
+ description æ”€æèŠ±å•†è¡ŒçŸ­æ¯ 
  tcp dest 8009 source 1 65535
 service TCP_9909
- description ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ 
+ description æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ 
  tcp dest 9909 source 1 65535
 service PZHCCB_10002
- description ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú 
+ description æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ 
  tcp dest 10002 source 1 65535
 service TCP_9999
  tcp dest 9999 source 1 65535
@@ -671,22 +672,22 @@ service TCP_50002
 service TCP_50003
  tcp dest 50003 source 1 65535
 service TCP_8443
- description ´ïÖİÉÌĞĞSSL-VPNÁ¬½Ó
+ description è¾¾å·å•†è¡ŒSSL-VPNè¿æ¥
  tcp dest 8443 source 1 65535
 service TCP_1158
  tcp dest 1158 source 1 65535
 service TCP_8404
  tcp dest 8404 source 1 65535
 service TCP_8118
- description ½ø³ö¿Úµ£±£
+ description è¿›å‡ºå£æ‹…ä¿
  tcp dest 8118 source 1 65535
 service TCP_6443
  tcp dest 6443 source 1 65535
 service HTTP_9080
- description XNDB·şÎñÆ÷ÓÃ
+ description XNDBæœåŠ¡å™¨ç”¨
  tcp dest 9080 source 1 65535
 service TCP_8119
- description p2p¶Ë¿Ú
+ description p2pç«¯å£
  tcp dest 8119 source 1 65535
 service TCP_16770
  tcp dest 16770 source 1 65535
@@ -704,9 +705,9 @@ service TCP_88
  description 218.4.234.150
  tcp dest 88 source 1 65535
 service TCP_7910
- description XNDBÒÆ¶¯¶Ë¿Ú½Ó¿Ú
+ description XNDBç§»åŠ¨ç«¯å£æ¥å£
  tcp dest 7910 source 1 65535
-service ÒÆ¶¯¶ÌĞÅ½Ó¿Ú_7890
+service ç§»åŠ¨çŸ­ä¿¡æ¥å£_7890
  tcp dest 7890 source 1 65535
 service TCP_3307
  tcp dest 3307 source 1 65535
@@ -717,7 +718,7 @@ service TCP_8089
 service TCP_8442
  tcp dest 8442 source 1 65535
 !
-service-group Î¬»¤ÇøServices
+service-group ç»´æŠ¤åŒºServices
  service-object ping
  service-object ssh
  service-object https
@@ -729,7 +730,7 @@ service-group Î¬»¤ÇøServices
  service-object TCP_7001
  service-object TCP_1521
  service-object TCP_7543
-service-group ÁªÍ¨¶ÌĞÅÍø¹Øservice_group
+service-group è”é€šçŸ­ä¿¡ç½‘å…³service_group
  service-object ping
  service-object TCP_9001
  service-object TCP_8801
@@ -754,14 +755,14 @@ service-group CQSEK_Services_Group
  service-object ftp
  service-object ping
  service-object TCP_10006
-service-group ĞËÅ©µ£±£·şÎñ
+service-group å…´å†œæ‹…ä¿æœåŠ¡
  service-object CQXNDB-HTTP8113
  service-object CQXNDB-WebLog-8013
-service-group °ÍÔÆÍøÕ¾·şÎñ×é
+service-group å·´äº‘ç½‘ç«™æœåŠ¡ç»„
  service-object CQBY_HTTP_8199
  service-object CQBY-WebLog-8099
-service-group ¿ª·¢·¢²¼»ú¶Ë¿Ú
- description Ó¦ÓÃ¿ª·¢²¿
+service-group å¼€å‘å‘å¸ƒæœºç«¯å£
+ description åº”ç”¨å¼€å‘éƒ¨
  service-object http
  service-object ssh
  service-object ftp
@@ -792,25 +793,25 @@ service-group ¿ª·¢·¢²¼»ú¶Ë¿Ú
  service-object TCP_8403
  service-object TCP_8003
  service-object TCP_8404
-service-group ¿ª·¢·¢²¼»ú¶Ë¿Ú2
+service-group å¼€å‘å‘å¸ƒæœºç«¯å£2
  service-object ssh
  service-object TCP_7001
  service-object TCP_8001
  service-object CQBY-WebLog-8099
  service-object TCP_8098
- service-object ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é
-service-group ¿ª·¢·¢²¼»ú¶Ë¿Ú3
+ service-object æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„
+service-group å¼€å‘å‘å¸ƒæœºç«¯å£3
  service-object TCP_1521
-service-group Î¬»¤Ğ­Òé
+service-group ç»´æŠ¤åè®®
  service-object ftp
  service-object https
  service-object ping
  service-object ssh
  service-object TCP_1521
-service-group FTP·şÎñ
+service-group FTPæœåŠ¡
  service-object ftp
  service-object ping
-service-group ÖØÇìÒøĞĞ¶Ë¿Ú×é
+service-group é‡åº†é“¶è¡Œç«¯å£ç»„
  service-object http
  service-object https
  service-object dns
@@ -818,7 +819,7 @@ service-group ÖØÇìÒøĞĞ¶Ë¿Ú×é
  service-object ping
  service-object TCP_7443
  service-object TCP_443
-service-group ¿ª·¢·¢²¼»ú¶Ë¿Ú4
+service-group å¼€å‘å‘å¸ƒæœºç«¯å£4
  service-object ssh
  service-object telnet
  service-object TCP_7001
@@ -826,24 +827,24 @@ service-group ¿ª·¢·¢²¼»ú¶Ë¿Ú4
  service-object TCP_8008
  service-object TCP_8003
  service-object TCP_8009
-service-group XNDBÓ¦ÓÃ·şÎñÆ÷
- description XNDBÓ¦ÓÃ·şÎñÆ÷9.10ÓÃ
+service-group XNDBåº”ç”¨æœåŠ¡å™¨
+ description XNDBåº”ç”¨æœåŠ¡å™¨9.10ç”¨
  service-object ssh
  service-object http
  service-object HTTP_8080
  service-object TCP_9080
  service-object TCP_3389
-service-group XNDBÊı¾İ¿â·şÎñÆ÷
- description XNDBÊı¾İ¿â·şÎñÆ÷ÓÃ
+service-group XNDBæ•°æ®åº“æœåŠ¡å™¨
+ description XNDBæ•°æ®åº“æœåŠ¡å™¨ç”¨
  service-object ssh
  service-object TCP_3306
  service-object HTTP_9080
  service-object HTTP_8080
-service-group °®²é¿ìµİ¶Ë¿Ú
+service-group çˆ±æŸ¥å¿«é€’ç«¯å£
  service-object http
  service-object https
  service-object dns
-service-group XNDBÓ¦ÓÃ·şÎñÆ÷1
+service-group XNDBåº”ç”¨æœåŠ¡å™¨1
  service-object dns
  service-object http
  service-object ssh
@@ -851,17 +852,17 @@ service-group XNDBÓ¦ÓÃ·şÎñÆ÷1
  service-object TCP_9080
  service-object TCP_8090
  service-object TCP_7080
-service-group E-mailĞ­Òé
+service-group E-mailåè®®
  service-object pop3
  service-object smtp
  service-object http
  service-object imap
  service-object dns
  service-object ping
-service-group 7.10²âÊÔ×é¶Ë¿Ú
+service-group 7.10æµ‹è¯•ç»„ç«¯å£
  service-object TCP_8113
 service-group APP_16.1_group
- service-object ÍòÔ´Ë®Îñ8401
+ service-object ä¸‡æºæ°´åŠ¡8401
  service-object TCP_8801
 service-group TEST_7.10_Group
  service-object https
@@ -876,7 +877,7 @@ service-group TEST_7.10_Group
  service-object TCP_8417
  service-object TCP_8403
  service-object TCP_8001
- service-object ÍòÔ´Ë®Îñ8401
+ service-object ä¸‡æºæ°´åŠ¡8401
  service-object TCP_8408
  service-object TCP_8118
  service-object TCP_7443
@@ -890,20 +891,20 @@ service-group TEST_7.11_Group
  service-object TCP_8015
  service-object TCP_8115
  service-object TCP_8401
-service-group E-MAIL¸üĞÂ¶Ë¿Ú
+service-group E-MAILæ›´æ–°ç«¯å£
  service-object ping
  service-object TCP_6220
  service-object TCP_1222
  service-object TCP_8070
  service-object TCP_8071
-service-group ±¤Àİ»ú¶Ë¿Ú×é
+service-group å ¡å’æœºç«¯å£ç»„
  service-object https
  service-object ping
  service-object ssh
  service-object telnet
  service-object ftp
  service-object tftp
-service-group XNDBÓ¦ÓÃ·şÎñÆ÷2
+service-group XNDBåº”ç”¨æœåŠ¡å™¨2
  description 10.16.9.16 
  service-object ssh
  service-object telnet
@@ -912,7 +913,7 @@ service-group XNDBÓ¦ÓÃ·şÎñÆ÷2
  service-object TCP_7050
  service-object TCP_7060
  service-object TCP_7040
-service-group XNDBÓ¦ÓÃ·şÎñÆ÷3
+service-group XNDBåº”ç”¨æœåŠ¡å™¨3
  description 10.16.9.19 
  service-object dns
  service-object http
@@ -924,7 +925,7 @@ service-group XNDBÓ¦ÓÃ·şÎñÆ÷3
  service-object TCP_7030
  service-object TCP_9080
  service-object HTTP_8080
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„
  service-object http
  service-object ftp
  service-object https
@@ -950,8 +951,8 @@ service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é
  service-object TCP_8103
  service-object TCP_8403
  service-object TCP_8003
-service-group ÍøÂçÉè±¸¼à¿Ø¶Ë¿Ú
- description ÔËÎ¬²¿ 
+service-group ç½‘ç»œè®¾å¤‡ç›‘æ§ç«¯å£
+ description è¿ç»´éƒ¨ 
  service-object http
  service-object https
  service-object ftp
@@ -960,7 +961,7 @@ service-group ÍøÂçÉè±¸¼à¿Ø¶Ë¿Ú
  service-object ssh
  service-object telnet
  service-object TCP_8888
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é1
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„1
  service-object ftp
  service-object https
  service-object ping
@@ -969,8 +970,8 @@ service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é1
  service-object CQBY-WebLog-8099
  service-object TCP_8001
  service-object TCP_8098
- service-object ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é2
+ service-object æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„2
  service-object ftp
  service-object https
  service-object ping
@@ -978,28 +979,28 @@ service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é2
  service-object ssh
  service-object TCP_1521
  service-object TCP_1158
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é3
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„3
  service-object ping
  service-object ssh
  service-object TCP_8002
  service-object TCP_8008
  service-object TCP_8003
-service-group ÔËÎ¬¼à¿Ø-²âÊÔ·şÎñÆ÷
+service-group è¿ç»´ç›‘æ§-æµ‹è¯•æœåŠ¡å™¨
  service-object http
  service-object https
  service-object ping
  service-object HTTP_8080
-service-group Àî³ÉÖ¾FTP×é
+service-group ææˆå¿—FTPç»„
  service-object ftp
  service-object ping
-service-group ÍøÂçÉè±¸¼à¿Ø¶Ë¿Ú1
+service-group ç½‘ç»œè®¾å¤‡ç›‘æ§ç«¯å£1
  service-object http
  service-object https
  service-object ftp
  service-object ping
  service-object snmp
  service-object TCP_8888
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é4
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„4
  service-object ftp
  service-object https
  service-object ping
@@ -1007,24 +1008,24 @@ service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é4
  service-object CQBY-WebLog-8099
  service-object TCP_8001
  service-object TCP_8098
- service-object ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é5
+ service-object æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„5
  service-object ftp
  service-object https
  service-object ping
  service-object telnet
-service-group ÔËÎ¬¼à¿Ø¶Ë¿Ú×é6
+service-group è¿ç»´ç›‘æ§ç«¯å£ç»„6
  service-object ping
  service-object TCP_8002
  service-object TCP_8008
  service-object TCP_8003
-service-group ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é
+service-group æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„
  service-object TCP_8009
  service-object TCP_9909
-service-group ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é1
+service-group æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„1
  service-object ping
  service-object PZHCCB_10002
-service-group XNDBÓ¦ÓÃ·şÎñÆ÷4
+service-group XNDBåº”ç”¨æœåŠ¡å™¨4
  service-object dns
  service-object http
  service-object ssh
@@ -1036,7 +1037,7 @@ service-group XNDBÓ¦ÓÃ·şÎñÆ÷4
  service-object TCP_7060
  service-object TCP_6050
  service-object TCP_6060
-service-group ½ûÖ¹µÇÂ½SSH/TELNET
+service-group ç¦æ­¢ç™»é™†SSH/TELNET
  service-object ssh
  service-object telnet
 service-group XNDB_9.16_in
@@ -1049,16 +1050,16 @@ service-group XNDB_9.19_in
  service-object HTTP_8080
  service-object TCP_3306
  service-object TCP_8090
-service-group »¥ÁªÍø·ÃÎÊ¶Ë¿Ú×é
+service-group äº’è”ç½‘è®¿é—®ç«¯å£ç»„
  service-object dns
  service-object http
  service-object TCP_8089
-service-group CFCA¶Ë¿Ú×é
+service-group CFCAç«¯å£ç»„
  description 9444
  service-object ping
  service-object TCP_9444
 service-group ZQW_sers_groups
- description ÖÖÇ®Íø¶Ë¿Ú×é
+ description ç§é’±ç½‘ç«¯å£ç»„
  service-object ssh
  service-object TCP_3306
  service-object TCP_5901
@@ -1074,14 +1075,14 @@ service-group ZQW_sers_groups_in
  service-object https
  service-object HTTP_8080
  service-object TCP_88
-service-group XNDBÒÆ¶¯¶ÌĞÅ¶Ë¿Ú×é
+service-group XNDBç§»åŠ¨çŸ­ä¿¡ç«¯å£ç»„
  service-object TCP_7910
- service-object ÒÆ¶¯¶ÌĞÅ½Ó¿Ú_7890
-service-group »¥ÁªÍø·ÃÎÊ¶Ë¿Ú×é1
+ service-object ç§»åŠ¨çŸ­ä¿¡æ¥å£_7890
+service-group äº’è”ç½‘è®¿é—®ç«¯å£ç»„1
  service-object dns
  service-object https
  service-object http
-service-group HTTPS×é
+service-group HTTPSç»„
  service-object https
  service-object dns
 !
@@ -1097,58 +1098,56 @@ sslvpn
 policy 2 eth0 eth2 any WEB-Servers WEB-Service_group always permit
  enable
  qos-group high
-policy 19 eth2 eth0 APP_Servers ÍòÔ´Ë®Îñ any always permit
+policy 19 eth2 eth0 APP_Servers ä¸‡æºæ°´åŠ¡ any always permit
  enable
-policy 29 eth2 eth0 APP_Servers ÁªÍ¨¶ÌĞÅÍø¹Ø any always permit
+policy 29 eth2 eth0 APP_Servers è”é€šçŸ­ä¿¡ç½‘å…³ any always permit
  enable
  qos-group high
  qos-tc gbandwidth 2000
-policy 49 eth2 eth0 WEB-Servers CFCA-210.74.41.109 CFCA¶Ë¿Ú×é always permit
+policy 49 eth2 eth0 WEB-Servers CFCA-210.74.41.109 CFCAç«¯å£ç»„ always permit
  enable
-policy 63 eth2 eth0 TEST-7.10 ÍøÂçÉè±¸×é snmp always permit
+policy 63 eth2 eth0 TEST-7.10 ç½‘ç»œè®¾å¤‡ç»„ snmp always permit
  enable
-policy 61 eth2 eth0 TEST-7.10 CFCA_²âÊÔµØÖ·_210.74.42.11 TCP_9444 always permit
+policy 61 eth2 eth0 TEST-7.10 CFCA_æµ‹è¯•åœ°å€_210.74.42.11 TCP_9444 always permit
  enable
 policy 36 eth2 eth0 TEST-7.10 any any always permit
 policy 3 eth2 eth0 TEST-7.11 any any always permit
-policy 7 eth2 eth0 Íø¹ÜÖ÷»ú any any always permit
+policy 7 eth2 eth0 ç½‘ç®¡ä¸»æœº any any always permit
  enable
  flow-log
-policy 4 eth1 eth2 any ·şÎñÆ÷×é ½ûÖ¹µÇÂ½SSH/TELNET always deny
+policy 4 eth1 eth2 any æœåŠ¡å™¨ç»„ ç¦æ­¢ç™»é™†SSH/TELNET always deny
  enable
-policy 13 eth1 eth2 ÏµÍ³¼¯³É²¿_¼à¿Ø»ú_1.206 IDS-48.100 any always permit
+policy 13 eth1 eth2 ç³»ç»Ÿé›†æˆéƒ¨_ç›‘æ§æœº_1.206 IDS-48.100 any always permit
  enable
-policy 6 eth1 eth2 Íø¹ÜÖ÷»ú any any always permit
+policy 6 eth1 eth2 ç½‘ç®¡ä¸»æœº any any always permit
  enable
-policy 53 eth1 eth2 Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú WEB-Servers ¿ª·¢·¢²¼»ú¶Ë¿Ú always permit
+policy 53 eth1 eth2 åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº WEB-Servers å¼€å‘å‘å¸ƒæœºç«¯å£ always permit
  enable
-policy 78 eth1 eth2 Êı¾İ¿â×é DB2-P720-Groups ÔËÎ¬¼à¿Ø¶Ë¿Ú×é2 always permit
+policy 78 eth1 eth2 æ•°æ®åº“ç»„ DB2-P720-Groups è¿ç»´ç›‘æ§ç«¯å£ç»„2 always permit
  enable
-policy 30 eth1 eth2 Î¬»¤ÇøÍø¶Î ±¤Àİ»ú_10.16.48.110 ±¤Àİ»ú¶Ë¿Ú×é always permit
+policy 30 eth1 eth2 ç»´æŠ¤åŒºç½‘æ®µ å ¡å’æœº_10.16.48.110 å ¡å’æœºç«¯å£ç»„ always permit
  enable
-policy 10 eth1 eth0 Íø¹ÜÖ÷»ú any Î¬»¤ÇøServices always permit
+policy 39 eth2 eth1 zabbix_è™šæ‹Ÿæœº8.27-28 ææˆå¿—_172.168.1.101 any always permit
  enable
-policy 39 eth2 eth1 zabbix_ĞéÄâ»ú8.27-28 Àî³ÉÖ¾_172.168.1.101 any always permit
+policy 60 eth1 eth2 ç»´æŠ¤åŒºæµ‹è¯•ç»„ TEST-Servers_Group any always permit
  enable
-policy 60 eth1 eth2 Î¬»¤Çø²âÊÔ×é TEST-Servers_Group any always permit
+policy 52 eth1 eth2 åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº TEST-Servers_Group any always permit
  enable
-policy 52 eth1 eth2 Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú TEST-Servers_Group any always permit
+policy 22 eth1 eth2 åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº APP_Servers å¼€å‘å‘å¸ƒæœºç«¯å£2 always permit
  enable
-policy 22 eth1 eth2 Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú APP_Servers ¿ª·¢·¢²¼»ú¶Ë¿Ú2 always permit
+policy 57 eth1 eth2 åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº DB-Servers ç»´æŠ¤åè®® always permit
  enable
-policy 57 eth1 eth2 Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú DB-Servers Î¬»¤Ğ­Òé always permit
+policy 68 eth1 eth0 è®¿é—®é‡åº†é“¶è¡Œæµ‹è¯•ç»„ é‡åº†é“¶è¡Œç”µå­å•†åŸåœ°å€ç»„ é‡åº†é“¶è¡Œç«¯å£ç»„ always permit
+policy 71 eth1 eth2 åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº APP2_GROUPS å¼€å‘å‘å¸ƒæœºç«¯å£4 always permit
  enable
-policy 68 eth1 eth0 ·ÃÎÊÖØÇìÒøĞĞ²âÊÔ×é ÖØÇìÒøĞĞµç×ÓÉÌ³ÇµØÖ·×é ÖØÇìÒøĞĞ¶Ë¿Ú×é always permit
-policy 71 eth1 eth2 Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú APP2_GROUPS ¿ª·¢·¢²¼»ú¶Ë¿Ú4 always permit
+policy 73 eth2 eth0 å…´å†œæ‹…ä¿æœåŠ¡å™¨9.10 å…´å†œæ‹…ä¿æœåŠ¡å…¬ç½‘IP_123.147.190.50 XNDBåº”ç”¨æœåŠ¡å™¨4 always permit
  enable
-policy 73 eth2 eth0 ĞËÅ©µ£±£·şÎñÆ÷9.10 ĞËÅ©µ£±£·şÎñ¹«ÍøIP_123.147.190.50 XNDBÓ¦ÓÃ·şÎñÆ÷4 always permit
+policy 76 eth2 eth0 WEB-Servers é‡åº†é“¶è¡Œç”µå­å•†åŸåœ°å€ç»„ é‡åº†é“¶è¡Œç«¯å£ç»„ always permit
  enable
-policy 76 eth2 eth0 WEB-Servers ÖØÇìÒøĞĞµç×ÓÉÌ³ÇµØÖ·×é ÖØÇìÒøĞĞ¶Ë¿Ú×é always permit
+policy 77 eth2 eth0 WEB-Servers çˆ±æŸ¥å¿«é€’åœ°å€ç»„ çˆ±æŸ¥å¿«é€’ç«¯å£ always permit
+policy 79 eth2 eth0 MAIL_SRV_8.15 any E-mailåè®® always permit
  enable
-policy 77 eth2 eth0 WEB-Servers °®²é¿ìµİµØÖ·×é °®²é¿ìµİ¶Ë¿Ú always permit
-policy 79 eth2 eth0 MAIL_SRV_8.15 any E-mailĞ­Òé always permit
- enable
-policy 80 eth1 eth2 Î¬»¤ÇøÍø¶Î MAIL_SRV_8.15 E-mailĞ­Òé always permit
+policy 80 eth1 eth2 ç»´æŠ¤åŒºç½‘æ®µ MAIL_SRV_8.15 E-mailåè®® always permit
  enable
 policy 8 eth0 eth2 any APP_Servers APP_16.1_group always permit
  enable
@@ -1157,100 +1156,100 @@ policy 11 eth0 eth2 any TEST-7.10 TEST_7.10_Group always permit
  enable
 policy 21 eth0 eth2 any TEST-7.11 TEST_7.11_Group always permit
  enable
-policy 27 eth0 eth2 any MAIL_SRV_8.15 E-mailĞ­Òé always permit
+policy 27 eth0 eth2 any MAIL_SRV_8.15 E-mailåè®® always permit
  enable
-policy 1 eth2 eth0 MAIL_SRV_8.15 any E-MAIL¸üĞÂ¶Ë¿Ú always permit
+policy 1 eth2 eth0 MAIL_SRV_8.15 any E-MAILæ›´æ–°ç«¯å£ always permit
  enable
 policy 64 eth2 eth0 WEB_8.2 any SMTPS_465 always permit
  enable
 policy 17 eth2 eth0 WEB_8.2 any http always permit
  enable
-policy 25 eth0 eth2 ÁªÍ¨¶ÌĞÅÆ½Ì¨ÍâÍø_123.147.144.21 APP_Servers ÁªÍ¨¶ÌĞÅÍø¹Øservice_group always permit
+policy 25 eth0 eth2 è”é€šçŸ­ä¿¡å¹³å°å¤–ç½‘_123.147.144.21 APP_Servers è”é€šçŸ­ä¿¡ç½‘å…³service_group always permit
  enable
-policy 28 eth2 eth0 APP_Servers ÁªÍ¨¶ÌĞÅÆ½Ì¨ÍâÍø_123.147.144.21 any always permit
+policy 28 eth2 eth0 APP_Servers è”é€šçŸ­ä¿¡å¹³å°å¤–ç½‘_123.147.144.21 any always permit
  enable
-policy 74 eth0 eth2 any ĞËÅ©µ£±£·şÎñÆ÷9.10 XNDBÓ¦ÓÃ·şÎñÆ÷ always permit
+policy 74 eth0 eth2 any å…´å†œæ‹…ä¿æœåŠ¡å™¨9.10 XNDBåº”ç”¨æœåŠ¡å™¨ always permit
  enable
-policy 75 eth0 eth2 any ĞËÅ©µ£±£·şÎñÆ÷9.13 XNDBÊı¾İ¿â·şÎñÆ÷ always permit
+policy 75 eth0 eth2 any å…´å†œæ‹…ä¿æœåŠ¡å™¨9.13 XNDBæ•°æ®åº“æœåŠ¡å™¨ always permit
  enable
-policy 32 eth0 eth2 any ĞËÅ©µ£±£·şÎñÆ÷_9.16 XNDB_9.16_in always permit
+policy 32 eth0 eth2 any å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.16 XNDB_9.16_in always permit
  enable
-policy 33 eth0 eth2 any ĞËÅ©µ£±£·şÎñÆ÷_9.19 XNDB_9.19_in always permit
+policy 33 eth0 eth2 any å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.19 XNDB_9.19_in always permit
  enable
-policy 35 eth2 eth0 ĞËÅ©µ£±£·şÎñÆ÷_9.16 ĞËÅ©µ£±£·şÎñ¹«ÍøIP_123.147.190.50 XNDBÓ¦ÓÃ·şÎñÆ÷1 always permit
+policy 35 eth2 eth0 å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.16 å…´å†œæ‹…ä¿æœåŠ¡å…¬ç½‘IP_123.147.190.50 XNDBåº”ç”¨æœåŠ¡å™¨1 always permit
  enable
-policy 37 eth2 eth0 ĞËÅ©µ£±£·şÎñÆ÷_9.19 ĞËÅ©µ£±£·şÎñ¹«ÍøIP_123.147.190.50 XNDBÓ¦ÓÃ·şÎñÆ÷3 always permit
+policy 37 eth2 eth0 å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.19 å…´å†œæ‹…ä¿æœåŠ¡å…¬ç½‘IP_123.147.190.50 XNDBåº”ç”¨æœåŠ¡å™¨3 always permit
  enable
-policy 41 eth1 eth2 ÔËÎ¬¼à¿Ø×é WEB-Servers ÔËÎ¬¼à¿Ø¶Ë¿Ú×é always permit
+policy 41 eth1 eth2 è¿ç»´ç›‘æ§ç»„ WEB-Servers è¿ç»´ç›‘æ§ç«¯å£ç»„ always permit
  enable
-policy 42 eth1 eth0 ÔËÎ¬¼à¿Ø×é ÍøÂçÉè±¸×é ÍøÂçÉè±¸¼à¿Ø¶Ë¿Ú always permit
+policy 42 eth1 eth0 è¿ç»´ç›‘æ§ç»„ ç½‘ç»œè®¾å¤‡ç»„ ç½‘ç»œè®¾å¤‡ç›‘æ§ç«¯å£ always permit
  enable
-policy 43 eth1 eth2 ÔËÎ¬¼à¿Ø×é1 ÍøÂçÉè±¸×é1 ÍøÂçÉè±¸¼à¿Ø¶Ë¿Ú always permit
+policy 43 eth1 eth2 è¿ç»´ç›‘æ§ç»„1 ç½‘ç»œè®¾å¤‡ç»„1 ç½‘ç»œè®¾å¤‡ç›‘æ§ç«¯å£ always permit
  enable
-policy 47 eth1 eth2 ÔËÎ¬¼à¿Ø×é1 APP2_GROUPS ÔËÎ¬¼à¿Ø¶Ë¿Ú×é3 always permit
+policy 47 eth1 eth2 è¿ç»´ç›‘æ§ç»„1 APP2_GROUPS è¿ç»´ç›‘æ§ç«¯å£ç»„3 always permit
  enable
-policy 44 eth1 eth2 ÔËÎ¬¼à¿Ø×é1 APP_Servers ÔËÎ¬¼à¿Ø¶Ë¿Ú×é1 always permit
+policy 44 eth1 eth2 è¿ç»´ç›‘æ§ç»„1 APP_Servers è¿ç»´ç›‘æ§ç«¯å£ç»„1 always permit
  enable
-policy 46 eth1 eth2 Êı¾İ¿â×é DB-Servers ÔËÎ¬¼à¿Ø¶Ë¿Ú×é2 always permit
+policy 46 eth1 eth2 æ•°æ®åº“ç»„ DB-Servers è¿ç»´ç›‘æ§ç«¯å£ç»„2 always permit
  enable
-policy 50 eth1 eth2 Êı¾İ¿â×é TEST-Servers_Group any always permit
+policy 50 eth1 eth2 æ•°æ®åº“ç»„ TEST-Servers_Group any always permit
  enable
-policy 48 eth1 eth2 ÔËÎ¬¼à¿Ø×é TEST-Servers_Group ÔËÎ¬¼à¿Ø-²âÊÔ·şÎñÆ÷ always permit
+policy 48 eth1 eth2 è¿ç»´ç›‘æ§ç»„ TEST-Servers_Group è¿ç»´ç›‘æ§-æµ‹è¯•æœåŠ¡å™¨ always permit
  enable
-policy 54 eth1 eth2 ÔËÎ¬²¿ÄÚÍø¼à¿Ø_1.100 APP_Servers ÔËÎ¬¼à¿Ø¶Ë¿Ú×é4 always permit
+policy 54 eth1 eth2 è¿ç»´éƒ¨å†…ç½‘ç›‘æ§_1.100 APP_Servers è¿ç»´ç›‘æ§ç«¯å£ç»„4 always permit
  enable
-policy 55 eth1 eth2 ÔËÎ¬²¿ÄÚÍø¼à¿Ø_1.100 DB-Servers ÔËÎ¬¼à¿Ø¶Ë¿Ú×é5 always permit
+policy 55 eth1 eth2 è¿ç»´éƒ¨å†…ç½‘ç›‘æ§_1.100 DB-Servers è¿ç»´ç›‘æ§ç«¯å£ç»„5 always permit
  enable
-policy 58 eth1 eth2 ÔËÎ¬²¿ÄÚÍø¼à¿Ø_1.100 APP2_GROUPS ÔËÎ¬¼à¿Ø¶Ë¿Ú×é6 always permit
+policy 58 eth1 eth2 è¿ç»´éƒ¨å†…ç½‘ç›‘æ§_1.100 APP2_GROUPS è¿ç»´ç›‘æ§ç«¯å£ç»„6 always permit
  enable
-policy 59 eth1 eth2 ÔËÎ¬²¿ÄÚÍø¼à¿Ø_1.100 ÍøÂçÉè±¸×é1 ÍøÂçÉè±¸¼à¿Ø¶Ë¿Ú1 always permit
+policy 59 eth1 eth2 è¿ç»´éƒ¨å†…ç½‘ç›‘æ§_1.100 ç½‘ç»œè®¾å¤‡ç»„1 ç½‘ç»œè®¾å¤‡ç›‘æ§ç«¯å£1 always permit
  enable
-policy 65 eth2 eth1 TEST-Servers_Group ÔËÎ¬±¸·İ»ú_172.168.1.104 Àî³ÉÖ¾FTP×é always permit
+policy 65 eth2 eth1 TEST-Servers_Group è¿ç»´å¤‡ä»½æœº_172.168.1.104 ææˆå¿—FTPç»„ always permit
  enable
-policy 67 eth0 eth2 any TEST-Servers_Group ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é always permit
-policy 51 eth0 eth2 any APP_Servers ÅÊÖ¦»¨ÉÌĞĞ¶ÌĞÅ¶Ë¿Ú×é always permit
+policy 67 eth0 eth2 any TEST-Servers_Group æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„ always permit
+policy 51 eth0 eth2 any APP_Servers æ”€æèŠ±å•†è¡ŒçŸ­ä¿¡ç«¯å£ç»„ always permit
  enable
 policy 69 eth2 eth0 APP_Servers PZHCCB_SMS_218.89.109.196 any always permit
  enable
 policy 82 eth0 eth2 any App_10.16.16.1 TCP_9999 always permit
  enable
-policy 9 eth2 eth1 ·şÎñÆ÷×é Ó¦ÓÃ¿ª·¢²¿·¢²¼»ú ftp always permit
+policy 9 eth2 eth1 æœåŠ¡å™¨ç»„ åº”ç”¨å¼€å‘éƒ¨å‘å¸ƒæœº ftp always permit
  enable
-policy 23 eth0 eth2 ISG-1000-02 ãòÖİSSL-VPNÉè±¸_10.16.6.2 any always permit
+policy 23 eth0 eth2 ISG-1000-02 æ³¸å·SSL-VPNè®¾å¤‡_10.16.6.2 any always permit
  enable
-policy 24 eth1 eth2 ÔËÎ¬±¸·İ»ú_172.168.1.104 TEST-7.10 TCP_1521 always permit
+policy 24 eth1 eth2 è¿ç»´å¤‡ä»½æœº_172.168.1.104 TEST-7.10 TCP_1521 always permit
  enable
 policy 12 eth2 eth1 10.16.8.17 any any always permit
-policy 5 eth1 eth2 Êı¾İ¿â×é zabbix_ĞéÄâ»ú8.27-28 any always permit
-policy 16 eth0 eth2 ISG-1000-01 ´ïÖİSSL-VPNÉè±¸_16.118.210.16 https always permit
+policy 5 eth1 eth2 æ•°æ®åº“ç»„ zabbix_è™šæ‹Ÿæœº8.27-28 any always permit
+policy 16 eth0 eth2 ISG-1000-01 è¾¾å·SSL-VPNè®¾å¤‡_16.118.210.16 https always permit
  enable
-policy 20 eth1 eth0 Ò×¼«¸¶²âÊÔ×é any »¥ÁªÍø·ÃÎÊ¶Ë¿Ú×é always permit
+policy 20 eth1 eth0 æ˜“æä»˜æµ‹è¯•ç»„ any äº’è”ç½‘è®¿é—®ç«¯å£ç»„ always permit
 policy 14 eth0 eth2 any ZQW_sers_groups http always permit
  enable
-policy 31 eth0 eth2 ½ğÈÚºóÔ®¹«ÍøµØÖ·_113.204.37.10 ZQW_sers_groups ZQW_sers_groups always permit
+policy 31 eth0 eth2 é‡‘èåæ´å…¬ç½‘åœ°å€_113.204.37.10 ZQW_sers_groups ZQW_sers_groups always permit
  enable
-policy 34 eth0 eth2 ½ğÈÚºóÔ®¹«ÍøµØÖ·_113.204.37.10 ZQW_ILO_sers_groups https always permit
+policy 34 eth0 eth2 é‡‘èåæ´å…¬ç½‘åœ°å€_113.204.37.10 ZQW_ILO_sers_groups https always permit
  enable
-policy 38 eth0 eth2 ÄÏÆº°ì¹«Çø¹«ÍøIP_113.204.37.146 TEST-7.11 TCP_8088 always permit
+policy 38 eth0 eth2 å—åªåŠå…¬åŒºå…¬ç½‘IP_113.204.37.146 TEST-7.11 TCP_8088 always permit
  enable
-policy 18 eth2 eth0 TEST-7.11 ÖØÇìÒøĞĞ_113.204.117.140 ÖØÇìÒøĞĞ¶Ë¿Ú×é always permit
-policy 26 eth2 eth1 DB2-P720-Groups ÀîÆô´¨172.168.1.33 any always permit
+policy 18 eth2 eth0 TEST-7.11 é‡åº†é“¶è¡Œ_113.204.117.140 é‡åº†é“¶è¡Œç«¯å£ç»„ always permit
+policy 26 eth2 eth1 DB2-P720-Groups æå¯å·172.168.1.33 any always permit
 policy 66 eth0 eth2 any TEST-7.10 http always permit
  enable
 policy 56 eth2 eth0 ZQW_sers_groups any ZQW_sers_groups_in always permit
  enable
-policy 70 eth2 eth0 ĞËÅ©µ£±£·şÎñÆ÷_9.16 XNDBÒÆ¶¯¶ÌĞÅ_218.206.27.231 XNDBÒÆ¶¯¶ÌĞÅ¶Ë¿Ú×é always permit
+policy 70 eth2 eth0 å…´å†œæ‹…ä¿æœåŠ¡å™¨_9.16 XNDBç§»åŠ¨çŸ­ä¿¡_218.206.27.231 XNDBç§»åŠ¨çŸ­ä¿¡ç«¯å£ç»„ always permit
  enable
-policy 45 eth0 eth1 any ³Â±Ì²¨172.168.1.39 HTTP_8080 always permit
+policy 45 eth0 eth1 any é™ˆç¢§æ³¢172.168.1.39 HTTP_8080 always permit
  enable
-policy 62 eth1 eth0 ³Â±Ì²¨172.168.1.39 any »¥ÁªÍø·ÃÎÊ¶Ë¿Ú×é1 always permit
-policy 72 eth0 eth1 any ×óÎÄ²Å_172.168.1.10 HTTP_8080 always permit
+policy 62 eth1 eth0 é™ˆç¢§æ³¢172.168.1.39 any äº’è”ç½‘è®¿é—®ç«¯å£ç»„1 always permit
+policy 72 eth0 eth1 any å·¦æ–‡æ‰_172.168.1.10 HTTP_8080 always permit
  enable
-policy 15 eth0 eth1 any Áõ´¿_172.168.1.87 HTTP_8080 always permit
+policy 15 eth0 eth1 any åˆ˜çº¯_172.168.1.87 HTTP_8080 always permit
  enable
-policy 40 eth1 eth0 Áõ´¿_172.168.1.87 any HTTPS×é always permit
+policy 40 eth1 eth0 åˆ˜çº¯_172.168.1.87 any HTTPSç»„ always permit
  enable
-policy 81 eth0 eth1 any ÔøÇÉ_172.168.1.15 HTTP_8080 always permit
+policy 81 eth0 eth1 any æ›¾å·§_172.168.1.15 HTTP_8080 always permit
  enable
 !
 sysmon
@@ -1258,7 +1257,7 @@ sysmon
  log memory local
  log session local
  log flow local
- sysres flow eth0(ÍâÍø) 10240
+ sysres flow eth0(å¤–ç½‘) 10240
 !
 
 ha-group
