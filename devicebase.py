@@ -12,7 +12,7 @@ class Addr:
         self.addresscontent.append(content)
 
     def printaddress(self):
-        print ('address name :' + self.name)
+        print('address name :' + self.name)
         for i in range(len(self.addresscontent)):
             print(' ' + self.addresscontent[i])
 
@@ -26,7 +26,7 @@ class AddrGrp:
         self.addressobject.append(content)
 
     def printaddressgroup(self):
-        print ('addressgroup name :' + self.name)
+        print('addressgroup name :' + self.name)
         for i in range(len(self.addressobject)):
             print(' ' + self.addressobject[i])
 
@@ -40,7 +40,7 @@ class Ser:
         self.servicecontent.append(content)
 
     def printservice(self):
-        print ('service name :' + self.name)
+        print('service name :' + self.name)
         for i in range(len(self.servicecontent)):
             print(' ' + self.servicecontent[i])
 
@@ -54,7 +54,7 @@ class ServGrp:
         self.serviceobject.append(content)
 
     def printservicegroup(self):
-        print ('servicegroup name :' + self.name)
+        print('servicegroup name :' + self.name)
         for i in range(len(self.serviceobject)):
             print(self.serviceobject[i])
 
@@ -69,16 +69,16 @@ class Policy:
         self.service = []
 
     def printpolicy(self):
-        print ('policy id :' + self.name)
-        print (' policy srceth :' + self.srceth)
-        print (' policy dsteth :' + self.dsteth)
-        print (' policy srcaddr :')
+        print('policy id :' + self.name)
+        print(' policy srceth :' + self.srceth)
+        print(' policy dsteth :' + self.dsteth)
+        print(' policy srcaddr :')
         for i in range(len(self.srcaddr)):
             print(self.srcaddr[i])
-        print (' policy dstaddr :')
+        print(' policy dstaddr :')
         for i in range(len(self.dstaddr)):
             print(self.dstaddr[i])
-        print (' policy service :')
+        print(' policy service :')
         for i in range(len(self.service)):
             print(self.service[i])
 
@@ -93,16 +93,16 @@ class PolicyDetail:
         self.service = []
 
     def printpolicydetail(self):
-        print ('policydetail id :' + self.name)
-        print (' policydetail srceth :' + self.srceth)
-        print (' policydetail dsteth :' + self.dsteth)
-        print (' policydetail srcaddr :')
+        print('policydetail id :' + self.name)
+        print(' policydetail srceth :' + self.srceth)
+        print(' policydetail dsteth :' + self.dsteth)
+        print(' policydetail srcaddr :')
         for i in range(len(self.srcaddr)):
             print('  ' + self.srcaddr[i])
-        print (' policydetail dstaddr :')
+        print(' policydetail dstaddr :')
         for i in range(len(self.dstaddr)):
             print('  ' + self.dstaddr[i])
-        print (' policydetail service :')
+        print(' policydetail service :')
         for i in range(len(self.service)):
             print('  ' + self.service[i])
 
@@ -117,16 +117,16 @@ class PolicyMic:
         self.service = ''
 
     def printpolicymic(self):
-        print ('policydetail id :' + self.name + ' srceth:' + self.srceth +
-               ' dsteth :' + self.dsteth + '  srcaddr:' + self.srcaddr +
-               ' dstaddr:' + self.dstaddr + ' service:' + self.service)
+        print('policydetail id :' + self.name + ' srceth:' + self.srceth +
+              ' dsteth :' + self.dsteth + '  srcaddr:' + self.srcaddr +
+              ' dstaddr:' + self.dstaddr + ' service:' + self.service)
 
 
 class FGT800:
     def __init__(self, name=""):
         self.name = name
         self.type = 'firewall'
-        self.portlink = []
+        self.portlink = ['external-c4948', 'internal-appaddr', 'port2-lszaddr']
         self.addrlist = []
         self.addrgrplist = []
         self.serlist = []
@@ -139,25 +139,25 @@ class FGT800:
         for i in self.addrlist:
             if name == i.name:
                 return i
-        return False
+        return 0
 
     def locataddrgrp(self, name):
         for i in self.addrgrplist:
             if name == i.name:
                 return i
-        return False
+        return 0
 
     def locatser(self, name):
         for i in self.serlist:
             if name == i.name:
                 return i
-        return False
+        return 0
 
     def locatsergrp(self, name):
         for i in self.sergrplist:
             if name == i.name:
                 return i
-        return False
+        return 0
 
     # 生成策略标准五元组
 
@@ -168,10 +168,10 @@ class FGT800:
             self.policydetaillist[len(self.policydetaillist) - 1].dsteth = i.dsteth
             for j in i.srcaddr:
                 tempaddrgrp = self.locataddrgrp(j)
-                if tempaddrgrp != False:
+                if tempaddrgrp != 0:
                     for k in tempaddrgrp.addressobject:
                         tempaddr = self.locataddr(k)
-                        if tempaddr:
+                        if tempaddr != 0:
                             for l in tempaddr.addresscontent:
                                 self.policydetaillist[len(
                                     self.policydetaillist) - 1].srcaddr.append(l)
@@ -185,10 +185,10 @@ class FGT800:
                         self.policydetaillist) - 1].srcaddr.append(j)
             for j in i.dstaddr:
                 tempaddrgrp = self.locataddrgrp(j)
-                if tempaddrgrp:
+                if tempaddrgrp != 0:
                     for k in tempaddrgrp.addressobject:
                         tempaddr = self.locataddr(k)
-                        if tempaddr:
+                        if tempaddr != 0:
                             for l in tempaddr.addresscontent:
                                 self.policydetaillist[len(
                                     self.policydetaillist) - 1].dstaddr.append(l)
@@ -202,10 +202,10 @@ class FGT800:
                         self.policydetaillist) - 1].dstaddr.append(j)
             for j in i.service:
                 tempservicegroup = self.locatsergrp(j)
-                if tempservicegroup:
+                if tempservicegroup != 0:
                     for k in tempservicegroup.serviceobject:
                         tempservic = self.locatser(k)
-                        if tempservic:
+                        if tempservic != 0:
                             for l in tempservic.servicecontent:
                                 self.policydetaillist[len(
                                     self.policydetaillist) - 1].service.append(l)
@@ -216,7 +216,7 @@ class FGT800:
                             self.policydetaillist) - 1].service.append(l)
                 else:
                     self.policydetaillist[len(
-                        self.policydetaillist) - 1].service.append(j)
+                        self.policydetaillist) - 1].service.append(str.lower(j))
 
     def creatpolicymiclist(self):
         for i in self.policydetaillist:
@@ -232,8 +232,8 @@ class FGT800:
 
     def printpolicymiclist(self):
         for i in self.policymiclist:
-            print ("policy id:" + i.name + " srceth:" + i.srceth +
-                   " dsteth:" + i.dsteth + " srcaddr:" + i.srcaddr + " dstaddr:" + i.dstaddr + " service:" + i.service)
+            print("policy id:" + i.name + " srceth:" + i.srceth +
+                  " dsteth:" + i.dsteth + " srcaddr:" + i.srcaddr + " dstaddr:" + i.dstaddr + " service:" + i.service)
 
     def parseconffile(self):
         keyword = ''
@@ -348,7 +348,7 @@ class USG800:
     def __init__(self, name=""):
         self.name = name
         self.type = 'firewall'
-        self.portlink = []
+        self.portlink = ['eth0-internetaddr', 'eth1-mgraddr', 'eth2-c4948']
         self.addrlist = []
         self.addrgrplist = []
         self.serlist = []
@@ -390,10 +390,10 @@ class USG800:
             self.policydetaillist[len(self.policydetaillist) - 1].dsteth = i.dsteth
             for j in i.srcaddr:
                 tempaddrgrp = self.locataddrgrp(j)
-                if tempaddrgrp != False:
+                if tempaddrgrp != 0:
                     for k in tempaddrgrp.addressobject:
                         tempaddr = self.locataddr(k)
-                        if tempaddr:
+                        if tempaddr != 0:
                             for l in tempaddr.addresscontent:
                                 self.policydetaillist[len(
                                     self.policydetaillist) - 1].srcaddr.append(l)
@@ -407,10 +407,10 @@ class USG800:
                         self.policydetaillist) - 1].srcaddr.append(j)
             for j in i.dstaddr:
                 tempaddrgrp = self.locataddrgrp(j)
-                if tempaddrgrp:
+                if tempaddrgrp != 0:
                     for k in tempaddrgrp.addressobject:
                         tempaddr = self.locataddr(k)
-                        if tempaddr:
+                        if tempaddr != 0:
                             for l in tempaddr.addresscontent:
                                 self.policydetaillist[len(
                                     self.policydetaillist) - 1].dstaddr.append(l)
@@ -424,10 +424,10 @@ class USG800:
                         self.policydetaillist) - 1].dstaddr.append(j)
             for j in i.service:
                 tempservicegroup = self.locatsergrp(j)
-                if tempservicegroup:
+                if tempservicegroup != 0:
                     for k in tempservicegroup.serviceobject:
                         tempservic = self.locatser(k)
-                        if tempservic:
+                        if tempservic != 0:
                             for l in tempservic.servicecontent:
                                 self.policydetaillist[len(
                                     self.policydetaillist) - 1].service.append(l)
@@ -454,8 +454,8 @@ class USG800:
 
     def printpolicymiclist(self):
         for i in self.policymiclist:
-            print ("policy id:" + i.name + " srceth:" + i.srceth +
-                   " dsteth:" + i.dsteth + " srcaddr:" + i.srcaddr + " dstaddr:" + i.dstaddr + " service:" + i.service)
+            print("policy id:" + i.name + " srceth:" + i.srceth +
+                  " dsteth:" + i.dsteth + " srcaddr:" + i.srcaddr + " dstaddr:" + i.dstaddr + " service:" + i.service)
 
     def parseconffile(self):
         keyword = ''
