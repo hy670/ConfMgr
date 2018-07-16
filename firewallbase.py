@@ -17,24 +17,41 @@ class Addr:
 
 
 class AddrGrp:
-    def __init__(self, name=""):
+    def __init__(self, addrgrpID="", name=""):
+        self.addrgrpID=addrgrpID
         self.name = name
         self.addressobject = []
 
 
-    def printaddressgroup(self):
+    def printaddrgrp(self):
+        print("addrgrp ID"+self.addrgrpID)
+        print('addressgroup name :' + self.name)
+        for i in range(len(self.addressobject)):
+            print(' ' + self.addressobject[i])
+class RuleAddrGrp:
+    def __init__(self, ruleaddrgrpID="", name=""):
+        self.ruleadrgrpID=ruleaddrgrpID
+        self.name = name
+        self.addressobject = []
+        self.addressgrpobject=[]
+
+
+    def printaddrgrp(self):
+        print("addrgrp ID"+self.addrgrpID)
         print('addressgroup name :' + self.name)
         for i in range(len(self.addressobject)):
             print(' ' + self.addressobject[i])
 
 
 class Ser:
-    def __init__(self, name=""):
+    def __init__(self, serID="",name=""):
+        self.serID=serID
         self.name = name
         self.servicecontent = []
 
 
     def printservice(self):
+        print('service ID'+self.serID)
         print('service name :' + self.name)
         for i in range(len(self.servicecontent)):
             print(' ' + self.servicecontent[i])
@@ -53,7 +70,8 @@ class ServGrp:
 
 
 class Policy:
-    def __init__(self, name=""):
+    def __init__(self, policyID="",name=""):
+        self.policyID=policyID
         self.name = name
         self.srceth = ''
         self.dsteth = ''

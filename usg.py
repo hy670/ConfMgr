@@ -1,5 +1,6 @@
 # -*- coding:utf8 -*-
 import IPy
+import re
 from firewallbase import *
 class USG:
     def __init__(self, name=""):
@@ -14,9 +15,9 @@ class USG:
         self.policydetaillist = []
         self.metapolicylist = []
 
-    def locataddr(self, name):
+    def locataddr(self, addrID):
         for i in self.addrlist:
-            if name == i.name:
+            if addrID == i.addrID:
                 return i
         return 0
 
@@ -117,7 +118,7 @@ class USG:
     def parseconffile(self):
         f = open('./conffile/usg.conf', 'r')
         for line in f:
-            tokss = line.strip().split(' ')
+            tokss = re.split(''' (?=(?:[^'"]|'[^']*'|"[^"]*")*$)''',line.strip())
             if len(tokss)>2:
                 if tokss[1] == 'service' and tokss[2]== "service":
                     tempser = Ser(tokss[8])
@@ -143,9 +144,7 @@ class USG:
                     tempser = Ser(tokss[8])
                     serdic = {}
                     for i in range(9, len(tokss) - 2, 2):
-                        #临时解决 content 内容中含有空格问题
-                        if len(tokss[i + 1].split('"'))>1:
-                            serdic[tokss[i]] = tokss[i + 1].split('"')[1]
+                        serdic[tokss[i]] = tokss[i + 1].split('"')[1]
                     portdic = {}
                     portdic['dstport'] = serdic['port']
                     portdic['portocol'] = serdic['protocol']
@@ -184,14 +183,27 @@ class USG:
                             tempaddr.addrcontent.append(str(IPy.IP(j, make_net=True)))
                     self.addrlist.append(tempaddr)
                 elif tokss[1] == 'address' and tokss[2] == "addrgrp":
-                    temaddrgrp = AddrGrp(tokss[8])
+                    temaddrgrp = AddrGrp(tokss[4],tokss[8])
+                    print(line)
                     addrgrpdic = {}
                     for i in range(9,len(tokss)-2,2):
                         addrgrpdic[tokss[i]]=tokss[i+1].split('"')[1]
+                    addrID=addrgrpdic['o_id'].split(';')
+                    for i in addrID:
+                        temaddrgrp.addressobject.append(i)
+                    self.addrgrplist.append(temaddrgrp)
+                elif tokss[1] == 'rule' and tokss[2] == "policyinfo":
+                    temppolicy = Policy(tokss[4],tokss[8])
+                    policydic= {}
+                    for i in range(9,len(tokss)-2,2):
+                        policydic[tokss[i]]=tokss[i+1].split('"')[1]
+                    if policydic['type']=='1':
+                        print(tokss[4]+"   "+tokss[8])
+                        print(policydic)
 
         f.close()
-        for i in self.addrlist:
-            i.printaddr()
+        for i in self.addrgrplist:
+            i.printaddrgrp()
         #self.creatpolicydetail()
         #self.creatmetapolicylist()
 
